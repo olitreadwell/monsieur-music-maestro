@@ -1,0 +1,32 @@
+# deps
+node_modules
+.pnpm-store
+
+# next
+.next
+out
+next-env.d.ts
+
+# build
+dist
+build
+
+# env
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+
+# editor
+.vscode
+.idea
+.DS_Store
+
+# vercel
+.vercel
+
+# misc
+tsconfig.tsbuildinfo

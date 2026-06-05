@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+:root {
+  --bg: #faf7f2;
+  --fg: #1a1a1a;
+  --accent: #c1440e;
+  --muted: #6b6b6b;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131110;
+    --fg: #ede8e0;
+    --accent: #ff7a3d;
+    --muted: #999;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
