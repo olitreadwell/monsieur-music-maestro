@@ -28,5 +28,8 @@ npm-debug.log*
 # vercel
 .vercel
 
+# claude session state
+.claude
+
 # misc
 tsconfig.tsbuildinfo
