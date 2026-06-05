@@ -12,7 +12,8 @@ type DocSlug =
 
 export async function loadDoc(slug: DocSlug): Promise<string> {
   const file = path.join(process.cwd(), 'content', 'music', `${slug}.md`);
-  return fs.readFile(file, 'utf8');
+  const raw = await fs.readFile(file, 'utf8');
+  return raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
 }
 
 export function Doc({ markdown }: { markdown: string }) {
