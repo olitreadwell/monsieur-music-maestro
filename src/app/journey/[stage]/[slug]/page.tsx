@@ -7,7 +7,6 @@ import remarkGfm from 'remark-gfm';
 import { getTree, getToy, STAGE_TITLES } from '@/lib/toys';
 import type { Toy } from '@/lib/toys';
 import CodeBlock from '@/components/CodeBlock';
-import TreeNav from '@/components/TreeNav';
 import ReadButton from '@/components/ReadButton';
 import Quiz from '@/components/Quiz';
 import Challenge from '@/components/Challenge';
@@ -103,71 +102,65 @@ export default async function ToyPage({
         </Link>
       </nav>
 
-      <div className="lg:grid lg:grid-cols-[16rem_1fr] lg:gap-10">
-        <aside className="hidden lg:block">
-          <TreeNav tree={tree} currentId={toy.id} />
-        </aside>
+      <div className="max-w-3xl mx-auto">
+        <header className="mb-6">
+          <h1 className="text-3xl font-semibold mb-2">{toy.title}</h1>
+          <p className="text-sm text-muted">
+            Stage {toy.stage} · {toy.type} · {toy.difficulty} · {toy.estimate_min}min
+          </p>
+        </header>
 
-        <main>
-          <header className="mb-6">
-            <h1 className="text-3xl font-semibold mb-2">{toy.title}</h1>
-            <p className="text-sm text-muted">
-              Stage {toy.stage} · {toy.type} · {toy.difficulty} · {toy.estimate_min}min
-            </p>
-          </header>
+        <article className="prose dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-accent prose-code:font-mono prose-pre:bg-fg/5 prose-pre:text-fg">
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+            {toy.body}
+          </ReactMarkdown>
+        </article>
 
-          <article className="prose dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-accent prose-code:font-mono prose-pre:bg-fg/5 prose-pre:text-fg">
-            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-              {toy.body}
-            </ReactMarkdown>
-          </article>
+        <div className="mt-12 pt-8 border-t border-fg/10">
+          <ReadButton toyId={toy.id} />
+        </div>
 
-          <div className="mt-12 pt-8 border-t border-fg/10">
-            <ReadButton toyId={toy.id} />
+        {toy.quiz && (
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold mb-3">Quiz</h2>
+            <Quiz quiz={toy.quiz} />
           </div>
+        )}
+        {toy.challenge && (
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold mb-3">Challenge</h2>
+            <Challenge challenge={toy.challenge} />
+          </div>
+        )}
+        {toy.puzzle && (
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold mb-3">Puzzle</h2>
+            <PatternPuzzle puzzle={toy.puzzle} />
+          </div>
+        )}
 
-          {toy.quiz && (
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-3">Quiz</h2>
-              <Quiz quiz={toy.quiz} />
-            </div>
+        <nav className="mt-12 flex justify-between text-sm">
+          {prev ? (
+            <Link
+              href={prev.routePath}
+              className="text-muted hover:text-accent transition"
+            >
+              ← {prev.title}
+            </Link>
+          ) : (
+            <span />
           )}
-          {toy.challenge && (
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-3">Challenge</h2>
-              <Challenge challenge={toy.challenge} />
-            </div>
+          {next ? (
+            <Link
+              href={next.routePath}
+              className="text-muted hover:text-accent transition"
+            >
+              {next.title} →
+            </Link>
+          ) : (
+            <span />
           )}
-          {toy.puzzle && (
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-3">Puzzle</h2>
-              <PatternPuzzle puzzle={toy.puzzle} />
-            </div>
-          )}
-
-          <nav className="mt-12 flex justify-between text-sm">
-            {prev ? (
-              <Link
-                href={prev.routePath}
-                className="text-muted hover:text-accent transition"
-              >
-                ← {prev.title}
-              </Link>
-            ) : (
-              <span />
-            )}
-            {next ? (
-              <Link
-                href={next.routePath}
-                className="text-muted hover:text-accent transition"
-              >
-                {next.title} →
-              </Link>
-            ) : (
-              <span />
-            )}
-          </nav>
-        </main>
+        </nav>
       </div>
     </div>
   );
