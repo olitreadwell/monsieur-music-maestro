@@ -24,8 +24,8 @@ interface StagesSidebarProps {
 
 export default function StagesSidebar({ tree }: StagesSidebarProps) {
   const pathname = usePathname();
-  const isToyPage = /^\/journey\/\d+\/.+/.test(pathname ?? '');
-  const [open, setOpen] = useState(!isToyPage);
+  const showOnPage = /^\/journey\/\d+\/.+/.test(pathname ?? '');
+  const [open, setOpen] = useState(false);
   const { progress } = useProgress();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -46,6 +46,8 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
       document.body.style.overflow = '';
     };
   }, [open]);
+
+  if (!showOnPage) return null;
 
   return (
     <>

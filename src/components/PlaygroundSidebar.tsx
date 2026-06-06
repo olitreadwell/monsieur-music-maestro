@@ -80,10 +80,24 @@ export default function PlaygroundSidebar() {
   const mountEditor = useCallback(() => {
     const container = containerRef.current;
     if (!container || editorRef.current) return;
+
+    // Strudel appends its CodeMirror editor to the PARENT of <strudel-editor>,
+    // not inside it. Inject CSS so the generated wrapper fills the container
+    // and the empty <strudel-editor> placeholder is hidden.
+    if (!document.getElementById('strudel-layout-fix')) {
+      const style = document.createElement('style');
+      style.id = 'strudel-layout-fix';
+      style.textContent = [
+        '#strudel-playground strudel-editor { display: none !important; }',
+        '#strudel-playground .flex-1 { position: relative; }',
+        '#strudel-playground .flex-1 > div { position: absolute; inset: 0; display: flex; flex-direction: column; }',
+        '#strudel-playground .cm-editor { flex: 1; min-height: 0; overflow: hidden; }',
+        '#strudel-playground .cm-scroller { flex: 1; min-height: 0; overflow-y: auto !important; }',
+      ].join('\n');
+      document.head.appendChild(style);
+    }
+
     const el = document.createElement('strudel-editor') as StrudelEditorEl;
-    el.style.width = '100%';
-    el.style.height = '100%';
-    el.style.display = 'block';
     container.appendChild(el);
     editorRef.current = el;
     requestAnimationFrame(() => {
