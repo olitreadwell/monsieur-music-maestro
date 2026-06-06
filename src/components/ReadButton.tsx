@@ -28,7 +28,7 @@ export default function ReadButton({ toyId }: ReadButtonProps) {
           type="button"
           onClick={() => unmarkRead(toyId)}
           aria-label="Mark as unread"
-          className="text-sm text-muted hover:text-accent transition underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
+          className="min-h-11 inline-flex items-center text-sm text-muted hover:text-accent motion-safe:transition-colors underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
         >
           undo
         </button>
@@ -41,7 +41,7 @@ export default function ReadButton({ toyId }: ReadButtonProps) {
       type="button"
       aria-pressed={false}
       onClick={() => markRead(toyId)}
-      className="min-h-[44px] px-6 py-3 rounded-md bg-accent text-bg font-medium text-sm hover:opacity-90 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+      className="min-h-[44px] px-6 py-3 rounded-md bg-accent text-bg font-medium text-sm hover:opacity-90 motion-safe:transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
     >
       I read this article
     </button>
