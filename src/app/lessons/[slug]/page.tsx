@@ -33,11 +33,14 @@ export default async function LessonSetPage({ params }: { params: Promise<{ slug
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
-      <div className="mb-6">
-        <Link href="/lessons" className="text-sm text-muted hover:text-fg transition">
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <Link
+          href="/lessons"
+          className="inline-flex items-center text-sm text-muted hover:text-fg motion-safe:transition rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+        >
           ← lesson sets
         </Link>
-      </div>
+      </nav>
 
       <div className="flex items-baseline gap-3 flex-wrap">
         <h1 className="text-4xl font-semibold tracking-tight">{set.title}</h1>
@@ -48,12 +51,15 @@ export default async function LessonSetPage({ params }: { params: Promise<{ slug
 
       <p className="mt-4 text-lg text-muted leading-relaxed">{set.intro}</p>
 
-      <ol className="mt-10 space-y-3 list-decimal list-inside">
+      <ol
+        className="mt-10 space-y-3 list-decimal list-inside"
+        aria-label="Toys in this lesson set"
+      >
         {toys.map((toy) => (
           <li key={toy!.id} className="text-base">
             <Link
               href={toy!.routePath}
-              className="hover:text-accent transition underline underline-offset-2"
+              className="hover:text-accent motion-safe:transition underline underline-offset-2 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
             >
               {toy!.title}
             </Link>
@@ -64,7 +70,7 @@ export default async function LessonSetPage({ params }: { params: Promise<{ slug
       <div className="mt-10">
         <Link
           href={`/lessons/${set.slug}/review`}
-          className="inline-block px-5 py-2.5 rounded-lg bg-accent text-white font-medium hover:opacity-90 transition"
+          className="inline-flex items-center min-h-11 px-5 py-2.5 rounded-lg bg-accent text-white font-medium hover:opacity-90 motion-safe:transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
         >
           Take the final review →
         </Link>

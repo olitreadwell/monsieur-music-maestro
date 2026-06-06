@@ -1,11 +1,18 @@
 'use client';
 
-export default function OpenPrompt() {
+interface Props {
+  labelledBy?: string;
+  describedBy?: string;
+}
+
+export default function OpenPrompt({ labelledBy, describedBy }: Props) {
   return (
     <textarea
-      className="w-full min-h-32 rounded-lg border border-fg/20 bg-transparent px-4 py-3 text-sm leading-relaxed resize-y focus:outline-none focus:ring-2 focus:ring-accent/50 placeholder:text-muted/50"
+      className="w-full min-h-32 rounded-lg border border-fg/20 bg-transparent px-4 py-3 text-sm leading-relaxed resize-y focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg placeholder:text-muted"
       placeholder="Write your reflection here…"
-      aria-label="Reflection response"
+      aria-label={labelledBy ? undefined : 'Reflection response'}
+      aria-labelledby={labelledBy}
+      aria-describedby={describedBy}
     />
   );
 }
