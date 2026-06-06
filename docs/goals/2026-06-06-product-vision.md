@@ -73,12 +73,16 @@ Starter list (will grow):
 
 Each cultural deep-dive treats the tradition with care: real names, real places, real lineages, no exotification. Music is people, not aesthetic spice.
 
-## Dance as a first-class outcome
+## Music, rhythm, dance — one sphere
 
-Every rhythm toy should connect to a body-movement. Every cultural deep-dive should name the dances that live in that tradition. Specifically:
+Music and dance are not two subjects with a connecting bridge. They are the same thing observed from different angles. A rhythm is what a dancer's body does. A dance step is a rhythm made visible. In most of the traditions this site covers (Cuban, West African, Brazilian, Indian, Persian, Indonesian, Aboriginal Australian, gospel) the separation we make in Western conservatory tradition (music ↔ dance) is a recent and culturally specific abstraction.
 
-- Afro and Latin social dances get their own lesson set: salsa (Cuban + LA + NY + on-2), bachata, kizomba, semba, forró, cumbia, son cubano partnerwork, merengue. Goal: the user dances them in their body, not their head.
-- Dance lesson sets pair a rhythm toy with: a counted exercise → a felt exercise → a video reference → an open prompt ("dance one minute alone, no music").
+Practically:
+
+- Every rhythm toy includes a `Dance and body` section. Already the case in the current toy body shape; don't lose it.
+- Cultural deep-dives name the dances that live in the tradition, treat them as part of the rhythm, not a follow-up.
+- "Concept across cultures" lesson sets show the same concept in song, percussion, and dance simultaneously.
+- The Afro and Latin social-dance threads (salsa, bachata, kizomba, semba, forró, cumbia, son cubano partnerwork, merengue) are woven through cultural deep-dives, not isolated to one phase. The user story "I dance these in my body, not my head" is met by repeated exposure across cultural sets, not a special dance module.
 
 ## Critique-level design
 
@@ -94,10 +98,9 @@ The work breaks down into ordered phases. Each phase should be ship-able on its 
 | B | a11y AA+ pass + mobile-first review | Foundation for everything else. Audit + fixes before more features. |
 | C | First quiz prototype on one toy + lesson-set scaffold | Prove the validator pattern + spaced-repetition data shape + the lesson-set entry + final review structure. |
 | D | Offline + PWA | Service worker, manifest, cached assets. |
-| E | Preschool layer + first cultural lesson set | Re-do the start so it's truly preschool. Add the first "Cuban son" or "West African polyrhythm" lesson set as proof. |
+| E | Preschool layer + first cultural lesson set | Re-do the start so it's truly preschool. Add the first lesson set (Cuban son OR West African polyrhythm) as proof — rhythm + dance treated as one. |
 | F | Critique-level design pass | Per-route design polish using frontend-design + web-design-guidelines. |
-| G | Build out global discovery: one new lesson set per cycle | Cultural deep-dives + concept-across-3-cultures sets, each with challenges + final review. |
-| H | Afro and Latin social-dance lesson set | The specific north-star: salsa, bachata, kizomba, etc. Counted exercise → felt exercise → video → "one minute alone". |
-| I | More challenges, puzzles, spaced-repetition queue at scale | Surface re-meets across the whole tree. |
+| G | Build out global discovery: one new lesson set per cycle | Cultural deep-dives + concept-across-3-cultures sets, each with challenges + final review, dance always woven in. |
+| H | More challenges, puzzles, spaced-repetition queue at scale | Surface re-meets across the whole tree. |
 
 Each phase produces a working artifact and gets merged + deployed before the next starts.
