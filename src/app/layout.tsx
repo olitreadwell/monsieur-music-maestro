@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
 import DropdownNav from '@/components/DropdownNav';
-import BottomRepl from '@/components/BottomRepl';
+import PlaygroundSidebar from '@/components/PlaygroundSidebar';
+import StagesSidebar from '@/components/StagesSidebar';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
+import { getTree } from '@/lib/toys';
 import './globals.css';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -20,7 +22,8 @@ export const viewport: Viewport = {
   themeColor: '#0a0a0a',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const tree = await getTree();
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
@@ -30,16 +33,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <StagesSidebar tree={tree} />
         <div className="fixed top-4 right-4 z-50">
           <DropdownNav />
         </div>
-        <main id="main-content" tabIndex={-1} className="flex-1 pb-24 focus:outline-none">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
         <footer className="border-t border-fg/10 px-6 py-4 text-xs text-muted">
           <div className="max-w-3xl mx-auto">
             Plain-language notes. AuDHD + ESL friendly. Open license except where noted.
           </div>
         </footer>
-        <BottomRepl />
+        <PlaygroundSidebar />
         <ServiceWorkerRegister />
       </body>
     </html>
