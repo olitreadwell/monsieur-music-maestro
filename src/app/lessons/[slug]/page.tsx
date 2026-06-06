@@ -78,7 +78,9 @@ export default async function LessonSetPage({ params }: { params: Promise<{ slug
 
       {set.body && (
         <article className="mt-16 prose dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-accent prose-code:font-mono prose-pre:bg-fg/5 prose-pre:text-fg">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{set.body}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {set.body.replace(/^#\s[^\n]*\n+/, '')}
+          </ReactMarkdown>
         </article>
       )}
     </div>
