@@ -1,9 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useLeitner } from '@/lib/leitner';
 import type { ReviewIndex, ReviewItemRef } from '@/lib/review';
+import ReviewWalkthrough from '@/components/ReviewWalkthrough';
+
+type Mode = 'list' | 'walkthrough';
 
 interface Props {
   index: ReviewIndex;
@@ -32,10 +35,40 @@ function nextDueLabel(items: Record<string, { nextDueAt: string }>): string {
 export default function ReviewQueue({ index }: Props) {
   const { state, due } = useLeitner();
   const [showAll, setShowAll] = useState(false);
+  const [mode, setMode] = useState<Mode>('list');
 
   const dueRefs = due
     .map((id) => index[id])
     .filter((ref): ref is ReviewItemRef => ref !== undefined);
+
+  const handleEnterWalkthrough = useCallback(() => {
+    setMode('walkthrough');
+  }, []);
+
+  const handleExitWalkthrough = useCallback(() => {
+    setMode('list');
+  }, []);
+
+  // Esc key exits walk-through (also handled inside ReviewWalkthrough, but
+  // guard here in case focus is outside that subtree).
+  useEffect(() => {
+    if (mode !== 'walkthrough') return;
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') handleExitWalkthrough();
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mode, handleExitWalkthrough]);
+
+  if (mode === 'walkthrough') {
+    return (
+      <ReviewWalkthrough
+        index={index}
+        initialDue={dueRefs}
+        onExit={handleExitWalkthrough}
+      />
+    );
+  }
 
   const allKnownIds = Object.keys(state.items).filter((id) => id in index);
 
@@ -56,9 +89,18 @@ export default function ReviewQueue({ index }: Props) {
     <div>
       <div aria-live="polite" aria-atomic="true" className="mb-6">
         {dueRefs.length > 0 ? (
-          <p className="text-lg font-semibold">
-            {dueRefs.length} {dueRefs.length === 1 ? 'item' : 'items'} due now
-          </p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-lg font-semibold">
+              {dueRefs.length} {dueRefs.length === 1 ? 'item' : 'items'} due now
+            </p>
+            <button
+              type="button"
+              onClick={handleEnterWalkthrough}
+              className="inline-flex items-center min-h-11 rounded bg-accent px-4 py-2 text-sm font-medium text-bg hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            >
+              Review next &rarr;
+            </button>
+          </div>
         ) : (
           <p className="text-lg font-semibold text-muted">
             Nothing due.{nextLabel ? ` Next item: ${nextLabel}.` : ' No upcoming items.'}
