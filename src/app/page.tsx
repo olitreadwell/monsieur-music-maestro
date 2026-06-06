@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { getTree, STAGE_TITLES } from '@/lib/toys';
+import StageProgress from '@/components/StageProgress';
+import TreeRow from '@/components/TreeRow';
 
 export const metadata = { title: 'monsieur music maestro — the journey' };
 
@@ -40,8 +42,14 @@ export default async function Home() {
 
           return (
             <div key={stage.number} className="mb-8">
-              <div className="font-semibold mb-1">
-                Stage {stage.number} — {title}
+              <div className="font-semibold mb-1 flex items-baseline gap-2">
+                <Link
+                  href={`/journey/${stage.number}`}
+                  className="hover:text-accent transition"
+                >
+                  Stage {stage.number} — {title}
+                </Link>
+                <StageProgress stage={stage} />
               </div>
 
               {!hasContent && (
@@ -49,33 +57,11 @@ export default async function Home() {
               )}
 
               {stage.spine.map((toy) => (
-                <div key={toy.id}>
-                  <Link
-                    href={toy.routePath}
-                    className="block hover:text-accent transition"
-                  >
-                    <span className="text-accent">●</span>{' '}
-                    <span className="inline-block min-w-[24ch]">{toy.title}</span>
-                    <span className="text-muted">
-                      ({toy.type} · {toy.difficulty} · {toy.estimate_min}min)
-                    </span>
-                  </Link>
-                </div>
+                <TreeRow key={toy.id} toy={toy} />
               ))}
 
               {stage.sideQuests.map((toy) => (
-                <div key={toy.id}>
-                  <Link
-                    href={toy.routePath}
-                    className="block pl-2 hover:text-accent transition"
-                  >
-                    ↳{' '}
-                    <span className="inline-block min-w-[22ch]">{toy.title}</span>
-                    <span className="text-muted">
-                      (side-quest · {toy.difficulty} · {toy.estimate_min}min)
-                    </span>
-                  </Link>
-                </div>
+                <TreeRow key={toy.id} toy={toy} prefix="↳" indent />
               ))}
 
               {branchKeys.length > 0 && (
@@ -86,20 +72,14 @@ export default async function Home() {
                     const isLast = bi === branchKeys.length - 1;
                     return toys.map((toy, ti) => {
                       const isLastToy = ti === toys.length - 1 && isLast;
-                      const prefix = isLastToy ? '    └─' : '    ├─';
+                      const treePrefix = isLastToy ? '    └─' : '    ├─';
                       return (
-                        <div key={toy.id}>
-                          <Link
-                            href={toy.routePath}
-                            className="block hover:text-accent transition"
-                          >
-                            {prefix} {branchSlug} · {' '}
-                            <span className="inline-block min-w-[16ch]">{toy.title}</span>
-                            <span className="text-muted">
-                              ({toy.type} · {toy.difficulty} · {toy.estimate_min}min)
-                            </span>
-                          </Link>
-                        </div>
+                        <TreeRow
+                          key={toy.id}
+                          toy={toy}
+                          prefix={treePrefix}
+                          branchLabel={branchSlug}
+                        />
                       );
                     });
                   })}
