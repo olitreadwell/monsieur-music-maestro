@@ -149,7 +149,7 @@ export default function BottomRepl() {
         aria-label="Strudel playground"
         className={[
           'overflow-hidden bg-zinc-900 border-t border-fg/10',
-          'transition-all duration-300',
+          'motion-safe:transition-all motion-safe:duration-300',
           open
             ? 'sm:h-[320px] max-sm:fixed max-sm:inset-0 max-sm:h-full max-sm:z-50'
             : 'h-0',
@@ -168,7 +168,7 @@ export default function BottomRepl() {
           'w-full h-11 flex items-center justify-center',
           'bg-zinc-900 border-t border-fg/10',
           'text-sm font-medium text-fg/80 hover:text-fg hover:bg-zinc-800',
-          'transition-colors',
+          'motion-safe:transition-colors',
           'pb-[env(safe-area-inset-bottom)]',
           'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fg',
         ].join(' ')}

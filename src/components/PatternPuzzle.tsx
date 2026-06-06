@@ -105,11 +105,11 @@ function ReorderPuzzle({
             aria-pressed={pickedIndex === i}
             aria-label={`Token: ${token}${pickedIndex === i ? ', selected' : ''}`}
             className={[
-              'rounded border px-3 py-1.5 text-sm font-mono cursor-grab select-none',
-              'focus:outline-none focus:ring-2 focus:ring-indigo-500',
+              'min-h-11 rounded border px-3 py-1.5 text-sm font-mono cursor-grab select-none',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2',
               pickedIndex === i
-                ? 'border-indigo-500 bg-indigo-50'
-                : 'border-neutral-300 bg-white hover:bg-neutral-50',
+                ? 'border-indigo-700 bg-indigo-50'
+                : 'border-neutral-400 bg-white hover:bg-neutral-50',
               dragIndex === i ? 'opacity-50' : '',
               checked ? 'cursor-default' : '',
             ]
@@ -122,8 +122,9 @@ function ReorderPuzzle({
       </div>
       {!checked && (
         <button
+          type="button"
           onClick={handleCheck}
-          className="mt-4 rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="mt-4 min-h-11 rounded bg-indigo-700 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
         >
           Check
         </button>
@@ -256,13 +257,13 @@ function FillBlankPuzzle({
                     : `Blank ${i + 1}: empty. ${pickedChipIndex !== null ? 'Click to place selected chip.' : ''}`
                 }
                 className={[
-                  'inline-flex min-w-16 h-8 items-center justify-center rounded border-2 border-dashed px-2 text-sm font-mono',
-                  'focus:outline-none focus:ring-2 focus:ring-indigo-500',
+                  'inline-flex min-w-16 h-11 items-center justify-center rounded border-2 border-dashed px-2 text-sm font-mono',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2',
                   slotValues[i]
-                    ? 'border-indigo-400 bg-indigo-50'
+                    ? 'border-indigo-700 bg-indigo-50'
                     : pickedChipIndex !== null
-                      ? 'border-indigo-300 bg-indigo-50/50'
-                      : 'border-neutral-300',
+                      ? 'border-indigo-500 bg-indigo-50/50'
+                      : 'border-neutral-500',
                   checked ? 'cursor-default' : 'cursor-pointer',
                 ]
                   .filter(Boolean)
@@ -288,11 +289,11 @@ function FillBlankPuzzle({
               aria-pressed={pickedChipIndex === i}
               aria-label={`Token: ${token}${pickedChipIndex === i ? ', selected' : ''}`}
               className={[
-                'rounded border px-3 py-1.5 text-sm font-mono cursor-grab select-none',
-                'focus:outline-none focus:ring-2 focus:ring-indigo-500',
+                'min-h-11 rounded border px-3 py-1.5 text-sm font-mono cursor-grab select-none',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2',
                 pickedChipIndex === i
-                  ? 'border-indigo-500 bg-indigo-50'
-                  : 'border-neutral-300 bg-white hover:bg-neutral-50',
+                  ? 'border-indigo-700 bg-indigo-50'
+                  : 'border-neutral-400 bg-white hover:bg-neutral-50',
                 draggingChipIndex === i ? 'opacity-50' : '',
                 checked ? 'cursor-default' : '',
               ]
@@ -307,9 +308,10 @@ function FillBlankPuzzle({
 
       {!checked && (
         <button
+          type="button"
           onClick={handleCheck}
           disabled={!allFilled}
-          className="rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="min-h-11 rounded bg-indigo-700 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-800 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
         >
           Check
         </button>
@@ -345,10 +347,10 @@ function FeedbackMessage({
       tabIndex={-1}
       className="mt-4 space-y-1 focus:outline-none"
     >
-      <p className={`font-semibold ${correct ? 'text-green-700' : 'text-red-500'}`}>
+      <p className={`font-semibold ${correct ? 'text-green-700' : 'text-red-700'}`}>
         {correct ? '✓ Correct' : '✗ Not quite'}
       </p>
-      {explanation && <p className="text-sm text-neutral-700">{explanation}</p>}
+      {explanation && <p className="text-sm text-neutral-800">{explanation}</p>}
     </div>
   );
 }

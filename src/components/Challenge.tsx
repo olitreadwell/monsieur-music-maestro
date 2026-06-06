@@ -46,13 +46,14 @@ export default function Challenge({ challenge }: { challenge: ChallengeT }) {
         onChange={(e) => setCode(e.target.value)}
         rows={8}
         spellCheck={false}
-        className="w-full rounded border border-neutral-300 bg-neutral-900 px-3 py-2 font-mono text-sm text-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="w-full rounded border border-neutral-400 bg-neutral-900 px-3 py-2 font-mono text-sm text-green-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2"
       />
 
       <div className="mt-3 flex flex-wrap gap-2">
         <button
+          type="button"
           onClick={handleTest}
-          className="rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="min-h-11 rounded bg-indigo-700 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
         >
           Test
         </button>
@@ -60,14 +61,15 @@ export default function Challenge({ challenge }: { challenge: ChallengeT }) {
           href={buildStrudelUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="min-h-11 inline-flex items-center rounded border border-neutral-400 px-4 py-2 text-sm hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
         >
-          Open in player
+          Open in player (opens in new tab)
         </a>
         {result !== null && (
           <button
+            type="button"
             onClick={handleReset}
-            className="rounded border border-neutral-300 px-3 py-2 text-sm hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="min-h-11 rounded border border-neutral-400 px-3 py-2 text-sm hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
           >
             Reset
           </button>
@@ -79,7 +81,7 @@ export default function Challenge({ challenge }: { challenge: ChallengeT }) {
           ref={feedbackRef}
           aria-live="polite"
           tabIndex={-1}
-          className={`mt-3 font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-500'}`}
+          className={`mt-3 font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'}`}
         >
           {result === 'correct'
             ? '✓ Looks good — attempt recorded.'

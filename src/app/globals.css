@@ -28,3 +28,22 @@ body {
   background: var(--bg);
   color: var(--fg);
 }
+
+/* Default focus-visible ring for any focusable element that does not set its own. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Respect prefers-reduced-motion: kill transitions, animations, and smooth scroll. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}

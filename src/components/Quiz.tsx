@@ -86,7 +86,7 @@ export default function Quiz({ quiz }: { quiz: QuizT }) {
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !isAnswered) handleSubmitShortAnswer();
             }}
-            className="w-full rounded border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full rounded border border-neutral-400 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
             placeholder="Your answer..."
           />
         </div>
@@ -94,13 +94,14 @@ export default function Quiz({ quiz }: { quiz: QuizT }) {
 
       {!isAnswered && (
         <button
+          type="button"
           onClick={
             quiz.kind === 'multiple-choice' ? handleSubmitMultipleChoice : handleSubmitShortAnswer
           }
           disabled={
             quiz.kind === 'multiple-choice' ? selectedIndex === null : shortAnswer.trim() === ''
           }
-          className="mt-4 rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="mt-4 min-h-11 rounded bg-indigo-700 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-800 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
         >
           Check answer
         </button>
@@ -112,14 +113,15 @@ export default function Quiz({ quiz }: { quiz: QuizT }) {
             ref={feedbackRef}
             aria-live="polite"
             tabIndex={-1}
-            className={`font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-500'}`}
+            className={`font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'}`}
           >
             {result === 'correct' ? '✓ Correct' : '✗ Not quite'}
           </p>
-          <p className="text-sm text-neutral-700">{quiz.explanation}</p>
+          <p className="text-sm text-neutral-800">{quiz.explanation}</p>
           <button
+            type="button"
             onClick={handleReset}
-            className="rounded border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="min-h-11 rounded border border-neutral-400 px-3 py-1.5 text-sm hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
           >
             Try again
           </button>

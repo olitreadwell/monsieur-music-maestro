@@ -97,8 +97,8 @@ export default function StrudelEmbed({ code, height = 280 }: StrudelEmbedProps) 
           <button
             type="button"
             onClick={handleClick}
-            aria-label="Load Strudel player"
-            className="relative z-10 rounded bg-fg/10 px-4 py-2 text-sm font-medium text-fg hover:bg-fg/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fg transition-colors"
+            aria-label="Load interactive Strudel player to hear this pattern"
+            className="relative z-10 rounded bg-fg/10 px-4 py-2 text-sm font-medium text-fg hover:bg-fg/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fg motion-safe:transition-colors"
           >
             ▶ load player
           </button>
