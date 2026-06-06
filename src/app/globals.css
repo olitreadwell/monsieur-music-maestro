@@ -1,11 +1,27 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-:root {
-  --bg: #faf7f2;
-  --fg: #1a1a1a;
-  --accent: #c1440e;
-  --muted: #6b6b6b;
+@layer base {
+  :root {
+    --bg: #f5ead4;
+    --fg: #1f1a14;
+    --muted: #5e574a;
+    --accent: #c41e3a;
+    --secondary: #d4a017;
+    --tertiary: #2e5f7a;
+    --rule: #d6cdb6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0d1a;
+      --fg: #f5ead4;
+      --muted: #a39e90;
+      --accent: #e63950;
+      --secondary: #f0bc3e;
+      --tertiary: #4a8fb0;
+      --rule: #26263a;
+    }
+  }
 }
 
 @theme inline {
@@ -13,20 +29,16 @@
   --color-fg: var(--fg);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131110;
-    --fg: #ede8e0;
-    --accent: #ff7a3d;
-    --muted: #999;
-  }
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-rule: var(--rule);
+  --font-display: var(--font-fraunces), Georgia, serif;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 /* Default focus-visible ring for any focusable element that does not set its own. */
