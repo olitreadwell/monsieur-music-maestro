@@ -59,3 +59,13 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Strudel editor layout fix.
+   <strudel-editor> appends its CodeMirror DOM to its parent, not inside itself.
+   The placeholder element takes 100% height, pushing the real editor below the
+   visible area. These rules hide the placeholder and make the editor fill the panel. */
+#strudel-playground strudel-editor { display: none !important; }
+#strudel-playground .flex-1 { position: relative; }
+#strudel-playground .flex-1 > div { position: absolute !important; inset: 0 !important; }
+#strudel-playground .cm-editor { height: 100% !important; display: flex !important; flex-direction: column !important; }
+#strudel-playground .cm-scroller { flex: 1 !important; min-height: 0 !important; overflow-y: auto !important; }
