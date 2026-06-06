@@ -108,7 +108,7 @@ Frontmatter fields:
 | `branch` | `spine` \| `side-quest` \| genre slug | yes | Tree position |
 | `parent` | id or null | yes | Prereq, null for `stage-0-play` |
 | `estimate_min` | number | yes | Time estimate |
-| `strudel_code` | string (YAML literal block) | optional | Patch body, surfaced via StrudelBlock |
+| ~~`strudel_code`~~ | DEPRECATED | — | Authors now embed Strudel code as a body-level ```strudel fenced block, so prose can introduce notation BEFORE the code appears. The frontmatter field is no longer rendered. |
 
 Body structure (MD):
 
@@ -117,12 +117,26 @@ Body structure (MD):
 Name the musical phenomenon. e.g. "pulse", "downbeat", "syncopation". Frame
 music as sound arranged in time before jumping to the patch.
 
+## How to read the code
+Introduce every Strudel token and operator this toy uses, in prose,
+**before** the code block. A reader who has never seen Strudel must be able
+to parse the patch from this section. Reuse what's already in earlier toys
+(don't re-explain `s(...)` in stage 8) — but always introduce anything new
+this toy adds.
+
+```strudel
+// inline comments name every token again here, for repeated reference
+s("bd hh sd hh")
+```
+
+The fenced block uses language `strudel`. The toy page's MD renderer maps
+that to the `StrudelBlock` component (with Copy and Open in strudel.cc
+buttons). Place the block immediately after the "How to read the code"
+prose so the reader meets the notation before the code itself.
+
 ## Try it
 Pointer to strudel.cc + how to play and stop. Then 2-4 "break it" bullets
-with concrete edits. The Strudel patch itself comes from frontmatter
-`strudel_code` (rendered above the body via StrudelBlock) AND has inline
-comments naming every token. A reader new to Strudel must be able to parse
-`bd`, `hh`, `s(...)`, `*4`, `.bank(...)` from the code's own comments.
+with concrete edits. Each bullet may introduce a tiny new operator inline.
 
 ## In the world
 Where this appears in real music, real dance floors, real DJ sets. Always
@@ -148,7 +162,16 @@ One question. No answer below it.
 - Side-quests: [links]
 ```
 
-The body has 7 sections (was 5). The two new ones — **Music theory note** and **Dance and body** — exist to keep the toy oriented toward the broader destination, not just the patch.
+The body has 8 sections. The body OWNS the code block (no longer rendered
+from frontmatter automatically). Authors place the ```strudel fenced block
+right after the "How to read the code" prose, so explanation always comes
+before first use.
+
+**The non-negotiable rule**: every Strudel function and token must be
+introduced in prose BEFORE it appears in code. If a stage 5 toy uses `note(...)`
+for the first time, that toy's "How to read the code" section explains
+`note(...)`. The inline `//` comments in the code block REINFORCE the prose,
+they don't replace it.
 
 ## Tree page (`/journey`)
 

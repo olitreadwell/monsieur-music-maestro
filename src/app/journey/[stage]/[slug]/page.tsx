@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import ReactMarkdown from 'react-markdown';
+import type { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getTree, getToy, STAGE_TITLES } from '@/lib/toys';
 import type { Toy } from '@/lib/toys';
@@ -50,6 +51,24 @@ function getPrevNext(
   };
 }
 
+const markdownComponents: Components = {
+  code(props) {
+    const { className, children } = props;
+    if (className && /language-strudel/.test(className)) {
+      const code = String(children).replace(/\n$/, '');
+      return <StrudelBlock code={code} />;
+    }
+    return <code className={className}>{children}</code>;
+  },
+  pre(props) {
+    const child = props.children as { props?: { className?: string } } | null;
+    if (child?.props?.className && /language-strudel/.test(child.props.className)) {
+      return <>{props.children}</>;
+    }
+    return <pre>{props.children}</pre>;
+  },
+};
+
 export default async function ToyPage({
   params,
 }: {
@@ -92,14 +111,10 @@ export default async function ToyPage({
             </p>
           </header>
 
-          {toy.strudel_code && (
-            <div className="mb-8">
-              <StrudelBlock code={toy.strudel_code} />
-            </div>
-          )}
-
           <article className="prose dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-accent prose-code:font-mono prose-pre:bg-fg/5 prose-pre:text-fg">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{toy.body}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+              {toy.body}
+            </ReactMarkdown>
           </article>
 
           <nav className="mt-12 flex justify-between text-sm">

@@ -7,18 +7,35 @@ difficulty: easy
 branch: spine
 parent: null
 estimate_min: 5
-strudel_code: |
-  // s = sound. The text in quotes is a pattern, read left to right.
-  // Each slot is one beat. Four slots = one bar of 4/4 time.
-  // bd = bass drum (the low kick).
-  // hh = hi-hat (the metallic tick).
-  // sd = snare drum (the sharp crack).
-  s("bd hh sd hh")
 ---
 
 ## What you're listening for
 
-A **pattern**. Music is sound arranged in time. Here, four hits, evenly spaced, four beats per bar. This is the skeleton of almost every pop, rock, and dance song you've heard.
+A **pattern**. Music is sound arranged in time. Here, four hits, evenly spaced, four beats per bar. This is the skeleton of nearly every pop, rock, and dance song you've heard.
+
+## How to read the code
+
+We're going to use **Strudel**, a free in-browser tool for making sound patterns. Strudel uses a small notation:
+
+- `s(...)` is a function that means **sound**. Whatever pattern you write in the quotes becomes a sequence of sounds.
+- Inside the quotes, each space-separated token is one **slot** in the pattern. Four slots = one bar of 4 beats.
+- Each token is the **name of a drum hit**. The names come from the Roland TR-808 drum machine (1980):
+  - `bd` = **bass drum** (the low kick)
+  - `hh` = **hi-hat** (the metallic tick)
+  - `sd` = **snare drum** (the sharp crack)
+  - `cp` = **clap**
+  - `oh` = **open hi-hat** (the sustained, ringing tick)
+
+So `s("bd hh sd hh")` reads: "play kick, hat, snare, hat — one per beat, looped forever."
+
+```strudel
+// s    = play these sounds in order, looped.
+// bd   = bass drum (kick).
+// hh   = hi-hat (closed).
+// sd   = snare drum.
+// Four slots = one bar of 4/4 time.
+s("bd hh sd hh")
+```
 
 ## Try it
 
@@ -26,9 +43,9 @@ Open [strudel.cc](https://strudel.cc). Paste the code above. Cmd+Enter (or Ctrl+
 
 Now break it:
 
-- Swap `bd` for `cp` (clap). Same shape, different feel.
+- Swap `bd` for `cp`. Same shape, different feel.
 - Add a fifth slot: `s("bd hh sd hh cp")`. Strudel stretches the four-beat grid to fit five.
-- Replace `sd` with `oh` (open hi-hat). The "answer" sound climbs higher.
+- Replace `sd` with `oh`. The "answer" sound climbs higher.
 
 ## In the world
 
@@ -40,7 +57,7 @@ In a club, dancers' feet step on the kick. At a rock show, the crowd's clap usua
 
 What you've made is one **bar** of **4/4 time**: four beats per bar, with the quarter note as the unit. 4/4 is the most common time signature in popular music.
 
-The `bd hh sd hh` shape is the bones of a **backbeat**: kick on beats 1 and 3, snare on beats 2 and 4. The "and" of the bar (2 and 4) carries the snap.
+The `bd hh sd hh` shape is the bones of a **backbeat**: kick on beats 1 and 3, snare on beats 2 and 4. The accent on 2 and 4 (rather than 1 and 3) is what gives the pattern its rocking feel.
 
 ## History
 
