@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
+import type { Quiz, Challenge, Puzzle } from '@/lib/quiz';
 
 export type ToyType = 'mutate' | 'challenge' | 'takeapart';
 export type Difficulty = 'easy' | 'normal' | 'stretch';
@@ -18,6 +19,9 @@ export interface Toy {
   body: string;
   slug: string;
   routePath: string;
+  quiz?: Quiz;
+  challenge?: Challenge;
+  puzzle?: Puzzle;
 }
 
 export interface Stage {
@@ -88,6 +92,69 @@ function parseToy(file: string, raw: string): Toy {
   const slug = path.basename(file, '.md');
   const routePath = `/journey/${stage}/${slug}`;
 
+  const quizRaw = data.quiz as Record<string, unknown> | undefined;
+  let quiz: Quiz | undefined;
+  if (quizRaw !== undefined) {
+    if (typeof quizRaw.id !== 'string' || !quizRaw.id) {
+      throw new Error(`Toy ${file}: quiz.id must be a non-empty string`);
+    }
+    const validQuizKinds = ['multiple-choice', 'short-answer'];
+    if (typeof quizRaw.kind !== 'string' || !validQuizKinds.includes(quizRaw.kind)) {
+      throw new Error(
+        `Toy ${file}: quiz.kind must be one of ${validQuizKinds.join('|')}, got ${String(quizRaw.kind)}`,
+      );
+    }
+    if (typeof quizRaw.question !== 'string' || !quizRaw.question) {
+      throw new Error(`Toy ${file}: quiz.question must be a non-empty string`);
+    }
+    if (typeof quizRaw.explanation !== 'string' || !quizRaw.explanation) {
+      throw new Error(`Toy ${file}: quiz.explanation must be a non-empty string`);
+    }
+    quiz = quizRaw as unknown as Quiz;
+  }
+
+  const challengeRaw = data.challenge as Record<string, unknown> | undefined;
+  let challenge: Challenge | undefined;
+  if (challengeRaw !== undefined) {
+    if (typeof challengeRaw.id !== 'string' || !challengeRaw.id) {
+      throw new Error(`Toy ${file}: challenge.id must be a non-empty string`);
+    }
+    if (typeof challengeRaw.prompt !== 'string' || !challengeRaw.prompt) {
+      throw new Error(`Toy ${file}: challenge.prompt must be a non-empty string`);
+    }
+    const validValidators = ['literal', 'regex', 'contains'];
+    if (
+      typeof challengeRaw.validator !== 'string' ||
+      !validValidators.includes(challengeRaw.validator)
+    ) {
+      throw new Error(
+        `Toy ${file}: challenge.validator must be one of ${validValidators.join('|')}, got ${String(challengeRaw.validator)}`,
+      );
+    }
+    challenge = challengeRaw as unknown as Challenge;
+  }
+
+  const puzzleRaw = data.puzzle as Record<string, unknown> | undefined;
+  let puzzle: Puzzle | undefined;
+  if (puzzleRaw !== undefined) {
+    if (typeof puzzleRaw.id !== 'string' || !puzzleRaw.id) {
+      throw new Error(`Toy ${file}: puzzle.id must be a non-empty string`);
+    }
+    const validPuzzleKinds = ['reorder', 'fill-blank'];
+    if (
+      typeof puzzleRaw.kind !== 'string' ||
+      !validPuzzleKinds.includes(puzzleRaw.kind)
+    ) {
+      throw new Error(
+        `Toy ${file}: puzzle.kind must be one of ${validPuzzleKinds.join('|')}, got ${String(puzzleRaw.kind)}`,
+      );
+    }
+    if (typeof puzzleRaw.prompt !== 'string' || !puzzleRaw.prompt) {
+      throw new Error(`Toy ${file}: puzzle.prompt must be a non-empty string`);
+    }
+    puzzle = puzzleRaw as unknown as Puzzle;
+  }
+
   return {
     id,
     stage,
@@ -101,6 +168,9 @@ function parseToy(file: string, raw: string): Toy {
     body: parsed.content.trim(),
     slug,
     routePath,
+    ...(quiz !== undefined && { quiz }),
+    ...(challenge !== undefined && { challenge }),
+    ...(puzzle !== undefined && { puzzle }),
   };
 }
 
