@@ -16,12 +16,12 @@ type StrudelEditorEl = HTMLElement & {
 };
 
 export default function PlaygroundSidebar() {
-  const [open, setOpen] = useState(false);
+  // Mobile-only toggle. On lg+ the sidebar is always visible.
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const editorRef = useRef<StrudelEditorEl | null>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
   const pollTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastCodeRef = useRef<string>('');
@@ -37,7 +37,7 @@ export default function PlaygroundSidebar() {
     }, DEBOUNCE_MS);
   }, []);
 
-  function startPoll() {
+  const startPoll = useCallback(() => {
     stopPoll();
     pollTimerRef.current = setInterval(() => {
       const el = editorRef.current;
@@ -52,7 +52,7 @@ export default function PlaygroundSidebar() {
         // editor not ready; skip tick.
       }
     }, POLL_MS);
-  }
+  }, [scheduleWrite]);
 
   function stopPoll() {
     if (pollTimerRef.current) {
@@ -61,7 +61,7 @@ export default function PlaygroundSidebar() {
     }
   }
 
-  function mountEditor() {
+  const mountEditor = useCallback(() => {
     const container = containerRef.current;
     if (!container || editorRef.current) return;
     const el = document.createElement('strudel-editor') as StrudelEditorEl;
@@ -84,9 +84,12 @@ export default function PlaygroundSidebar() {
       }
       startPoll();
     });
-  }
+  }, [startPoll]);
 
-  function loadScriptAndMount() {
+  // On mount (client side), load script + mount editor immediately.
+  useEffect(() => {
+    if (scriptLoaded || editorRef.current) return;
+
     const existing = document.querySelector(
       `script[src="${STRUDEL_REPL_SRC}"]`,
     ) as HTMLScriptElement | null;
@@ -110,34 +113,7 @@ export default function PlaygroundSidebar() {
     script.type = 'module';
     script.addEventListener('load', onReady, { once: true });
     document.head.appendChild(script);
-  }
-
-  function handleOpen() {
-    setOpen(true);
-    if (!scriptLoaded) {
-      loadScriptAndMount();
-    } else if (!editorRef.current) {
-      mountEditor();
-    } else if (editorRef.current) {
-      startPoll();
-    }
-  }
-
-  function handleClose() {
-    setOpen(false);
-    stopPoll();
-    triggerRef.current?.focus();
-  }
-
-  useEffect(() => {
-    if (!open) return;
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') handleClose();
-    }
-    document.addEventListener('keydown', handleKey);
-    closeRef.current?.focus();
-    return () => document.removeEventListener('keydown', handleKey);
-  }, [open]);
+  }, [scriptLoaded, mountEditor]);
 
   useEffect(() => {
     return () => {
@@ -146,6 +122,18 @@ export default function PlaygroundSidebar() {
       editorRef.current?.remove();
     };
   }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        triggerRef.current?.focus();
+      }
+    }
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [mobileOpen]);
 
   function handlePasteFromClipboard() {
     navigator.clipboard
@@ -163,37 +151,40 @@ export default function PlaygroundSidebar() {
 
   return (
     <>
+      {/* Mobile-only floating trigger. Hidden on lg+. */}
       <button
         ref={triggerRef}
         type="button"
-        onClick={handleOpen}
-        aria-expanded={open}
+        onClick={() => setMobileOpen(true)}
+        aria-expanded={mobileOpen}
         aria-controls="strudel-playground"
-        className="fixed bottom-4 right-4 z-50 text-sm font-medium px-4 py-2 rounded-full border border-rule bg-accent text-bg shadow-lg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+        className="lg:hidden fixed bottom-4 right-4 z-50 text-sm font-medium px-4 py-2 rounded-full border border-rule bg-accent text-bg shadow-lg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
       >
         <span className="mr-1.5" aria-hidden="true">♪</span>
         playground
       </button>
 
-      {open && (
+      {/* Mobile-only backdrop. */}
+      {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 bg-fg/30"
-          onClick={handleClose}
+          className="lg:hidden fixed inset-0 z-40 bg-fg/30"
+          onClick={() => setMobileOpen(false)}
           aria-hidden="true"
         />
       )}
 
       <aside
         id="strudel-playground"
-        role="dialog"
-        aria-modal="true"
+        role="complementary"
         aria-label="Strudel playground"
         className={[
-          'fixed inset-y-0 right-0 z-40',
-          'w-full sm:w-[28rem] md:w-[32rem] lg:w-[36rem]',
           'bg-zinc-900 text-fg border-l border-rule flex flex-col',
+          // Mobile: fixed overlay, toggleable.
+          'fixed inset-y-0 right-0 z-40 w-full sm:w-[28rem]',
           'motion-safe:transition-transform motion-safe:duration-300',
-          open ? 'translate-x-0' : 'translate-x-full',
+          mobileOpen ? 'translate-x-0' : 'translate-x-full',
+          // Desktop: in-flow column, always visible.
+          'lg:static lg:translate-x-0 lg:w-[28rem] lg:flex-shrink-0 lg:sticky lg:top-0 lg:h-screen',
         ].join(' ')}
       >
         <div className="flex items-center justify-between px-5 py-3 border-b border-rule">
@@ -207,11 +198,10 @@ export default function PlaygroundSidebar() {
               paste
             </button>
             <button
-              ref={closeRef}
               type="button"
-              onClick={handleClose}
+              onClick={() => setMobileOpen(false)}
               aria-label="Close playground"
-              className="text-sm px-2 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              className="lg:hidden text-sm px-2 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               close
             </button>
