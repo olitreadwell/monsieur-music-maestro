@@ -101,7 +101,7 @@ export default function Quiz({ quiz }: { quiz: QuizT }) {
           disabled={
             quiz.kind === 'multiple-choice' ? selectedIndex === null : shortAnswer.trim() === ''
           }
-          className="mt-4 min-h-11 rounded bg-indigo-700 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-800 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
+          className="mt-4 min-h-11 rounded bg-indigo-700 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-800 disabled:bg-neutral-300 disabled:text-neutral-600 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2 motion-safe:transition-colors"
         >
           Check answer
         </button>

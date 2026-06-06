@@ -165,14 +165,15 @@ export default function BottomRepl() {
         aria-expanded={open}
         aria-controls="strudel-repl-panel"
         className={[
-          'w-full h-11 flex items-center justify-center',
-          'bg-zinc-900 border-t border-fg/10',
-          'text-sm font-medium text-fg/80 hover:text-fg hover:bg-zinc-800',
+          'w-full h-11 flex items-center justify-center gap-2',
+          'bg-zinc-950 dark:bg-zinc-900 border-t border-fg/10',
+          'text-sm font-medium text-fg hover:bg-zinc-800',
           'motion-safe:transition-colors',
           'pb-[env(safe-area-inset-bottom)]',
-          'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fg',
+          'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
         ].join(' ')}
       >
+        <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true" />
         {open ? '▼ close playground' : '▲ open playground'}
       </button>
     </div>

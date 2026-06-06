@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { getDueItems } from '@/lib/leitner';
 
 const STATIC_NAV_LINKS = [
-  { href: '/', label: 'tree' },
+  { href: '/', label: 'home' },
+  { href: '/lessons', label: 'lessons' },
   { href: '/review', label: 'review' },
   { href: '/journey/narrative', label: 'narrative' },
   { href: '/cheatsheet', label: 'cheatsheet' },
@@ -97,7 +98,7 @@ export default function DropdownNav() {
         aria-expanded={open}
         aria-controls={MENU_ID}
         onClick={() => setOpen((v) => !v)}
-        className="text-sm px-3 py-1 rounded border border-fg/10 hover:border-fg/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-safe:transition-colors"
+        className="text-sm px-3 py-1 rounded border border-fg/10 bg-bg/90 backdrop-blur-sm hover:border-fg/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-safe:transition-colors"
       >
         menu ▾
       </button>
