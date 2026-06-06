@@ -12,6 +12,10 @@ type StrudelEditorEl = HTMLElement & {
   editor?: {
     setCode?: (c: string) => void;
     getCode?: () => string;
+    evaluate?: () => void;
+    start?: () => void;
+    stop?: () => void;
+    hush?: () => void;
   };
 };
 
@@ -168,6 +172,26 @@ export default function PlaygroundSidebar() {
       });
   }
 
+  function handlePlay() {
+    const el = editorRef.current;
+    if (!el?.editor) return;
+    if (typeof el.editor.evaluate === 'function') {
+      el.editor.evaluate();
+    } else if (typeof el.editor.start === 'function') {
+      el.editor.start();
+    }
+  }
+
+  function handleStop() {
+    const el = editorRef.current;
+    if (!el?.editor) return;
+    if (typeof el.editor.stop === 'function') {
+      el.editor.stop();
+    } else if (typeof el.editor.hush === 'function') {
+      el.editor.hush();
+    }
+  }
+
   const showFloatingTrigger = !mobileOpen && !desktopOpen;
 
   return (
@@ -215,13 +239,29 @@ export default function PlaygroundSidebar() {
             : 'lg:static lg:w-0 lg:flex-shrink-0 lg:overflow-hidden',
         ].join(' ')}
       >
-        <div className="flex items-center justify-between px-5 py-3 border-b border-rule">
-          <h2 className="text-lg font-display italic">Playground</h2>
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-rule gap-2">
+          <h2 className="text-lg font-display italic shrink-0">Playground</h2>
+          <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={handlePlay}
+              aria-label="Play the patch in the playground"
+              className="text-xs font-medium px-2.5 py-1 rounded bg-accent text-bg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+            >
+              ▶ play
+            </button>
+            <button
+              type="button"
+              onClick={handleStop}
+              aria-label="Stop playback"
+              className="text-xs px-2.5 py-1 rounded border border-fg/20 hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+            >
+              ■ stop
+            </button>
             <button
               type="button"
               onClick={handlePasteFromClipboard}
-              className="text-xs px-2 py-1 rounded border border-fg/20 hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              className="text-xs px-2.5 py-1 rounded border border-fg/20 hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               paste
             </button>
@@ -232,7 +272,7 @@ export default function PlaygroundSidebar() {
                 setDesktopOpen(false);
               }}
               aria-label="Close playground"
-              className="text-sm px-2 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              className="text-xs px-2.5 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               close
             </button>
@@ -240,6 +280,10 @@ export default function PlaygroundSidebar() {
         </div>
 
         <div ref={containerRef} className="flex-1 min-h-0 overflow-auto" />
+
+        <div className="px-4 py-2 border-t border-rule text-xs text-fg/60">
+          Cmd+Enter plays · Cmd+. stops
+        </div>
       </aside>
     </>
   );
