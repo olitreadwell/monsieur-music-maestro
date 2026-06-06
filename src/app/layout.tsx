@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Link from 'next/link';
 import DropdownNav from '@/components/DropdownNav';
 import BottomRepl from '@/components/BottomRepl';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
@@ -33,16 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="fixed top-4 right-4 z-50">
           <DropdownNav />
         </div>
-        <header className="border-b border-fg/10 px-6 py-4">
-          <nav aria-label="Primary" className="max-w-3xl mx-auto flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <Link href="/" className="font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">monsieur music maestro</Link>
-            <Link href="/journey" className="rounded hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-safe:transition-colors">journey</Link>
-            <Link href="/cheatsheet" className="rounded hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-safe:transition-colors">cheatsheet</Link>
-            <Link href="/resources" className="rounded hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-safe:transition-colors">resources</Link>
-            <Link href="/practice-log" className="rounded hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-safe:transition-colors">practice log</Link>
-          </nav>
-        </header>
-        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1 pb-24 focus:outline-none">{children}</main>
         <footer className="border-t border-fg/10 px-6 py-4 text-xs text-muted">
           <div className="max-w-3xl mx-auto">
             Plain-language notes. AuDHD + ESL friendly. Open license except where noted.
