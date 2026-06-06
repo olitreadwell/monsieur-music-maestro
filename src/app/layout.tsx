@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Link from 'next/link';
+import DropdownNav from '@/components/DropdownNav';
 import './globals.css';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -20,6 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
+        <div className="fixed top-4 right-4 z-50">
+          <DropdownNav />
+        </div>
         <header className="border-b border-fg/10 px-6 py-4">
           <nav className="max-w-3xl mx-auto flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <Link href="/" className="font-semibold">monsieur music maestro</Link>
