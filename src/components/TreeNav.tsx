@@ -1,6 +1,21 @@
+'use client';
+
 import Link from 'next/link';
 import type { Tree } from '@/lib/toys';
-import { STAGE_TITLES } from '@/lib/toys';
+import { useProgress } from '@/lib/progress';
+
+// Inlined to avoid importing from toys.ts which uses node:fs (server-only)
+const STAGE_TITLES: Record<number, string> = {
+  0: 'Play',
+  1: 'Pulse',
+  2: 'Hats + clap',
+  3: 'Clave',
+  4: 'Counting',
+  5: 'Low end',
+  6: 'Colour',
+  7: 'Shape',
+  8: 'Play it out',
+};
 
 interface TreeNavProps {
   tree: Tree;
@@ -8,6 +23,8 @@ interface TreeNavProps {
 }
 
 export default function TreeNav({ tree, currentId }: TreeNavProps) {
+  const { progress } = useProgress();
+
   return (
     <nav aria-label="Journey tree" className="font-mono text-sm">
       {tree.stages.map((stage) => {
@@ -25,6 +42,8 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
 
             {stage.spine.map((toy) => {
               const isCurrent = toy.id === currentId;
+              const isRead = progress.toysRead[toy.id] !== undefined;
+              const bullet = isCurrent ? '→' : isRead ? '✓' : '●';
               return (
                 <div key={toy.id}>
                   <Link
@@ -35,8 +54,8 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
                         : 'flex items-baseline gap-1 hover:text-accent'
                     }
                   >
-                    <span>{isCurrent ? '→' : '●'}</span>
-                    <span>{toy.title}</span>
+                    <span className={isRead && !isCurrent ? 'opacity-60' : ''}>{bullet}</span>
+                    <span className={isRead && !isCurrent ? 'opacity-60' : ''}>{toy.title}</span>
                   </Link>
                 </div>
               );
@@ -44,6 +63,8 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
 
             {stage.sideQuests.map((toy) => {
               const isCurrent = toy.id === currentId;
+              const isRead = progress.toysRead[toy.id] !== undefined;
+              const bullet = isCurrent ? '→' : isRead ? '✓' : '↳';
               return (
                 <div key={toy.id} className="pl-4">
                   <Link
@@ -54,8 +75,8 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
                         : 'flex items-baseline gap-1 hover:text-accent'
                     }
                   >
-                    <span>{isCurrent ? '→' : '↳'}</span>
-                    <span>{toy.title}</span>
+                    <span className={isRead && !isCurrent ? 'opacity-60' : ''}>{bullet}</span>
+                    <span className={isRead && !isCurrent ? 'opacity-60' : ''}>{toy.title}</span>
                   </Link>
                 </div>
               );
@@ -68,10 +89,11 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
                   <div key={branchSlug} className="pl-4">
                     {branchToys.map((toy, toyIdx) => {
                       const isCurrent = toy.id === currentId;
+                      const isRead = progress.toysRead[toy.id] !== undefined;
                       const isLast =
                         toyIdx === branchToys.length - 1 &&
                         branchIdx === branchArr.length - 1;
-                      const prefix = isLast ? '└─' : '├─';
+                      const prefix = isCurrent ? '→' : isRead ? '✓' : isLast ? '└─' : '├─';
                       return (
                         <div key={toy.id}>
                           <Link
@@ -82,8 +104,8 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
                                 : 'flex items-baseline gap-1 hover:text-accent'
                             }
                           >
-                            <span>{isCurrent ? '→' : prefix}</span>
-                            <span>
+                            <span className={isRead && !isCurrent ? 'opacity-60' : ''}>{prefix}</span>
+                            <span className={isRead && !isCurrent ? 'opacity-60' : ''}>
                               {branchSlug} · {toy.title}
                             </span>
                           </Link>

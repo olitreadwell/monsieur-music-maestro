@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getTree, STAGE_TITLES } from '@/lib/toys';
-import ToyCard from '@/components/ToyCard';
+import StageProgressBar from '@/components/StageProgressBar';
+import StageToyList from '@/components/StageToyList';
 
 export function generateStaticParams() {
   return Array.from({ length: 9 }, (_, i) => ({ stage: String(i) }));
@@ -49,66 +50,14 @@ export default async function StagePage({
         </Link>
       </nav>
 
-      <header className="mb-8">
+      <header className="mb-4">
         <p className="text-sm text-muted mb-1">Stage {stageNumber}</p>
         <h1 className="text-3xl font-semibold">{stageTitle}</h1>
       </header>
 
-      {stageData.spine.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-muted mb-3">
-            Spine
-          </h2>
-          <ul className="space-y-2">
-            {stageData.spine.map((toy) => (
-              <li key={toy.id}>
-                <ToyCard toy={toy} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <StageProgressBar stage={stageData} />
 
-      {stageData.sideQuests.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-muted mb-3">
-            Side-quests
-          </h2>
-          <ul className="space-y-2">
-            {stageData.sideQuests.map((toy) => (
-              <li key={toy.id}>
-                <ToyCard toy={toy} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {Object.keys(stageData.branches).length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-muted mb-3">
-            Branches
-          </h2>
-          {Object.entries(stageData.branches).map(([branchSlug, toys]) => (
-            <div key={branchSlug} className="mb-4">
-              <h3 className="text-sm font-medium text-muted mb-2">{branchSlug}</h3>
-              <ul className="space-y-2">
-                {toys.map((toy) => (
-                  <li key={toy.id}>
-                    <ToyCard toy={toy} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
-      )}
-
-      {stageData.spine.length === 0 &&
-        stageData.sideQuests.length === 0 &&
-        Object.keys(stageData.branches).length === 0 && (
-          <p className="text-muted text-sm">No toys yet for this stage.</p>
-        )}
+      <StageToyList stage={stageData} />
 
       <nav className="mt-12 flex justify-between text-sm">
         {prevStage !== null ? (
