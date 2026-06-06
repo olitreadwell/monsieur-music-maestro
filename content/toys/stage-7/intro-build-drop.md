@@ -7,6 +7,17 @@ difficulty: normal
 branch: spine
 parent: stage-6-chord-stab
 estimate_min: 12
+quiz:
+  id: stage-7-intro-build-drop-quiz
+  kind: multiple-choice
+  question: "In an additive build, what happens to the number of layers over time?"
+  options:
+    - "Layers are removed one by one until only the kick remains."
+    - "Layers are added one by one, increasing density and energy."
+    - "All layers enter at once on the drop, then thin out."
+    - "Layers alternate: one enters as another exits, keeping density constant."
+  correctAnswerIndex: 1
+  explanation: "An additive build starts sparse (often just kick) and adds layers one at a time. Each addition raises energy. The drop then arrives with all layers playing, releasing the tension the build created."
 ---
 
 ## What you're listening for
