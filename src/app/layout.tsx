@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Link from 'next/link';
 import DropdownNav from '@/components/DropdownNav';
+import BottomRepl from '@/components/BottomRepl';
 import './globals.css';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Plain-language notes. AuDHD + ESL friendly. Open license except where noted.
           </div>
         </footer>
+        <BottomRepl />
       </body>
     </html>
   );

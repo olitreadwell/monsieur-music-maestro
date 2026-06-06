@@ -42,3 +42,14 @@ The journey itself was built on top of the research base in `~/oli/learning/inte
 - Manual: `vercel --prod`
 - Preview: `vercel`
 - Auto: push to `main`
+
+## License
+
+This project is released under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). See LICENSE for the full text.
+
+The choice of AGPL is downstream of the project's use of [Strudel](https://strudel.cc) (also AGPL-3.0), which provides the in-page music REPL. AGPL allows us to bundle Strudel directly into pages while keeping the source open.
+
+## Attribution
+
+- Strudel (https://strudel.cc, AGPL-3.0): the in-browser music notation and runtime that powers every playable patch on this site. Maintained at https://codeberg.org/uzu/strudel.
+- The drum-machine sound names (`bd`, `sd`, `hh`, etc.) come from Roland Corporation's TR-808 and TR-909 drum machines.
