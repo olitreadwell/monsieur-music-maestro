@@ -16,6 +16,7 @@ type StrudelEditorEl = HTMLElement & {
     start?: () => void;
     stop?: () => void;
     hush?: () => void;
+    view?: { scrollDOM?: HTMLElement };
   };
 };
 
@@ -43,12 +44,21 @@ export default function PlaygroundSidebar() {
     }, DEBOUNCE_MS);
   }, []);
 
+  const scrolledRef = useRef(false);
+
   const startPoll = useCallback(() => {
     stopPoll();
     pollTimerRef.current = setInterval(() => {
       const el = editorRef.current;
       if (!el?.editor || typeof el.editor.getCode !== 'function') return;
       try {
+        if (!scrolledRef.current) {
+          const scrollEl = el.editor?.view?.scrollDOM;
+          if (scrollEl) {
+            scrollEl.scrollTop = 0;
+            scrolledRef.current = true;
+          }
+        }
         const current = el.editor.getCode();
         if (current !== lastCodeRef.current) {
           lastCodeRef.current = current;
@@ -87,6 +97,12 @@ export default function PlaygroundSidebar() {
       lastCodeRef.current = savedCode;
       if (typeof el.editor?.setCode === 'function') {
         el.editor.setCode(savedCode);
+        try {
+          const scrollEl = el.editor?.view?.scrollDOM;
+          if (scrollEl) scrollEl.scrollTop = 0;
+        } catch {
+          // scroll not critical
+        }
       }
       startPoll();
     });
