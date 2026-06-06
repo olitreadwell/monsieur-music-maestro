@@ -6,7 +6,7 @@ import type { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getTree, getToy, STAGE_TITLES } from '@/lib/toys';
 import type { Toy } from '@/lib/toys';
-import StrudelEmbed from '@/components/StrudelEmbed';
+import CodeBlock from '@/components/CodeBlock';
 import TreeNav from '@/components/TreeNav';
 import ReadButton from '@/components/ReadButton';
 import Quiz from '@/components/Quiz';
@@ -58,15 +58,16 @@ function getPrevNext(
 const markdownComponents: Components = {
   code(props) {
     const { className, children } = props;
-    if (className && /language-strudel/.test(className)) {
+    const match = className?.match(/language-(\w+)/);
+    if (match) {
       const code = String(children).replace(/\n$/, '');
-      return <StrudelEmbed code={code} />;
+      return <CodeBlock code={code} language={match[1]} />;
     }
     return <code className={className}>{children}</code>;
   },
   pre(props) {
     const child = props.children as { props?: { className?: string } } | null;
-    if (child?.props?.className && /language-strudel/.test(child.props.className)) {
+    if (child?.props?.className && /language-/.test(child.props.className)) {
       return <>{props.children}</>;
     }
     return <pre>{props.children}</pre>;
