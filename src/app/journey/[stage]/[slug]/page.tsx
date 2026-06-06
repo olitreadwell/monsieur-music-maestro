@@ -6,7 +6,7 @@ import type { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getTree, getToy, STAGE_TITLES } from '@/lib/toys';
 import type { Toy } from '@/lib/toys';
-import StrudelBlock from '@/components/StrudelBlock';
+import StrudelEmbed from '@/components/StrudelEmbed';
 import TreeNav from '@/components/TreeNav';
 
 export async function generateStaticParams() {
@@ -56,7 +56,7 @@ const markdownComponents: Components = {
     const { className, children } = props;
     if (className && /language-strudel/.test(className)) {
       const code = String(children).replace(/\n$/, '');
-      return <StrudelBlock code={code} />;
+      return <StrudelEmbed code={code} />;
     }
     return <code className={className}>{children}</code>;
   },
