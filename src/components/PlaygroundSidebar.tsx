@@ -227,8 +227,9 @@ export default function PlaygroundSidebar() {
         id="strudel-playground"
         role="complementary"
         aria-label="Strudel playground"
+        style={{ backgroundColor: '#0f0f12', color: '#f5ead4' }}
         className={[
-          'bg-zinc-900 text-zinc-100 border-l border-rule flex flex-col',
+          'border-l border-rule flex flex-col',
           // Mobile: fixed overlay, toggleable.
           'fixed inset-y-0 right-0 z-40 w-full sm:w-[28rem]',
           'motion-safe:transition-all motion-safe:duration-300',
@@ -239,13 +240,17 @@ export default function PlaygroundSidebar() {
             : 'lg:static lg:w-0 lg:flex-shrink-0 lg:overflow-hidden',
         ].join(' ')}
       >
-        <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-700 gap-2 shrink-0">
+        <div
+          className="flex items-center justify-between px-3 py-2 gap-2 shrink-0 border-b"
+          style={{ borderColor: '#2a2a30' }}
+        >
           <div className="flex items-center gap-1.5">
             <button
               type="button"
               onClick={handlePlay}
               aria-label="Play the patch"
-              className="text-xs font-medium px-2.5 py-1 rounded bg-accent text-bg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              style={{ backgroundColor: '#c41e3a', color: '#f5ead4' }}
+              className="text-xs font-medium px-2.5 py-1 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-opacity hover:opacity-90"
             >
               ▶ play
             </button>
@@ -253,7 +258,8 @@ export default function PlaygroundSidebar() {
               type="button"
               onClick={handleStop}
               aria-label="Stop playback"
-              className="text-xs text-zinc-100 px-2.5 py-1 rounded border border-zinc-600 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              style={{ color: '#f5ead4', borderColor: '#4a4a52' }}
+              className="text-xs px-2.5 py-1 rounded border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent hover:opacity-90"
             >
               ■ stop
             </button>
@@ -261,7 +267,8 @@ export default function PlaygroundSidebar() {
               type="button"
               onClick={handlePasteFromClipboard}
               aria-label="Paste clipboard into editor"
-              className="text-xs text-zinc-100 px-2.5 py-1 rounded border border-zinc-600 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              style={{ color: '#f5ead4', borderColor: '#4a4a52' }}
+              className="text-xs px-2.5 py-1 rounded border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent hover:opacity-90"
             >
               paste
             </button>
@@ -273,7 +280,8 @@ export default function PlaygroundSidebar() {
               setDesktopOpen(false);
             }}
             aria-label="Close playground"
-            className="text-xs text-zinc-100 px-2.5 py-1 rounded border border-zinc-600 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+            style={{ color: '#f5ead4', borderColor: '#4a4a52' }}
+            className="text-xs px-2.5 py-1 rounded border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent hover:opacity-90"
           >
             close
           </button>
