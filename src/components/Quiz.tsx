@@ -4,6 +4,22 @@ import { useState, useRef, useEffect } from 'react';
 import type { Quiz as QuizT } from '@/lib/quiz';
 import { useAttempt } from '@/lib/quiz';
 
+const feedbackKeyframes = `
+@keyframes mmm-nod {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+@keyframes mmm-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-3px); }
+  40%  { transform: translateX(3px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+`;
+
 export default function Quiz({ quiz }: { quiz: QuizT }) {
   const { recordAttempt } = useAttempt(quiz.id);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -51,6 +67,7 @@ export default function Quiz({ quiz }: { quiz: QuizT }) {
 
   return (
     <div className="rounded-lg bg-neutral-50 p-5 mt-4 border border-neutral-200">
+      <style>{feedbackKeyframes}</style>
       {quiz.kind === 'multiple-choice' && (
         <fieldset disabled={isAnswered}>
           <legend className="text-base font-semibold mb-3">{quiz.question}</legend>
@@ -113,7 +130,7 @@ export default function Quiz({ quiz }: { quiz: QuizT }) {
             ref={feedbackRef}
             aria-live="polite"
             tabIndex={-1}
-            className={`font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'}`}
+            className={`font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'} ${result === 'correct' ? 'motion-safe:[animation:mmm-nod_250ms_ease-out]' : 'motion-safe:[animation:mmm-shake_280ms_ease-out]'}`}
           >
             {result === 'correct' ? '✓ Correct' : '✗ Not quite'}
           </p>

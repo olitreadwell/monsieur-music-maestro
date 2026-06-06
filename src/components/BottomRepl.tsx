@@ -149,11 +149,12 @@ export default function BottomRepl() {
         aria-label="Strudel playground"
         className={[
           'overflow-hidden bg-zinc-900 border-t border-fg/10',
-          'motion-safe:transition-all motion-safe:duration-300',
+          'motion-safe:transition-[height] motion-safe:duration-300',
           open
             ? 'sm:h-[320px] max-sm:fixed max-sm:inset-0 max-sm:h-full max-sm:z-50'
             : 'h-0',
         ].join(' ')}
+        style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
       >
         <div ref={containerRef} className="w-full h-full" />
       </div>
