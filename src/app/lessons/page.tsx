@@ -14,11 +14,14 @@ export default async function LessonsPage() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
-      <div className="mb-6">
-        <Link href="/" className="text-sm text-muted hover:text-fg transition">
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <Link
+          href="/"
+          className="inline-flex items-center text-sm text-muted hover:text-fg motion-safe:transition rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+        >
           ← home
         </Link>
-      </div>
+      </nav>
 
       <h1 className="text-4xl font-semibold tracking-tight">Lesson sets</h1>
       <p className="mt-3 text-lg text-muted">
@@ -26,15 +29,15 @@ export default async function LessonsPage() {
       </p>
 
       {sets.length === 0 ? (
-        <p className="mt-12 text-muted/60">No lesson sets yet.</p>
+        <p className="mt-12 text-muted">No lesson sets yet.</p>
       ) : (
-        <ul className="mt-12 space-y-10" role="list">
+        <ul className="mt-12 space-y-10">
           {sets.map((s) => (
             <li key={s.slug}>
               <div className="flex items-baseline gap-3 flex-wrap">
                 <Link
                   href={`/lessons/${s.slug}`}
-                  className="text-xl font-semibold hover:text-accent transition"
+                  className="text-xl font-semibold hover:text-accent motion-safe:transition rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                 >
                   {s.title}
                 </Link>
@@ -45,7 +48,8 @@ export default async function LessonsPage() {
               <p className="mt-2 text-muted leading-relaxed">{s.intro}</p>
               <Link
                 href={`/lessons/${s.slug}`}
-                className="mt-3 inline-block text-sm text-accent underline"
+                className="mt-3 inline-flex items-center min-h-11 text-sm text-accent underline rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+                aria-label={`Start lesson set: ${s.title}`}
               >
                 Start set →
               </Link>

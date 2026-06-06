@@ -54,7 +54,7 @@ export default function ReviewQueue({ index }: Props) {
 
   return (
     <div>
-      <div aria-live="polite" className="mb-6">
+      <div aria-live="polite" aria-atomic="true" className="mb-6">
         {dueRefs.length > 0 ? (
           <p className="text-lg font-semibold">
             {dueRefs.length} {dueRefs.length === 1 ? 'item' : 'items'} due now
@@ -67,43 +67,55 @@ export default function ReviewQueue({ index }: Props) {
       </div>
 
       {dueRefs.length > 0 && (
-        <ul className="space-y-3 mb-8">
-          {dueRefs.map((ref) => (
-            <li
-              key={ref.itemId}
-              className="rounded-lg border border-fg/10 bg-neutral-50 px-4 py-3 flex items-start justify-between gap-4"
-            >
-              <div>
-                <p className="font-medium text-sm">{ref.source.title}</p>
-                <p className="text-xs text-muted mt-0.5 capitalize">{kindLabel(ref.kind)}</p>
-              </div>
-              <Link
-                href={`${ref.source.route}#${ref.itemId}`}
-                className="shrink-0 text-sm text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+        <section aria-labelledby="due-now-heading">
+          <h2 id="due-now-heading" className="sr-only">
+            Items due now
+          </h2>
+          <ul className="space-y-3 mb-8">
+            {dueRefs.map((ref) => (
+              <li
+                key={ref.itemId}
+                className="rounded-lg border border-fg/10 bg-fg/5 px-4 py-3 flex items-start justify-between gap-4"
               >
-                Open this
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <div>
+                  <p className="font-medium text-sm">{ref.source.title}</p>
+                  <p className="text-xs text-muted mt-0.5 capitalize">{kindLabel(ref.kind)}</p>
+                </div>
+                <Link
+                  href={`${ref.source.route}#${ref.itemId}`}
+                  className="shrink-0 inline-flex items-center min-h-11 text-sm text-accent hover:underline rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+                  aria-label={`Open ${kindLabel(ref.kind)}: ${ref.source.title}`}
+                >
+                  Open this
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <button
         type="button"
         onClick={() => setShowAll((v) => !v)}
-        className="text-sm text-muted hover:text-fg transition mb-6"
+        aria-expanded={showAll}
+        aria-controls="all-items-by-box"
+        className="inline-flex items-center min-h-11 text-sm text-muted hover:text-fg motion-safe:transition mb-6 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
       >
         {showAll ? 'Hide done' : 'Show all items by box'}
       </button>
 
       {showAll && (
-        <div className="space-y-6">
+        <section
+          id="all-items-by-box"
+          aria-label="All review items grouped by Leitner box"
+          className="space-y-6"
+        >
           {([1, 2, 3, 4, 5] as const).map((box) => {
             const refs = nonDueByBox[box];
             if (refs.length === 0) return null;
             return (
               <div key={box}>
-                <h3 className="text-sm font-semibold mb-2">Box {box}</h3>
+                <h2 className="text-sm font-semibold mb-2">Box {box}</h2>
                 <ul className="space-y-2">
                   {refs.map((ref) => (
                     <li
@@ -116,7 +128,8 @@ export default function ReviewQueue({ index }: Props) {
                       </div>
                       <Link
                         href={`${ref.source.route}#${ref.itemId}`}
-                        className="shrink-0 text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+                        className="shrink-0 inline-flex items-center min-h-11 text-accent hover:underline rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+                        aria-label={`Open ${kindLabel(ref.kind)}: ${ref.source.title}`}
                       >
                         Open
                       </Link>
@@ -126,7 +139,7 @@ export default function ReviewQueue({ index }: Props) {
               </div>
             );
           })}
-        </div>
+        </section>
       )}
 
       {allKnownIds.length === 0 && dueRefs.length === 0 && (

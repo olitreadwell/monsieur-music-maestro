@@ -29,14 +29,17 @@ export default async function LessonSetReviewPage({
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
-      <div className="mb-6">
-        <Link href={`/lessons/${set.slug}`} className="text-sm text-muted hover:text-fg transition">
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <Link
+          href={`/lessons/${set.slug}`}
+          className="inline-flex items-center text-sm text-muted hover:text-fg motion-safe:transition rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+        >
           ← {set.title}
         </Link>
-      </div>
+      </nav>
 
       <h1 className="text-4xl font-semibold tracking-tight">
-        Final review — {set.title}
+        Final review, {set.title}
       </h1>
 
       {set.finalReview.quizzes.length > 0 && (
@@ -69,16 +72,21 @@ export default async function LessonSetReviewPage({
         <h2 id="open-prompt-heading" className="text-xl font-semibold mb-3">
           Reflection
         </h2>
-        <p className="text-muted mb-4 leading-relaxed">{set.finalReview.openPrompt}</p>
-        <OpenPrompt />
+        <p id="open-prompt-description" className="text-muted mb-4 leading-relaxed">
+          {set.finalReview.openPrompt}
+        </p>
+        <OpenPrompt
+          labelledBy="open-prompt-heading"
+          describedBy="open-prompt-description"
+        />
       </section>
 
       <div className="mt-12">
         <Link
           href={`/lessons/${set.slug}`}
-          className="text-sm text-accent underline"
+          className="inline-flex items-center min-h-11 text-sm text-accent underline rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
         >
-          Done — back to lesson set
+          Done, back to lesson set
         </Link>
       </div>
     </div>
