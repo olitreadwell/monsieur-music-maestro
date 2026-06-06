@@ -7,6 +7,18 @@ difficulty: stretch
 branch: spine
 parent: stage-7-intro-build-drop
 estimate_min: 15
+challenge:
+  id: stage-8-two-decks-challenge
+  prompt: "Add the EQ swap: uncomment Track B's bass line and remove Track A's bass line from the stack below. The goal is to hear only one bassline at a time."
+  starterCode: |
+    stack(
+      s("bd*4").bank("RolandTR909"),
+      s("~ cp ~ cp").bank("RolandTR909"),
+      note("c2 ~ ~ eb2 ~ ~ g2 ~").s("sawtooth").lpf(700).gain(0.6)
+    ).cpm(32)
+  targetDescription: "Track A's stack with the bass note line removed, so only kick and clap remain."
+  validator: contains
+  target: 'bd*4'
 ---
 
 ## What you're listening for

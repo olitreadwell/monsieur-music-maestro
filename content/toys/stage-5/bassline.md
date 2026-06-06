@@ -7,6 +7,17 @@ difficulty: normal
 branch: spine
 parent: stage-4-counting
 estimate_min: 10
+challenge:
+  id: stage-5-bassline-challenge
+  prompt: "Change the bassline so it uses `e2` instead of `eb2`. This shifts the minor third to a major third above the root."
+  starterCode: |
+    stack(
+      s("bd*4").bank("RolandTR909"),
+      note("c2 ~ ~ eb2 ~ ~ c2 ~").s("bass").lpf(700).gain(0.8)
+    ).cpm(128)
+  targetDescription: "The tresillo bassline with e2 (major third) in place of eb2 (minor third)."
+  validator: contains
+  target: 'e2'
 ---
 
 ## What you're listening for

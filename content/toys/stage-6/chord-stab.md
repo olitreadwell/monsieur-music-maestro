@@ -7,6 +7,18 @@ difficulty: normal
 branch: spine
 parent: stage-5-bass-mood
 estimate_min: 10
+puzzle:
+  id: stage-6-chord-stab-puzzle
+  kind: fill-blank
+  prompt: "Complete the C minor triad. A minor triad is built from a root, a minor third (3 semitones up), and a perfect fifth (7 semitones up). Fill in the missing middle note: `c3 ___ g3`."
+  tokens:
+    - "d3"
+    - "eb3"
+    - "e3"
+    - "f3"
+  correctSequence:
+    - "eb3"
+  explanation: "A minor third above C is E-flat (3 semitones: C to C#, C# to D, D to Eb). E-flat gives the triad its minor, darker quality. E natural (4 semitones) would produce a major third and a brighter major triad."
 ---
 
 ## What you're listening for

@@ -7,6 +7,17 @@ difficulty: normal
 branch: spine
 parent: stage-3-clave
 estimate_min: 10
+quiz:
+  id: stage-4-counting-quiz
+  kind: multiple-choice
+  question: "In Strudel, what does the `< >` (angle bracket) notation do to a pattern?"
+  options:
+    - "It plays all options at the same time, layered on top of each other."
+    - "It randomly picks one option each time the pattern loops."
+    - "It plays one option per cycle, moving to the next on each new bar."
+    - "It stretches the pattern to fill twice as many bars."
+  correctAnswerIndex: 2
+  explanation: "Angle brackets are cycle alternation. Each time the pattern completes one loop (one bar), Strudel advances to the next item in the brackets. This lets you mark phrase boundaries with a change that happens every N bars."
 ---
 
 ## What you're listening for

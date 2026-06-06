@@ -7,6 +7,17 @@ difficulty: normal
 branch: spine
 parent: stage-1-pulse
 estimate_min: 10
+quiz:
+  id: stage-3-clave-quiz
+  kind: multiple-choice
+  question: "The son clave 3-2 spans how many bars, and which bar carries three hits?"
+  options:
+    - "One bar; the first half carries three hits."
+    - "Two bars; the first bar carries three hits."
+    - "Two bars; the second bar carries three hits."
+    - "Four bars; the third bar carries three hits."
+  correctAnswerIndex: 1
+  explanation: "The son clave is a 16-step, two-bar pattern. The first bar is the 'three side' (three hits), the second is the 'two side' (two hits). Together they make five hits across two bars of 4/4 time."
 ---
 
 ## What you're listening for
