@@ -26,6 +26,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const tree = await getTree();
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}>
+      <head>
+        {/* Strudel appends cm-editor next to <strudel-editor>, not inside it.
+            Hide the empty placeholder; make the generated wrapper fill the panel. */}
+        <style>{`
+          #strudel-playground strudel-editor{display:none!important}
+          #strudel-playground .flex-1{position:relative}
+          #strudel-playground .flex-1>div{position:absolute!important;inset:0!important}
+          #strudel-playground .cm-editor{height:100%!important;display:flex!important;flex-direction:column!important}
+          #strudel-playground .cm-scroller{flex:1!important;min-height:0!important;overflow-y:auto!important}
+        `}</style>
+      </head>
       <body className="min-h-full font-sans">
         <a
           href="#main-content"
