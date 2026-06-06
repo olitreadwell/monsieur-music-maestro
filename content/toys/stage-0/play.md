@@ -37,7 +37,7 @@ We're going to use **Strudel**, a free in-browser tool for making sound patterns
   - `cp` = **clap**
   - `oh` = **open hi-hat** (the sustained, ringing tick)
 
-So `s("bd hh sd hh")` reads: "play kick, hat, snare, hat — one per beat, looped forever."
+So `s("bd hh sd hh")` reads: "play kick, hat, snare, hat: one per beat, looped forever."
 
 ```strudel
 // s    = play these sounds in order, looped.
@@ -78,7 +78,7 @@ The backbeat itself is older. Drummers in 1940s and 1950s rhythm and blues, Earl
 
 ## Dance and body
 
-Stand up. On `bd`, drop your weight a little. On `sd`, bounce. Without thinking, you'll find "1". That's the **pulse** — the felt-not-counted base under everything else.
+Stand up. On `bd`, drop your weight a little. On `sd`, bounce. Without thinking, you'll find "1". That's the **pulse**: the felt-not-counted base under everything else.
 
 ## Self-test
 
@@ -86,4 +86,4 @@ Without looking back: what's the difference between a beat and a bar?
 
 ## Next
 
-- Spine: [Stage 1 — Pulse](/journey/1/pulse)
+- Spine: [Stage 1: Pulse](/journey/1/pulse)

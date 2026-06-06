@@ -55,7 +55,7 @@ Paste in [strudel.cc](https://strudel.cc). Play and stop with Cmd+Enter and Cmd+
 Break it:
 
 - Remove the kick. Clap along with the tresillo. Count "1, 2, 3" for the first gap, "1, 2, 3" for the second, then "1, 2" for the last. Does the final shorter gap feel like it "snaps" back to the start?
-- Change the clave to `"cp ~ cp ~ ~ cp ~ ~"` — that is a 2+3+3 arrangement. Same three hits, different home. Does it feel like the tresillo starts on a different foot?
+- Change the clave to `"cp ~ cp ~ ~ cp ~ ~"`: that is a 2+3+3 arrangement. Same three hits, different home. Does it feel like the tresillo starts on a different foot?
 - Lower the tresillo gain to `0.2`. With the kick louder, does the tresillo feel hidden inside the groove rather than sitting on top?
 - Try the full son clave from the spine toy: `"cp ~ ~ cp ~ ~ cp ~ ~ ~ cp ~ cp ~ ~ ~"`. Compare the one-bar tresillo to the two-bar clave. The tresillo is the clave's first half.
 
@@ -63,7 +63,7 @@ Break it:
 
 The tresillo does not stay in one genre. It has been in pop music for well over 150 years.
 
-In 19th-century Cuba it appeared in the **habanera** — a ballroom and parlour dance that became popular across Europe. The composer Georges Bizet used the habanera rhythm in his 1875 opera *Carmen*. The aria "L'amour est un oiseau rebelle" opens with a bass line in exactly the tresillo shape. Bizet likely found the rhythm in printed sheet music imported from Cuba.
+In 19th-century Cuba it appeared in the **habanera**: a ballroom and parlour dance that became popular across Europe. The composer Georges Bizet used the habanera rhythm in his 1875 opera *Carmen*. The aria "L'amour est un oiseau rebelle" opens with a bass line in exactly the tresillo shape. Bizet likely found the rhythm in printed sheet music imported from Cuba.
 
 That same cell fed into early US **ragtime** (Scott Joplin's syncopations carry the same feel) and into jazz.
 
@@ -73,7 +73,7 @@ Drake's "Hotline Bling" (2015) rides a tresillo-shaped rhythmic feel. Post Malon
 
 ## Music theory note
 
-The tresillo is an example of **rhythmic displacement** — placing accents where the listener does not quite expect them, while still fitting inside the 4/4 bar.
+The tresillo is an example of **rhythmic displacement**: placing accents where the listener does not quite expect them, while still fitting inside the 4/4 bar.
 
 The three hits span 3+3+2 = 8 steps. If you divide 8 evenly you get 4 steps between hits. The tresillo compresses two of those gaps (from 4 to 3) and shortens the last one further (to 2). The result is a kind of forward lean: the rhythm always arrives a little early.
 
@@ -89,7 +89,7 @@ Back in the Americas it fed into the blues, jazz, and eventually into the rhythm
 
 ## Dance and body
 
-The tresillo's 3+3+2 feel gives dancers two long beats and one short one per bar. The "short beat" at the end — the snap back to step 1 — is a moment of urgency. Salsa dancers call a related feeling the "clave feel": the sense that certain steps are pushed and others are pulled.
+The tresillo's 3+3+2 feel gives dancers two long beats and one short one per bar. The "short beat" at the end: the snap back to step 1: is a moment of urgency. Salsa dancers call a related feeling the "clave feel": the sense that certain steps are pushed and others are pulled.
 
 Try this: stand still and bounce slowly. On the tresillo hits, let your weight drop (or your knee bend): hit, rest, rest, **drop**; rest, rest, **drop**; rest, **drop**, and restart. The short gap at the end means the third drop arrives faster. That sudden arrival is a bodily jolt. It is why tresillo rhythms work on a dance floor.
 
@@ -99,5 +99,5 @@ Without looking back: what are the three gap sizes in a tresillo? (In steps.)
 
 ## Next
 
-- Spine: [Stage 3 — The clave (spine)](/journey/3/clave)
-- Related side-quest: [2-3 flip — swap clave direction](/journey/3/2-3-flip)
+- Spine: [Stage 3: The clave (spine)](/journey/3/clave)
+- Related side-quest: [2-3 flip: swap clave direction](/journey/3/2-3-flip)

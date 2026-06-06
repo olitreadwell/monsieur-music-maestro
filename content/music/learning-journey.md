@@ -83,7 +83,7 @@ is in `strudel-cheatsheet.md`.
 
 ---
 
-### Stage 0 — Play (no rules)
+### Stage 0: Play (no rules)
 
 - **Goal:** press play and make noise. Prove it works. No pressure.
 - **Listen:** any track you love.
@@ -99,7 +99,7 @@ is in `strudel-cheatsheet.md`.
 
 ---
 
-### Stage 1 — The pulse (four-on-the-floor)
+### Stage 1: The pulse (four-on-the-floor)
 
 - **Goal:** build the house heartbeat: a kick on every beat.
 - **Listen:** any house track. Find the steady "thump... thump... thump... thump."
@@ -116,7 +116,7 @@ is in `strudel-cheatsheet.md`.
 
 ---
 
-### Stage 2 — The top (hats and clap)
+### Stage 2: The top (hats and clap)
 
 - **Goal:** add the parts that sit on top of the kick.
 - **Listen:** in a house track, find the fast ticking (hi-hats) and the clap.
@@ -134,7 +134,7 @@ is in `strudel-cheatsheet.md`.
 
 ---
 
-### Stage 3 — The clave (your Afro/Latin DNA)
+### Stage 3: The clave (your Afro/Latin DNA)
 
 This is the stage where your favourite music walks in.
 
@@ -166,7 +166,7 @@ This is the stage where your favourite music walks in.
 
 ---
 
-### Stage 4 — Counting (bars and phrases)
+### Stage 4: Counting (bars and phrases)
 
 - **Goal:** count past 4, so you can build song sections later.
 - **Listen:** count "1-2-3-4" again and again in a track. Every four counts is one **bar**.
@@ -188,7 +188,7 @@ This is the stage where your favourite music walks in.
 
 ---
 
-### Stage 5 — The low end (bass and mood)
+### Stage 5: The low end (bass and mood)
 
 - **Goal:** add a bassline, and meet "happy vs sad" (major vs minor).
 - **Listen:** find the low notes that move under a house track.
@@ -211,7 +211,7 @@ This is the stage where your favourite music walks in.
 
 ---
 
-### Stage 6 — The colour (chords and stabs)
+### Stage 6: The colour (chords and stabs)
 
 - **Goal:** add chords, the "colour" on top.
 - **Listen:** find the stabby chord hits in a house or Amapiano track.
@@ -230,7 +230,7 @@ This is the stage where your favourite music walks in.
 
 ---
 
-### Stage 7 — The shape (arrange a track)
+### Stage 7: The shape (arrange a track)
 
 - **Goal:** turn loops into a short finished track (about 60 to 90 seconds).
 - **Listen:** notice a track's sections: quiet intro, build-up, full drop, breakdown, outro.
@@ -249,7 +249,7 @@ This is the stage where your favourite music walks in.
 
 ---
 
-### Stage 8 — Play it out (DJ)
+### Stage 8: Play it out (DJ)
 
 - **Goal:** mix two tracks together, like a DJ.
 - **Tool:** install **Mixxx** (free, open-source, mixxx.org). DJ with just your laptop.

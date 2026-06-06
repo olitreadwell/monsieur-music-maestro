@@ -116,7 +116,7 @@ Without looking back: a minor triad has three notes. What is the name of the int
 
 ## Next
 
-- Spine: [Stage 7 — Shape: intro, build, drop](/journey/7/intro-build-drop)
+- Spine: [Stage 7: Shape: intro, build, drop](/journey/7/intro-build-drop)
 - Side-quests:
   - [Minor vs major: change one note](/journey/6/minor-vs-major)
   - [The pad: sustained chord wash](/journey/6/pad)

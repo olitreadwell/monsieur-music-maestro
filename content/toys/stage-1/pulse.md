@@ -41,7 +41,7 @@ Paste in [strudel.cc](https://strudel.cc). Cmd+Enter plays, Cmd+. stops.
 
 Now break it:
 
-- Change `*4` to `*8`. Twice as many kicks. Suddenly busier — does it still feel like a heartbeat, or does it tip into drum 'n' bass?
+- Change `*4` to `*8`. Twice as many kicks. Suddenly busier: does it still feel like a heartbeat, or does it tip into drum 'n' bass?
 - Change `*4` to `*2`. Half as many. Lazier, slower-feeling, even at the same tempo. This is closer to hip-hop's "boom-bap" pace.
 - Swap `RolandTR909` for `RolandTR808`. Same beat, deeper and rounder kick. The 808 is the kick of trap and Miami bass; the 909 is the kick of house.
 - Try `s("bd*4, hh*8").bank("RolandTR909")`. The comma inside the quotes means **play two patterns at the same time** (this is called layering or polyphony). Hats over the kick: the bare floor of a house track.
@@ -66,9 +66,9 @@ From house it travelled into techno (Detroit, late 1980s), then into Eurodance, 
 
 ## Dance and body
 
-Stand. Bounce on the balls of your feet, one bounce per kick. That bounce is what dancers call **finding the one**. House DJs assume you can find the one — every transition, every drop, every build is timed against it.
+Stand. Bounce on the balls of your feet, one bounce per kick. That bounce is what dancers call **finding the one**. House DJs assume you can find the one: every transition, every drop, every build is timed against it.
 
-Try clapping on every kick. Then try clapping on **every other** kick (beats 2 and 4 — the same beats your snare landed on in Stage 0). Notice how your body wants to do one or the other, not both at once.
+Try clapping on every kick. Then try clapping on **every other** kick (beats 2 and 4: the same beats your snare landed on in Stage 0). Notice how your body wants to do one or the other, not both at once.
 
 ## Self-test
 
@@ -76,4 +76,4 @@ Without looking back: what does `*4` do? And what does `,` inside the quotes do?
 
 ## Next
 
-- Spine: [Stage 2 — Hats and clap](/journey/2/hats-clap)
+- Spine: [Stage 2: Hats and clap](/journey/2/hats-clap)

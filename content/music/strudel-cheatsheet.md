@@ -46,7 +46,7 @@ To pick a specific variation within a bank, add `:N` after the name. `bd:0` play
 s("bd:0 ~ bd:1 ~")
 ```
 
-→ first met in [Stage 0 — Play](/journey/0/play)
+→ first met in [Stage 0: Play](/journey/0/play)
 
 ---
 
@@ -62,7 +62,7 @@ Inside the pattern string, `*N` repeats a sound N times per bar. `~` is a rest (
 s("bd*4, hh*8, ~ [sd sd] ~ sd")
 ```
 
-→ first met in [Stage 1 — The pulse](/journey/1/pulse)
+→ first met in [Stage 1: The pulse](/journey/1/pulse)
 
 ---
 
@@ -81,7 +81,7 @@ s("bd*4, ~ cp ~ cp, hh*8")
 
 For more complex layering, `stack(a, b, c)` does the same thing across multiple lines and is easier to read.
 
-→ first met in [Stage 0 — Two patterns at once](/journey/0/two-patterns-at-once)
+→ first met in [Stage 0: Two patterns at once](/journey/0/two-patterns-at-once)
 
 ---
 
@@ -101,7 +101,7 @@ Cultural shorthand:
 - `RolandTR808`: hip-hop (1980s–present), trap, Miami bass. The 808 kick is longer, deeper, and more "boom."
 - `RolandTR707`: early UK electronic, post-punk, some electro. Lighter, more plastic-sounding.
 
-→ first met in [Stage 1 — The pulse](/journey/1/pulse)
+→ first met in [Stage 1: The pulse](/journey/1/pulse)
 
 ---
 
@@ -122,7 +122,7 @@ s("bd*4").bank("RolandTR909").cpm(128)
 
 Note: older Strudel tutorials may use `setcpm(N)` as a standalone call instead of `.cpm(N)` chained on the pattern. Both exist across versions. If one errors, try the other.
 
-→ first met in [Stage 1 — Tempo shifts](/journey/1/tempo-shifts)
+→ first met in [Stage 1: Tempo shifts](/journey/1/tempo-shifts)
 
 ---
 
@@ -134,7 +134,7 @@ Note: older Strudel tutorials may use `setcpm(N)` as a standalone call instead o
 // note(...)    = sequence of pitched notes.
 // c2           = C, octave 2 (low bass).
 // eb2          = E-flat, octave 2 (minor third above C).
-// g2           = G, octave 2 (fifth above C — this is C minor).
+// g2           = G, octave 2 (fifth above C, this is C minor).
 // ~            = silence / rest.
 // .s("bass")   = use the "bass" sample bank for the notes.
 // .lpf(700)    = low-pass filter (see section 7).
@@ -148,7 +148,7 @@ For picking numbered variations from a sample bank, `n("0 1 2")` works the same 
 s("conga").n("0 ~ 1 2")
 ```
 
-→ first met in [Stage 5 — The bassline](/journey/5/bassline)
+→ first met in [Stage 5: The bassline](/journey/5/bassline)
 
 ---
 
@@ -171,7 +171,7 @@ note("<c2 eb2 g2 bb2>")
   .gain(0.8)
 ```
 
-→ `.lpf` first met in [Stage 5 — The bassline](/journey/5/bassline). `.cut` first met in [Stage 5 — Sub stab (deep house)](/journey/5/sub-stab). `.attack` and `.release` first met in [Stage 7 — Deep house: the slow build](/journey/7/long-build)
+→ `.lpf` first met in [Stage 5: The bassline](/journey/5/bassline). `.cut` first met in [Stage 5: Sub stab (deep house)](/journey/5/sub-stab). `.attack` and `.release` first met in [Stage 7: Deep house: the slow build](/journey/7/long-build)
 
 ---
 
@@ -191,7 +191,7 @@ stack(
 )
 ```
 
-→ `.late` first met in [Stage 4 — 16-bar build](/journey/4/16-bar-build). `.slow` / `.fast` introduced across Stage 5–7.
+→ `.late` first met in [Stage 4: 16-bar build](/journey/4/16-bar-build). `.slow` / `.fast` introduced across Stage 5-7.
 
 ---
 
@@ -214,7 +214,7 @@ note("<c3eb3g3 ab2c3eb3 f2ab2c3 g2bb2d3>")
   .gain(0.5)
 ```
 
-→ first met in [Stage 6 — The chord stab](/journey/6/chord-stab)
+→ first met in [Stage 6: The chord stab](/journey/6/chord-stab)
 
 ---
 
@@ -233,7 +233,7 @@ stack(
 )
 ```
 
-→ first met in [Stage 8 — Afro house: live percussion](/journey/8/percussion-layer)
+→ first met in [Stage 8: Afro house: live percussion](/journey/8/percussion-layer)
 
 ---
 
@@ -255,7 +255,7 @@ note("c2 ~ ~ eb2 ~ ~ g2 ~")
 
 To sweep from bright to dark (reverse), use `saw.range(8000, 200).slow(8)`.
 
-→ first met in [Stage 7 — Filter build](/journey/7/filter-build)
+→ first met in [Stage 7: Filter build](/journey/7/filter-build)
 
 ---
 
@@ -265,14 +265,14 @@ To sweep from bright to dark (reverse), use `saw.range(8000, 200).slow(8)`.
 
 ```strudel
 // .swing(0.2)  = light shuffle: every second eighth note lands slightly late.
-//               Tune by ear — exact feel depends on Strudel version.
+//               Tune by ear: exact feel depends on Strudel version.
 //               If it sounds wrong, try 0.15 or 0.25 instead.
 s("bd*4, ~ cp ~ cp, hh*8").bank("RolandTR909").swing(0.2)
 ```
 
 Note: `.swing()` behavior varies across Strudel versions. If the value you chose sounds too subtle or too strong, adjust by ear. This is flagged as uncertain in current Strudel documentation.
 
-→ first met in [Stage 2 — Shuffle hats](/journey/2/shuffle-hats)
+→ first met in [Stage 2: Shuffle hats](/journey/2/shuffle-hats)
 
 ---
 

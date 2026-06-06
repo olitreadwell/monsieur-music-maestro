@@ -41,7 +41,7 @@ export default function StrudelEmbed({ code, height = 280 }: StrudelEmbedProps) 
     ) as HTMLScriptElement | null;
 
     if (existing) {
-      // Script already in DOM from another embed — element may already be defined.
+      // Script already in DOM from another embed. Element may already be defined.
       if (customElements.get('strudel-editor')) {
         setLoaded(true);
         mountEditor();
@@ -83,7 +83,7 @@ export default function StrudelEmbed({ code, height = 280 }: StrudelEmbedProps) 
       {/* Always-present container where the editor is appended. */}
       <div ref={containerRef} className="w-full h-full" />
 
-      {/* Facade — shown until loaded. */}
+      {/* Facade: shown until loaded. */}
       {!loaded && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-fg/5">
           {/* Faded code preview */}

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getLessonSets } from '@/lib/lesson-sets';
 import type { LessonSetFormat } from '@/lib/lesson-sets';
 
-export const metadata = { title: 'Lesson sets — monsieur music maestro' };
+export const metadata = { title: 'Lesson sets: monsieur music maestro' };
 
 const FORMAT_LABELS: Record<LessonSetFormat, string> = {
   'cultural-deep-dive': 'cultural deep-dive',

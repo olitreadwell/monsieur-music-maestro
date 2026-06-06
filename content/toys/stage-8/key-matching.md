@@ -32,7 +32,7 @@ stack(
   note("<c3eb3g3 ab2c3eb3>")
     .s("piano").slow(2).room(0.3).gain(0.5),
 
-  // Pattern in F minor — one step away on the Camelot wheel
+  // Pattern in F minor: one step away on the Camelot wheel
   // F minor triad: F, Ab, C
   note("<f2ab2c3 db3f3ab3>")
     .s("piano").slow(2).room(0.3).gain(0.5).delay(0.02)
@@ -48,7 +48,7 @@ stack(
   note("<c3eb3g3 ab2c3eb3>")
     .s("piano").slow(2).room(0.3).gain(0.5),
 
-  // Pattern in F-sharp minor — very far on the Camelot wheel
+  // Pattern in F-sharp minor: very far on the Camelot wheel
   // F-sharp minor triad: F#, A, C#
   note("<fs3a3cs4 d3fs3a3>")
     .s("piano").slow(2).room(0.3).gain(0.5).delay(0.02)

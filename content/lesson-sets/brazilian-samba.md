@@ -1,6 +1,6 @@
 ---
 slug: brazilian-samba
-title: Brazilian samba — Bahia, Rio, and beyond
+title: "Brazilian samba: Bahia, Rio, and beyond"
 format: cultural-deep-dive
 intro: |
   Samba is a Brazilian rhythm family with deep West and Central African
@@ -49,10 +49,10 @@ finalReview:
     What was the same? What was different?
 ---
 
-# Brazilian samba — Bahia, Rio, and beyond
+# Brazilian samba: Bahia, Rio, and beyond
 
 Samba is the most internationally famous Brazilian music, but it is
-not one genre — it is a family that has been splitting and recombining
+not one genre: it is a family that has been splitting and recombining
 for over a century. The roots are West and Central African
 (predominantly from what is now Angola, Congo, and Yorubaland in
 present-day Nigeria), brought to Brazil through the trans-Atlantic
@@ -66,9 +66,9 @@ form that followed.
 Samba's deepest roots are in Bahia, the northeastern state with the
 largest Afro-Brazilian population. The samba-de-roda (samba in a
 circle) of Recôncavo Baiano is the form UNESCO recognises as a
-"masterpiece of intangible heritage". Older Bahian forms — lundu
+"masterpiece of intangible heritage". Older Bahian forms: lundu
 (a 19th-century African-derived song-dance) and batuque (a generic
-term for African drumming) — fed into samba.
+term for African drumming): fed into samba.
 
 The candomblé tradition (an Afro-Brazilian religion of mostly Yoruba
 origin) also kept African musical structures alive in Bahia through
@@ -92,7 +92,7 @@ elaborate Carnival parade. Estação Primeira de Mangueira (founded
 ## Samba-canção, bossa nova, samba-funk
 
 In the 1940s and 1950s, samba slowed down and went indoors. **Samba-
-canção** (song-style samba) was the slower vocal form — think Dolores
+canção** (song-style samba) was the slower vocal form: think Dolores
 Duran or Lupicínio Rodrigues. In the late 1950s, **bossa nova** ("new
 trend") emerged in middle-class Rio neighbourhoods: João Gilberto,
 Antonio Carlos (Tom) Jobim, and Vinícius de Moraes took samba-canção's
@@ -109,8 +109,8 @@ rhythmic feel with American funk's groove.
 
 In the late 1980s, Rio's favelas birthed **baile funk** (also called
 funk carioca): an electronic, sample-based genre built on Miami bass
-and Brazilian percussion. Its rhythmic skeleton — the "tamborzão" beat
-— is a syncopated kick pattern that owes its character to samba's
+and Brazilian percussion. Its rhythmic skeleton: the "tamborzão" beat,
+a syncopated kick pattern that owes its character to samba's
 tresillo-derived bass figure. Modern artists: Anitta, MC Carol, Ludmilla.
 The genre travels: Madonna sampled it, Diplo built a career on it,
 and now you hear baile funk samples in K-pop and US hip-hop.
@@ -118,8 +118,8 @@ and now you hear baile funk samples in K-pop and US hip-hop.
 ## What ties it all together
 
 The tresillo (the 3-stroke rhythm you met in stage 3) sits inside
-samba's surface in many ways. The tamborim — the small high-pitched
-drum carried by Carnival drummers — plays a 3-2 pattern. The surdo
+samba's surface in many ways. The tamborim: the small high-pitched
+drum carried by Carnival drummers: plays a 3-2 pattern. The surdo
 (the big low drum) plays a "boom-doom" on beats 2 and 4. The bossa
 nova guitar pattern is a tresillo-derived bass figure. Even baile
 funk's tamborzão has tresillo bones.

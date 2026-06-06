@@ -20,7 +20,7 @@ export async function generateMetadata({
     return { title: 'Not found' };
   }
   const title = STAGE_TITLES[stageNumber];
-  return { title: `Stage ${stageNumber} — ${title} — monsieur music maestro` };
+  return { title: `Stage ${stageNumber}: ${title} - monsieur music maestro` };
 }
 
 export default async function StagePage({

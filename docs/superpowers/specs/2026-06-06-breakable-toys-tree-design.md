@@ -5,7 +5,7 @@ status: approved
 owner: olitreadwell
 ---
 
-# Breakable Toys Tree — Design
+# Breakable Toys Tree: Design
 
 ## What this is
 
@@ -17,7 +17,7 @@ A learning journey tree for the monsieur-music-maestro site. Each node is a "bre
 
 - Music as a craft (rhythm, time, melody, harmony, arrangement)
 - Music theory (named concepts, standard notation where useful)
-- Music history (who, when, where, why — accurate, cited)
+- Music history (who, when, where, why: accurate, cited)
 - Dance (how bodies respond to rhythm; club, social, partner)
 - DJing (mixing, key, phrase, crowd reading)
 
@@ -108,7 +108,7 @@ Frontmatter fields:
 | `branch` | `spine` \| `side-quest` \| genre slug | yes | Tree position |
 | `parent` | id or null | yes | Prereq, null for `stage-0-play` |
 | `estimate_min` | number | yes | Time estimate |
-| ~~`strudel_code`~~ | DEPRECATED | — | Authors now embed Strudel code as a body-level ```strudel fenced block, so prose can introduce notation BEFORE the code appears. The frontmatter field is no longer rendered. |
+| ~~`strudel_code`~~ | DEPRECATED |: | Authors now embed Strudel code as a body-level ```strudel fenced block, so prose can introduce notation BEFORE the code appears. The frontmatter field is no longer rendered. |
 
 Body structure (MD):
 
@@ -121,7 +121,7 @@ music as sound arranged in time before jumping to the patch.
 Introduce every Strudel token and operator this toy uses, in prose,
 **before** the code block. A reader who has never seen Strudel must be able
 to parse the patch from this section. Reuse what's already in earlier toys
-(don't re-explain `s(...)` in stage 8) — but always introduce anything new
+(don't re-explain `s(...)` in stage 8): but always introduce anything new
 this toy adds.
 
 ```strudel
@@ -140,7 +140,7 @@ with concrete edits. Each bullet may introduce a tiny new operator inline.
 
 ## In the world
 Where this appears in real music, real dance floors, real DJ sets. Always
-reach outward — the toy is a window onto a real practice.
+reach outward: the toy is a window onto a real practice.
 
 ## Music theory note
 What musicians call this. Time signature, beat names, harmonic concept,
@@ -148,7 +148,7 @@ form vocabulary. Connect to standard notation if useful.
 
 ## History
 Who, when, where, why. Plain. Cite real people and decades. Don't fabricate
-exact dates — say "early 1980s" if uncertain.
+exact dates: say "early 1980s" if uncertain.
 
 ## Dance and body
 How dancers, drummers, listeners physically respond to this idea. Get the
@@ -178,15 +178,15 @@ they don't replace it.
 Plain monospace ASCII tree. No graphviz, no JS framework.
 
 ```
-Stage 0 — Play
+Stage 0: Play
 ● play                                  (mutate · easy · 3min)
   ↳ explore-sounds                      (side-quest · easy · 5min)
 
-Stage 1 — Pulse
+Stage 1: Pulse
 ● pulse                                 (mutate · easy · 5min)
   ↳ tempo-shifts                        (side-quest · normal · 8min)
 
-Stage 3 — Clave
+Stage 3: Clave
 ● clave                                 (mutate · normal · 10min)
   ↳ branches
     ├─ afro-house · afrobeat-clave      (takeapart · stretch · 15min)
@@ -207,7 +207,7 @@ Rules:
 
 Layout:
 
-- Sidebar (left, desktop): `TreeNav` — compact tree, current toy highlighted, collapsible.
+- Sidebar (left, desktop): `TreeNav`: compact tree, current toy highlighted, collapsible.
 - Main (right): title, meta line, body (MD render).
 - Prev/Next nav at bottom, derived from spine order.
 - Mobile: `TreeNav` collapses to a top dropdown.

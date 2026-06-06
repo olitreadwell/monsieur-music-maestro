@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const set = await getLessonSet(slug);
   if (!set) return {};
-  return { title: `${set.title} — monsieur music maestro` };
+  return { title: `${set.title}: monsieur music maestro` };
 }
 
 const FORMAT_LABELS: Record<LessonSetFormat, string> = {

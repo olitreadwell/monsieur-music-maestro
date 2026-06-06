@@ -1,7 +1,7 @@
 ---
 id: stage-6-pad
 stage: 6
-title: The pad — sustained chord wash
+title: "The pad: sustained chord wash"
 type: mutate
 difficulty: normal
 branch: side-quest
@@ -97,5 +97,5 @@ Without looking back: what do `.attack(...)` and `.release(...)` control in an e
 
 ## Next
 
-- Return to spine: [Stage 7 — Shape](/journey/7/intro-build-drop)
+- Return to spine: [Stage 7: Shape](/journey/7/intro-build-drop)
 - Other side-quest: [Minor vs major](/journey/6/minor-vs-major)

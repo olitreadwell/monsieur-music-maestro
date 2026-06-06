@@ -11,7 +11,7 @@ estimate_min: 5
 
 ## What you're listening for
 
-**Timbre** — the quality or colour of a sound, apart from how loud or how long it is. A snare and a cymbal can both play at the same pitch and volume, but they sound completely different. That difference is timbre. When a drummer picks which drum to hit, they are choosing timbre.
+**Timbre**: the quality or colour of a sound, apart from how loud or how long it is. A snare and a cymbal can both play at the same pitch and volume, but they sound completely different. That difference is timbre. When a drummer picks which drum to hit, they are choosing timbre.
 
 Every token in Strudel's pattern string is an instruction to fetch a specific timbre from a drum machine kit. This toy cycles through all the main ones so you know what is in your toolkit.
 
@@ -46,19 +46,19 @@ Now break it:
 
 - Listen twice. Try to name the timbre difference between `hh`, `oh`, and `cy`. All three are metallic. Which is shortest? Which spreads most?
 - Reorder the slots. Try `s("bd cy sd oh tom hh cp").bank("RolandTR909")`. Same sounds, new feel.
-- Try `s("cy*4").bank("RolandTR909")`. Four crashes per bar is unusual — but useful to know what it would sound like.
+- Try `s("cy*4").bank("RolandTR909")`. Four crashes per bar is unusual: but useful to know what it would sound like.
 - Try `s("tom*4").bank("RolandTR909")`. Four toms per bar. This is the shape of a drum fill.
-- Swap `"RolandTR909"` for `"RolandTR808"`. The 808 is from 1980, one model earlier. Its sounds have a different character — especially the kick and the toms.
+- Swap `"RolandTR909"` for `"RolandTR808"`. The 808 is from 1980, one model earlier. Its sounds have a different character: especially the kick and the toms.
 
 ## In the world
 
 In a real track, different timbres give the ear different information:
 
 - Low timbres (kick, bass) anchor the body and drive movement.
-- Mid timbres (snare, clap, tom) mark the backbeat — the "crack" your body responds to.
+- Mid timbres (snare, clap, tom) mark the backbeat: the "crack" your body responds to.
 - High timbres (closed hat, open hat, cymbal) fill the space between beats, keeping energy up.
 
-A house producer layers these timbres carefully. The kick might be at 60 Hz, the snare at 200 Hz, the hats at 8 kHz — none of them competing for the same frequency slot.
+A house producer layers these timbres carefully. The kick might be at 60 Hz, the snare at 200 Hz, the hats at 8 kHz: none of them competing for the same frequency slot.
 
 ## Music theory note
 
@@ -82,5 +82,5 @@ Without looking back: what is timbre, and which of the seven sounds is the most 
 
 ## Next
 
-- Spine: [Stage 1 — Pulse](/journey/1/pulse)
+- Spine: [Stage 1: Pulse](/journey/1/pulse)
 - Side-quests in Stage 0: [Two patterns at once](/journey/0/two-patterns-at-once)

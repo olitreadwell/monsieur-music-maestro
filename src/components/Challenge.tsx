@@ -84,8 +84,8 @@ export default function Challenge({ challenge }: { challenge: ChallengeT }) {
           className={`mt-3 font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'}`}
         >
           {result === 'correct'
-            ? '✓ Looks good — attempt recorded.'
-            : '✗ Not quite — check your code and try again.'}
+            ? '✓ Looks good. Attempt recorded.'
+            : '✗ Not quite. Check your code and try again.'}
         </p>
       )}
     </div>

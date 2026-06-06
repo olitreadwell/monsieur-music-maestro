@@ -109,7 +109,7 @@ How many beats are in an 8-bar phrase in 4/4 time?
 
 ## Next
 
-- Spine: [Stage 5 — The low end](/journey/5/bassline)
+- Spine: [Stage 5: The low end](/journey/5/bassline)
 - Side-quests:
   - [Phrase tag](/journey/4/phrase-tag)
   - [16-bar build](/journey/4/16-bar-build)

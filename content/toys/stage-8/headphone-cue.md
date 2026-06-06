@@ -1,7 +1,7 @@
 ---
 id: stage-8-headphone-cue
 stage: 8
-title: Headphone cue — the DJ's private channel
+title: "Headphone cue: the DJ's private channel"
 type: challenge
 difficulty: stretch
 branch: side-quest

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Doc, loadDoc } from '@/lib/doc';
 
-export const metadata = { title: 'journey — narrative — monsieur music maestro' };
+export const metadata = { title: 'journey: narrative - monsieur music maestro' };
 
 export default async function Page() {
   const md = await loadDoc('learning-journey');

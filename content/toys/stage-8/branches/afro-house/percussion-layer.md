@@ -1,7 +1,7 @@
 ---
 id: stage-8-afro-house-percussion-layer
 stage: 8
-title: Afro house — live percussion over a DJ mix
+title: "Afro house: live percussion over a DJ mix"
 type: mutate
 difficulty: stretch
 branch: afro-house

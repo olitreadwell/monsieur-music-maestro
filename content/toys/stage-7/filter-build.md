@@ -1,7 +1,7 @@
 ---
 id: stage-7-filter-build
 stage: 7
-title: Filter build — sweep the tension
+title: "Filter build: sweep the tension"
 type: mutate
 difficulty: normal
 branch: side-quest
@@ -108,6 +108,6 @@ Without looking back: what does `saw.range(200, 8000).slow(8)` do step by step? 
 
 ## Next
 
-- Return to spine: [Stage 8 — Two decks](/journey/8/two-decks)
+- Return to spine: [Stage 8: Two decks](/journey/8/two-decks)
 - Other side-quest: [16-bar section thinking](/journey/7/16-bar-section)
 - Optional: [Deep house long build](/journey/7/branches/deep/long-build)

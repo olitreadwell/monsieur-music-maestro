@@ -13,7 +13,7 @@ estimate_min: 8
 
 The same five hits, different order. In **3-2** (the spine toy) the "three side" comes first. In **2-3** the "two side" comes first. Both use the same clave tones. The change sounds subtle but it shifts where the phrase feels like it "starts."
 
-Experienced musicians in Cuban and Latin traditions argue about which direction a song's clave runs. Getting it wrong — playing 3-2 over a 2-3 song — is one of the clearest errors a musician can make. The rhythm clashes with the melody even if every individual note is correct.
+Experienced musicians in Cuban and Latin traditions argue about which direction a song's clave runs. Getting it wrong: playing 3-2 over a 2-3 song: is one of the clearest errors a musician can make. The rhythm clashes with the melody even if every individual note is correct.
 
 ## How to read the code
 
@@ -61,12 +61,12 @@ Paste in [strudel.cc](https://strudel.cc). Play, then break it:
 
 - Switch back to 3-2 by changing the clave string to `"cp ~ ~ cp ~ ~ cp ~ ~ ~ cp ~ cp ~ ~ ~"`. Go back and forth a few times. Which direction feels like it starts on a stronger footing?
 - Remove the kick. Listen to the 2-3 clave alone for a minute. Clap with it. Then switch to 3-2. Does one feel more "resolved" to you personally?
-- Try playing two clavas at the same time: one 3-2, one 2-3, both at half gain. They will clash — this is what musicians mean when they say the clave is "crossed."
+- Try playing two clavas at the same time: one 3-2, one 2-3, both at half gain. They will clash: this is what musicians mean when they say the clave is "crossed."
   ```strudel
   stack(
     s("bd*4"),
     s("cp ~ ~ cp ~ ~ cp ~ ~ ~ cp ~ cp ~ ~ ~").gain(0.4), // 3-2
-    s("~ ~ cp ~ cp ~ ~ ~ cp ~ ~ cp ~ ~ cp ~").gain(0.4), // 2-3 — clashes
+    s("~ ~ cp ~ cp ~ ~ ~ cp ~ ~ cp ~ ~ cp ~").gain(0.4), // 2-3: clashes
     s("hh*8").gain(0.3)
   ).bank("RolandTR909")
   ```
@@ -76,19 +76,19 @@ Paste in [strudel.cc](https://strudel.cc). Play, then break it:
 
 In salsa and son cubano, the clave direction is determined by the **melody** and specifically by where the melody's long tones fall. A phrase that opens with a long note on the "and" of beat 2 (an off-beat) usually sits over a 3-2 clave. A phrase that opens on beat 1 (a downbeat) often sits over a 2-3.
 
-Soloists in Latin jazz and salsa know the clave direction of each song and make sure their phrases do not "break the clave" — that is, start on the wrong bar and pull against the rhythm.
+Soloists in Latin jazz and salsa know the clave direction of each song and make sure their phrases do not "break the clave": that is, start on the wrong bar and pull against the rhythm.
 
 In modern Latin house and Afro house, producers sometimes leave the clave implied rather than stated. A melodic hook or a percussion fill takes the place of literal clave sticks. The direction is still there; it shapes how the music breathes.
 
 ## Music theory note
 
-The 3-2 and 2-3 distinction is a case of **phrase alignment** — where a musical figure sits relative to the bar line.
+The 3-2 and 2-3 distinction is a case of **phrase alignment**: where a musical figure sits relative to the bar line.
 
 In a 3-2 pattern, the "heavy" side (three hits) lands in bar 1. The ear treats bar 1 as the "downward" moment and bar 2 as the "release." In 2-3, the lighter side comes first and the heavier bar 2 becomes the arrival.
 
 Some musicologists describe this as analogous to strong/weak beat relationships within a bar: downbeat versus upbeat, cadence versus antecedent. The clave makes this a two-bar phenomenon rather than a single-beat one.
 
-Neither direction is "correct" in isolation. In Cuban music the direction is a property of the song, determined by the vocals and the primary instrumental melody. Changing direction mid-song (called **crossing the clave**) is considered an error — not a creative choice.
+Neither direction is "correct" in isolation. In Cuban music the direction is a property of the song, determined by the vocals and the primary instrumental melody. Changing direction mid-song (called **crossing the clave**) is considered an error: not a creative choice.
 
 ## History
 
@@ -96,7 +96,7 @@ The distinction between 3-2 and 2-3 was documented by Cuban musicologists, notab
 
 Son cubano solidified both clave directions as distinct, song-specific choices in the early 20th century. By the time salsa emerged in New York in the 1970s, the vocabulary of "playing in clave" was shared knowledge among Latin musicians. Educators like John Santos and Rebeca Mauleón (whose book *Salsa Guidebook for Piano and Ensemble* remains a standard reference) formalised the rules for English-speaking audiences from the 1990s onward.
 
-Afro house producers in South Africa and Lagos in the 2010s and 2020s do not always follow the Cuban convention explicitly, but the same underlying tension between a heavy and a light bar appears in their music through different cultural routes — back to West African bell patterns that share the same 3+2 structure.
+Afro house producers in South Africa and Lagos in the 2010s and 2020s do not always follow the Cuban convention explicitly, but the same underlying tension between a heavy and a light bar appears in their music through different cultural routes: back to West African bell patterns that share the same 3+2 structure.
 
 ## Dance and body
 
@@ -114,5 +114,5 @@ Without looking back: what does it mean when a musician says the clave is "cross
 
 ## Next
 
-- Spine: [Stage 3 — The clave (spine)](/journey/3/clave)
-- Related side-quest: [Tresillo — the single-bar cell](/journey/3/tresillo)
+- Spine: [Stage 3: The clave (spine)](/journey/3/clave)
+- Related side-quest: [Tresillo: the single-bar cell](/journey/3/tresillo)

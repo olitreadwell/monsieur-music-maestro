@@ -99,4 +99,4 @@ You hear a track where a new layer enters every 4 bars over 16 bars. How many to
 
 - Back to spine: [Counting](/journey/4/counting)
 - Other side-quest: [Phrase tag](/journey/4/phrase-tag)
-- Continue: [Stage 5 — The low end](/journey/5/bassline)
+- Continue: [Stage 5: The low end](/journey/5/bassline)

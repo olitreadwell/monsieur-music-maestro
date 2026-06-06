@@ -19,9 +19,9 @@ This toy takes that idea apart. You will separate the layers, hear each one alon
 
 Two new things in this toy.
 
-**`n("0 1 2...")`** selects which sample from a multi-sample instrument. Many drum banks have several recordings of the same instrument — a conga hit at different pitches or dynamics. `n("0")` plays the first recording, `n("1")` plays the second, and so on. Write the number after the sound name with `.n(...)` or embed it directly as `"soundname:n"`. This toy uses `"conga:0"` and `"conga:1"` to get two different conga tones.
+**`n("0 1 2...")`** selects which sample from a multi-sample instrument. Many drum banks have several recordings of the same instrument: a conga hit at different pitches or dynamics. `n("0")` plays the first recording, `n("1")` plays the second, and so on. Write the number after the sound name with `.n(...)` or embed it directly as `"soundname:n"`. This toy uses `"conga:0"` and `"conga:1"` to get two different conga tones.
 
-**`s("soundname:n")`** is shorthand for selecting sample number `n` from the bank named `soundname`. So `s("conga:0")` plays the first conga sample and `s("conga:1")` plays the second. It is identical to `s("conga").n(0)` — just shorter. Use whichever reads more clearly.
+**`s("soundname:n")`** is shorthand for selecting sample number `n` from the bank named `soundname`. So `s("conga:0")` plays the first conga sample and `s("conga:1")` plays the second. It is identical to `s("conga").n(0)`: just shorter. Use whichever reads more clearly.
 
 Everything else you know:
 
@@ -46,7 +46,7 @@ stack(
   // snare: on beats 2 and 4, loosely (the backbeat keeps 4/4 felt)
   s("~ sd ~ sd").gain(0.6),
 
-  // conga low: hits on steps 1, 4, 7 — the tresillo skeleton
+  // conga low: hits on steps 1, 4, 7: the tresillo skeleton
   s("conga:0 ~ ~ conga:0 ~ ~ conga:0 ~").gain(0.75),
 
   // conga high: fills the gaps between the low conga hits
@@ -63,13 +63,13 @@ stack(
 
 Paste in [strudel.cc](https://strudel.cc). Play, then take it apart:
 
-**Step 1 — Isolate.** Comment out everything except the low conga line. In Strudel you can put `//` before a line inside `stack(...)` to silence it. Listen to just the low conga: you should hear the tresillo. Add back the high conga and hear the gaps fill in. Then unmute the kick. Each layer reveals something new.
+**Step 1: Isolate.** Comment out everything except the low conga line. In Strudel you can put `//` before a line inside `stack(...)` to silence it. Listen to just the low conga: you should hear the tresillo. Add back the high conga and hear the gaps fill in. Then unmute the kick. Each layer reveals something new.
 
-**Step 2 — Shift a conga.** Move the high conga one step earlier: change `"~ conga:1 conga:1 ~ conga:1 conga:1 ~ conga:1"` to `"conga:1 ~ conga:1 conga:1 ~ conga:1 conga:1 ~"`. Does the interlock feel tighter or looser?
+**Step 2: Shift a conga.** Move the high conga one step earlier: change `"~ conga:1 conga:1 ~ conga:1 conga:1 ~ conga:1"` to `"conga:1 ~ conga:1 conga:1 ~ conga:1 conga:1 ~"`. Does the interlock feel tighter or looser?
 
-**Step 3 — Thin it out.** Remove the snare and lower all gains to around `0.5`. The pattern becomes sparse. This is closer to the feel of the early Fela Kuti records where the groove is light and the space is part of the sound.
+**Step 3: Thin it out.** Remove the snare and lower all gains to around `0.5`. The pattern becomes sparse. This is closer to the feel of the early Fela Kuti records where the groove is light and the space is part of the sound.
 
-**Step 4 — Add the clave explicitly.** Add a fifth line to the stack:
+**Step 4: Add the clave explicitly.** Add a fifth line to the stack:
 ```
 s("cp ~ ~ cp ~ ~ cp ~ ~ ~ cp ~ cp ~ ~ ~").gain(0.5),
 ```
@@ -79,7 +79,7 @@ This is the full son clave 3-2. Does it clash with the conga pattern or sit alon
 
 **Fela Kuti** (born Fela Anikulapo Kuti, Lagos 1938, died 1997) built Afrobeat in Lagos in the late 1960s and 1970s. He blended Nigerian Yoruba highlife and jazz with political commentary, leading a large band (Africa 70, later Egypt 80) that could have twenty or more musicians on stage. His drummer and chief musical architect was **Tony Allen** (born Lagos 1940, died Paris 2020).
 
-Tony Allen's genius was precisely this interlocking approach. He played drum kit differently from Western rock drummers: the kick, snare, hi-hat, and percussion did not simply reinforce each other — each played against the others' gaps. Allen later described it as "playing across himself." The result was a groove that felt alive and never mechanical.
+Tony Allen's genius was precisely this interlocking approach. He played drum kit differently from Western rock drummers: the kick, snare, hi-hat, and percussion did not simply reinforce each other: each played against the others' gaps. Allen later described it as "playing across himself." The result was a groove that felt alive and never mechanical.
 
 Modern **Afro house** producers in South Africa, Nigeria, and the diaspora (Black Coffee, Themba, Culoe De Song, and others from the 2000s onward) inherited this sense of interlocking parts. They layered samples and programmed percussion using the same logic: sparse individual voices, dense combined result.
 
@@ -87,7 +87,7 @@ Modern **Afro house** producers in South Africa, Nigeria, and the diaspora (Blac
 
 What you hear here is **polyrhythmic layering** within a single tempo. It is different from a **polyrhythm** (two tempos at once, like 3 against 2 in a 6/8 feel). In this pattern, all voices agree on the tempo and bar length. But each voice has its own rhythmic identity, and together they suggest multiple "lines" moving inside the same time grid.
 
-African musicologists — particularly Kofi Agawu (Ghanaian, Princeton-based) — have written at length about how Western notation struggles to capture this quality. The interlocking is an emergent property: neither voice alone contains the groove. The groove lives in the relationship between them.
+African musicologists: particularly Kofi Agawu (Ghanaian, Princeton-based): have written at length about how Western notation struggles to capture this quality. The interlocking is an emergent property: neither voice alone contains the groove. The groove lives in the relationship between them.
 
 ## History
 
@@ -95,11 +95,11 @@ Tony Allen and Fela Kuti's collaboration produced a documented catalogue of reco
 
 After Fela's death in 1997, Allen continued to record and collaborate. His album *Secret Agent* (2009) and his collaboration with Damon Albarn (of Gorillaz) on *The Good, the Bad and the Queen* (2007) introduced him to new audiences. He released *Rejoice* in 2020, weeks before his death.
 
-The Afrobeat influence on Afro house and Afrobeats (with the s) is contested in its details — not all Afro house producers consciously reference Fela or Allen, and many come from Southern and East African traditions with different percussion vocabularies. What they share with Afrobeat is the **layering principle**, not necessarily a direct lineage.
+The Afrobeat influence on Afro house and Afrobeats (with the s) is contested in its details: not all Afro house producers consciously reference Fela or Allen, and many come from Southern and East African traditions with different percussion vocabularies. What they share with Afrobeat is the **layering principle**, not necessarily a direct lineage.
 
 ## Dance and body
 
-Afrobeat at live shows — and Afro house on the dance floor — asks your whole body to respond to multiple rhythms at once. The hips might respond to the kick. The shoulders to the high conga. The head to the hat.
+Afrobeat at live shows: and Afro house on the dance floor: asks your whole body to respond to multiple rhythms at once. The hips might respond to the kick. The shoulders to the high conga. The head to the hat.
 
 Try this: bounce on the kick (four times per bar). Then, while still bouncing, roll your shoulders on the tresillo: three rolls per bar, unevenly spaced. The two movements will fight each other a little and then find a compromise. That compromise is what Afro house dancers call being "in the pocket."
 
@@ -109,7 +109,7 @@ Without looking back: what does Tony Allen mean when he is described as "playing
 
 ## Next
 
-- Spine: [Stage 3 — The clave](/journey/3/clave)
+- Spine: [Stage 3: The clave](/journey/3/clave)
 - Other branches:
-  - [909 clave — sparse deep house rim](/journey/3/branches/deep/909-clave)
-  - [2-step clave — UK garage kick shove](/journey/3/branches/garage/2-step-clave)
+  - [909 clave: sparse deep house rim](/journey/3/branches/deep/909-clave)
+  - [2-step clave: UK garage kick shove](/journey/3/branches/garage/2-step-clave)

@@ -1,6 +1,6 @@
 ---
 slug: cuban-son
-title: "Cuban son — the root of salsa"
+title: "Cuban son: the root of salsa"
 format: cultural-deep-dive
 intro: |
   Cuban son is the parent of salsa, mambo, cha-cha, and a large share of
@@ -41,7 +41,7 @@ finalReview:
     table. Did you find it? Describe what you noticed.
 ---
 
-# Cuban son — the root of salsa
+# Cuban son: the root of salsa
 
 Cuban son (pronounced *sohn*) is one of the most consequential musical forms of the 20th century. It travelled from rural eastern Cuba to Havana in the early 1900s, was reshaped by big-band arrangements in the 1940s and 1950s, sailed to New York with Cuban and Puerto Rican musicians, and there became salsa.
 
@@ -73,7 +73,7 @@ Real names matter. Cuban son was not an abstract cultural process; it was made b
 
 **Tito Puente** (1923–2000), born Ernest Anthony Puente in New York to Puerto Rican parents, was a bandleader, timbales player, and composer. He made more than 100 albums. His 1958 recording "Oye Como Va" (later covered by Santana in 1970) remains one of the most recognised Latin compositions.
 
-**Mario Bauzá** (1911–1993), born in Havana, was a trumpeter who moved to New York in 1930 and worked with Cab Calloway before co-founding the Afro-Cubans big band with Machito (Frank Grillo, his brother-in-law) in 1940. Bauzá brought clave-structured rhythms into jazz big-band arrangements. He introduced bebop trumpeter Dizzy Gillespie to Chano Pozo, a Cuban conga player, leading directly to Gillespie's 1947 recording "Manteca" — a landmark in Afro-Cuban jazz.
+**Mario Bauzá** (1911–1993), born in Havana, was a trumpeter who moved to New York in 1930 and worked with Cab Calloway before co-founding the Afro-Cubans big band with Machito (Frank Grillo, his brother-in-law) in 1940. Bauzá brought clave-structured rhythms into jazz big-band arrangements. He introduced bebop trumpeter Dizzy Gillespie to Chano Pozo, a Cuban conga player, leading directly to Gillespie's 1947 recording "Manteca": a landmark in Afro-Cuban jazz.
 
 ## The lineage
 
@@ -90,7 +90,7 @@ The clave pattern is present, explicitly or implicitly, in all of them.
 
 ## The dance
 
-Son cubano is a partner dance. The basic step is a six-count pattern (two steps, pause, three steps) that aligns to the clave. Experienced son dancers feel the clave in their body and orient their phrasing — when to turn, when to stay, when to open a pattern — to the clave direction.
+Son cubano is a partner dance. The basic step is a six-count pattern (two steps, pause, three steps) that aligns to the clave. Experienced son dancers feel the clave in their body and orient their phrasing: when to turn, when to stay, when to open a pattern: to the clave direction.
 
 Salsa developed from son. The footwork is faster and the style varies by city (New York salsa-on-2, Los Angeles salsa-on-1, Colombian Cali-style). But the relationship to the clave remains: a salsa musician who "crosses the clave" (plays 3-2 over a 2-3 song) is making an error, not a creative choice.
 
@@ -100,6 +100,6 @@ You do not need to know the dance to understand the clave. But knowing the clave
 
 Take the three toys below in order. Do the "I read this" button at the bottom of each one. When you have done all three, come back here and do the final review.
 
-1. **The clave** — the full two-bar pattern, the heartbeat of son.
-2. **Tresillo** — the single-bar building block inside the clave.
-3. **2-3 flip** — same five hits, different bar order, different feel.
+1. **The clave**: the full two-bar pattern, the heartbeat of son.
+2. **Tresillo**: the single-bar building block inside the clave.
+3. **2-3 flip**: same five hits, different bar order, different feel.

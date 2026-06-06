@@ -114,7 +114,7 @@ Without looking back: what is the difference between an **additive build** (addi
 
 ## Next
 
-- Spine: [Stage 8 — Play it out (DJ): two decks](/journey/8/two-decks)
+- Spine: [Stage 8: Play it out (DJ): two decks](/journey/8/two-decks)
 - Side-quests:
   - [Filter build: sweep tension](/journey/7/filter-build)
   - [16-bar section thinking](/journey/7/16-bar-section)
