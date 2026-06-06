@@ -1,49 +1,113 @@
 import Link from 'next/link';
+import { getTree, STAGE_TITLES } from '@/lib/toys';
 
-export default function Home() {
+export const metadata = { title: 'monsieur music maestro — the journey' };
+
+export default async function Home() {
+  const tree = await getTree();
+  const totalToys = tree.allToys.length;
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-        monsieur music maestro
-      </h1>
-      <p className="mt-4 text-lg text-muted">
-        An absolute-beginner path to making{' '}
-        <span className="text-accent font-medium">house music by writing code</span>{' '}
-        (Strudel), plus the listening, theory, dancing, history and DJ skills underneath.
-      </p>
-      <p className="mt-4 text-sm text-muted">
-        AuDHD + ESL friendly. Plain language. Short sessions. Sound before symbol. Build something every time. Afro and Latin music run all the way through.
-      </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+            monsieur music maestro
+          </h1>
+          <p className="mt-3 text-lg text-muted">
+            An absolute-beginner path to making house music by writing code.
+          </p>
+          <p className="mt-2 text-sm text-muted">
+            9 stages · {totalToys} {totalToys === 1 ? 'toy' : 'toys'}
+          </p>
+        </div>
+        <Link
+          href="/journey/narrative"
+          className="shrink-0 text-sm text-muted hover:text-fg transition whitespace-nowrap"
+        >
+          narrative version →
+        </Link>
+      </div>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2">
-        <Link href="/journey" className="border border-fg/10 rounded-lg p-6 hover:border-accent transition">
-          <div className="text-sm text-muted">centrepiece</div>
-          <div className="mt-1 text-xl font-semibold">the journey</div>
-          <p className="mt-2 text-sm text-muted">
-            9 stages, 10 plain rules, fixed session shape, history thread, move thread, paste-ready Strudel per stage.
-          </p>
-        </Link>
-        <Link href="/cheatsheet" className="border border-fg/10 rounded-lg p-6 hover:border-accent transition">
-          <div className="text-sm text-muted">reference</div>
-          <div className="mt-1 text-xl font-semibold">strudel cheatsheet</div>
-          <p className="mt-2 text-sm text-muted">
-            Drum names, mini-notation, paste-ready house + Afro/Latin snippets.
-          </p>
-        </Link>
-        <Link href="/resources" className="border border-fg/10 rounded-lg p-6 hover:border-accent transition">
-          <div className="text-sm text-muted">links</div>
-          <div className="mt-1 text-xl font-semibold">resources</div>
-          <p className="mt-2 text-sm text-muted">
-            Free + open-license tutorials, flagged <code>[OPEN]</code> / <code>[FREE]</code> / <code>[PAID]</code>. Plus the research the journey is built on.
-          </p>
-        </Link>
-        <Link href="/practice-log" className="border border-fg/10 rounded-lg p-6 hover:border-accent transition">
-          <div className="text-sm text-muted">tool</div>
-          <div className="mt-1 text-xl font-semibold">practice log</div>
-          <p className="mt-2 text-sm text-muted">
-            A spaced-practice session log template.
-          </p>
-        </Link>
+      <div className="mt-12 font-mono text-sm leading-relaxed">
+        {tree.stages.map((stage) => {
+          const title = STAGE_TITLES[stage.number];
+          const hasContent =
+            stage.spine.length > 0 ||
+            stage.sideQuests.length > 0 ||
+            Object.keys(stage.branches).length > 0;
+          const branchKeys = Object.keys(stage.branches);
+
+          return (
+            <div key={stage.number} className="mb-8">
+              <div className="font-semibold mb-1">
+                Stage {stage.number} — {title}
+              </div>
+
+              {!hasContent && (
+                <div className="text-muted/50 pl-2">(no toys yet)</div>
+              )}
+
+              {stage.spine.map((toy) => (
+                <div key={toy.id}>
+                  <Link
+                    href={toy.routePath}
+                    className="block hover:text-accent transition"
+                  >
+                    <span className="text-accent">●</span>{' '}
+                    <span className="inline-block min-w-[24ch]">{toy.title}</span>
+                    <span className="text-muted">
+                      ({toy.type} · {toy.difficulty} · {toy.estimate_min}min)
+                    </span>
+                  </Link>
+                </div>
+              ))}
+
+              {stage.sideQuests.map((toy) => (
+                <div key={toy.id}>
+                  <Link
+                    href={toy.routePath}
+                    className="block pl-2 hover:text-accent transition"
+                  >
+                    ↳{' '}
+                    <span className="inline-block min-w-[22ch]">{toy.title}</span>
+                    <span className="text-muted">
+                      (side-quest · {toy.difficulty} · {toy.estimate_min}min)
+                    </span>
+                  </Link>
+                </div>
+              ))}
+
+              {branchKeys.length > 0 && (
+                <div className="pl-2">
+                  <div>↳ branches</div>
+                  {branchKeys.map((branchSlug, bi) => {
+                    const toys = stage.branches[branchSlug];
+                    const isLast = bi === branchKeys.length - 1;
+                    return toys.map((toy, ti) => {
+                      const isLastToy = ti === toys.length - 1 && isLast;
+                      const prefix = isLastToy ? '    └─' : '    ├─';
+                      return (
+                        <div key={toy.id}>
+                          <Link
+                            href={toy.routePath}
+                            className="block hover:text-accent transition"
+                          >
+                            {prefix} {branchSlug} · {' '}
+                            <span className="inline-block min-w-[16ch]">{toy.title}</span>
+                            <span className="text-muted">
+                              ({toy.type} · {toy.difficulty} · {toy.estimate_min}min)
+                            </span>
+                          </Link>
+                        </div>
+                      );
+                    });
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
