@@ -21,10 +21,16 @@ type StrudelEditorEl = HTMLElement & {
 };
 
 const DESKTOP_OPEN_KEY = 'mmm:playground-open';
+const WIDTH_KEY = 'mmm:playground-width';
+const DEFAULT_WIDTH = 448; // 28rem
+const MIN_WIDTH = 240;
+const MAX_WIDTH = 900;
 
 export default function PlaygroundSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopOpen, setDesktopOpen] = useState(true);
+  const [width, setWidth] = useState(DEFAULT_WIDTH);
+  const draggingRef = useRef(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const editorRef = useRef<StrudelEditorEl | null>(null);
@@ -161,6 +167,43 @@ export default function PlaygroundSidebar() {
   }, [desktopOpen]);
 
   useEffect(() => {
+    try {
+      const saved = localStorage.getItem(WIDTH_KEY);
+      if (saved) {
+        const n = Number(saved);
+        if (n >= MIN_WIDTH && n <= MAX_WIDTH) setWidth(n);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(WIDTH_KEY, String(width));
+    } catch {
+      // ignore
+    }
+  }, [width]);
+
+  const handleResizePointerDown = useCallback((e: React.PointerEvent) => {
+    e.preventDefault();
+    draggingRef.current = true;
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+  }, []);
+
+  const handleResizePointerMove = useCallback((e: React.PointerEvent) => {
+    if (!draggingRef.current) return;
+    const newWidth = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, window.innerWidth - e.clientX));
+    setWidth(newWidth);
+  }, []);
+
+  const handleResizePointerUp = useCallback((e: React.PointerEvent) => {
+    draggingRef.current = false;
+    (e.target as HTMLElement).releasePointerCapture(e.pointerId);
+  }, []);
+
+  useEffect(() => {
     if (!mobileOpen) return;
     function handleKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
@@ -241,7 +284,11 @@ export default function PlaygroundSidebar() {
         id="strudel-playground"
         role="complementary"
         aria-label="Strudel playground"
-        style={{ backgroundColor: '#0f0f12', color: '#f5ead4' }}
+        style={{
+          backgroundColor: '#0f0f12',
+          color: '#f5ead4',
+          ...(desktopOpen ? { width: `${width}px` } : {}),
+        }}
         className={[
           'border-l border-rule flex flex-col',
           // Mobile: fixed overlay, toggleable.
@@ -250,10 +297,22 @@ export default function PlaygroundSidebar() {
           mobileOpen ? 'translate-x-0' : 'translate-x-full',
           // Desktop: in-flow column, can collapse via desktopOpen.
           desktopOpen
-            ? 'lg:static lg:translate-x-0 lg:w-[28rem] lg:flex-shrink-0 lg:sticky lg:top-0 lg:h-screen'
+            ? 'lg:static lg:translate-x-0 lg:flex-shrink-0 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)]'
             : 'lg:static lg:w-0 lg:flex-shrink-0 lg:overflow-hidden',
         ].join(' ')}
       >
+        {/* Drag handle — desktop only, only when open */}
+        {desktopOpen && (
+          <div
+            role="separator"
+            aria-label="Resize playground"
+            aria-orientation="vertical"
+            className="hidden lg:block absolute left-0 top-0 bottom-0 w-1 cursor-col-resize hover:bg-accent/40 active:bg-accent/60 z-10 touch-none"
+            onPointerDown={handleResizePointerDown}
+            onPointerMove={handleResizePointerMove}
+            onPointerUp={handleResizePointerUp}
+          />
+        )}
         <div
           className="flex items-center justify-between px-3 py-2 gap-2 shrink-0 border-b"
           style={{ borderColor: '#2a2a30' }}

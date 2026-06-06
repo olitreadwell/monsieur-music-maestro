@@ -60,3 +60,8 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  #strudel-playground {
+    position: relative;
+  }
+}

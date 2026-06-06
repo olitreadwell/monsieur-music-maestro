@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import type { Tree } from '@/lib/toys';
 import { useProgress } from '@/lib/progress';
@@ -17,21 +17,83 @@ const STAGE_TITLES: Record<number, string> = {
   8: 'Play it out',
 };
 
+const DESKTOP_OPEN_KEY = 'mmm:stages-open';
+const WIDTH_KEY = 'mmm:stages-width';
+const DEFAULT_WIDTH = 320;
+const MIN_WIDTH = 200;
+const MAX_WIDTH = 600;
+
 interface StagesSidebarProps {
   tree: Tree;
 }
 
 export default function StagesSidebar({ tree }: StagesSidebarProps) {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [desktopOpen, setDesktopOpen] = useState(true);
+  const [width, setWidth] = useState(DEFAULT_WIDTH);
+  const draggingRef = useRef(false);
   const { progress } = useProgress();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (!open) return;
+    try {
+      const saved = localStorage.getItem(DESKTOP_OPEN_KEY);
+      if (saved === 'false') setDesktopOpen(false);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(DESKTOP_OPEN_KEY, String(desktopOpen));
+    } catch {
+      // ignore
+    }
+  }, [desktopOpen]);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(WIDTH_KEY);
+      if (saved) {
+        const n = Number(saved);
+        if (n >= MIN_WIDTH && n <= MAX_WIDTH) setWidth(n);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(WIDTH_KEY, String(width));
+    } catch {
+      // ignore
+    }
+  }, [width]);
+
+  const handleResizePointerDown = useCallback((e: React.PointerEvent) => {
+    e.preventDefault();
+    draggingRef.current = true;
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+  }, []);
+
+  const handleResizePointerMove = useCallback((e: React.PointerEvent) => {
+    if (!draggingRef.current) return;
+    setWidth(Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, e.clientX)));
+  }, []);
+
+  const handleResizePointerUp = useCallback((e: React.PointerEvent) => {
+    draggingRef.current = false;
+    (e.target as HTMLElement).releasePointerCapture(e.pointerId);
+  }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
     function handleKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setOpen(false);
+        setMobileOpen(false);
         triggerRef.current?.focus();
       }
     }
@@ -42,48 +104,73 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
       document.removeEventListener('keydown', handleKey);
       document.body.style.overflow = '';
     };
-  }, [open]);
+  }, [mobileOpen]);
+
+  const showFloatingTrigger = !mobileOpen && !desktopOpen;
 
   return (
     <>
-      <button
-        ref={triggerRef}
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-expanded={open}
-        aria-controls="stages-sidebar"
-        className="fixed top-4 left-4 z-50 text-sm font-medium px-3 py-1.5 rounded border border-rule bg-bg/90 backdrop-blur-sm hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
-      >
-        <span className="mr-1.5" aria-hidden="true">☰</span>
-        stages
-      </button>
+      {showFloatingTrigger && (
+        <button
+          ref={triggerRef}
+          type="button"
+          onClick={() => {
+            setMobileOpen(true);
+            setDesktopOpen(true);
+          }}
+          aria-expanded={false}
+          aria-controls="stages-sidebar"
+          className="fixed top-[3.75rem] left-2 z-50 text-sm font-medium px-3 py-1.5 rounded border border-rule bg-bg/90 backdrop-blur-sm hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+        >
+          <span className="mr-1.5" aria-hidden="true">☰</span>
+          stages
+        </button>
+      )}
 
-      {open && (
+      {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 bg-fg/30 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
-          onClick={() => setOpen(false)}
+          className="lg:hidden fixed inset-0 z-40 bg-fg/30"
+          onClick={() => setMobileOpen(false)}
           aria-hidden="true"
         />
       )}
 
       <aside
         id="stages-sidebar"
-        role="dialog"
-        aria-modal="true"
+        role="complementary"
         aria-label="Stages"
+        style={desktopOpen ? { width: `${width}px` } : undefined}
         className={[
-          'fixed inset-y-0 left-0 z-40 w-72 sm:w-80 bg-bg border-r border-rule',
-          'flex flex-col',
-          'motion-safe:transition-transform motion-safe:duration-300',
-          open ? 'translate-x-0' : '-translate-x-full',
+          'bg-bg border-r border-rule flex flex-col shrink-0',
+          'fixed inset-y-0 left-0 z-50 w-full sm:w-80',
+          'motion-safe:transition-all motion-safe:duration-300',
+          mobileOpen ? 'translate-x-0' : '-translate-x-full',
+          desktopOpen
+            ? 'lg:static lg:translate-x-0 lg:flex-shrink-0 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)]'
+            : 'lg:static lg:translate-x-0 lg:w-0 lg:flex-shrink-0 lg:overflow-hidden',
         ].join(' ')}
       >
-        <div className="flex items-center justify-between px-5 py-4 border-b border-rule">
+        {desktopOpen && (
+          <div
+            role="separator"
+            aria-label="Resize stages"
+            aria-orientation="vertical"
+            className="hidden lg:block absolute right-0 top-0 bottom-0 w-1 cursor-col-resize hover:bg-accent/40 active:bg-accent/60 z-10 touch-none"
+            onPointerDown={handleResizePointerDown}
+            onPointerMove={handleResizePointerMove}
+            onPointerUp={handleResizePointerUp}
+          />
+        )}
+
+        <div className="flex items-center justify-between px-5 py-4 border-b border-rule shrink-0">
           <h2 className="text-lg font-display italic">Stages</h2>
           <button
             ref={closeRef}
             type="button"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setMobileOpen(false);
+              setDesktopOpen(false);
+            }}
             aria-label="Close stages"
             className="text-sm px-2 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
           >
@@ -102,7 +189,7 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
               <div key={stage.number} className="mb-5">
                 <Link
                   href={`/journey/${stage.number}`}
-                  onClick={() => setOpen(false)}
+                  onClick={() => setMobileOpen(false)}
                   className="block text-xs uppercase tracking-wide opacity-60 mb-1 hover:opacity-100 hover:text-accent motion-safe:transition-colors"
                 >
                   Stage {stage.number} · {STAGE_TITLES[stage.number]}
@@ -113,7 +200,7 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
                     <Link
                       key={toy.id}
                       href={toy.routePath}
-                      onClick={() => setOpen(false)}
+                      onClick={() => setMobileOpen(false)}
                       className={[
                         'flex items-baseline gap-1.5 py-0.5 hover:text-accent motion-safe:transition-colors',
                         read ? 'opacity-60' : '',
@@ -130,7 +217,7 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
                     <Link
                       key={toy.id}
                       href={toy.routePath}
-                      onClick={() => setOpen(false)}
+                      onClick={() => setMobileOpen(false)}
                       className={[
                         'flex items-baseline gap-1.5 pl-4 py-0.5 hover:text-accent motion-safe:transition-colors',
                         read ? 'opacity-60' : '',
@@ -151,7 +238,7 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
                           <Link
                             key={toy.id}
                             href={toy.routePath}
-                            onClick={() => setOpen(false)}
+                            onClick={() => setMobileOpen(false)}
                             className={[
                               'flex items-baseline gap-1.5 pl-4 py-0.5 hover:text-accent motion-safe:transition-colors',
                               read ? 'opacity-60' : '',

@@ -41,10 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        <div className="fixed top-4 right-4 z-50 lg:right-[calc(28rem+1rem)]">
+        <header className="sticky top-0 z-50 h-14 flex items-center justify-end px-4 border-b border-rule bg-bg">
           <DropdownNav />
-        </div>
-        <div className="lg:flex lg:min-h-screen">
+        </header>
+        <div className="lg:flex" style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
           <div className="flex-1 min-w-0 flex flex-col">
             <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
             <footer className="border-t border-fg/10 px-6 py-4 text-xs text-muted">
