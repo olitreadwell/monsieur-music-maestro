@@ -29,7 +29,7 @@ interface StagesSidebarProps {
 
 export default function StagesSidebar({ tree }: StagesSidebarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [desktopOpen, setDesktopOpen] = useState(true);
+  const [desktopOpen, setDesktopOpen] = useState(false);
   const [width, setWidth] = useState(DEFAULT_WIDTH);
   const draggingRef = useRef(false);
   const { progress } = useProgress();
@@ -39,7 +39,7 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(DESKTOP_OPEN_KEY);
-      if (saved === 'false') setDesktopOpen(false);
+      if (saved === 'true') setDesktopOpen(true);
     } catch {
       // ignore
     }
