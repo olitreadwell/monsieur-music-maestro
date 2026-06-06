@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
 import DropdownNav from '@/components/DropdownNav';
 import BottomRepl from '@/components/BottomRepl';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
@@ -7,10 +7,11 @@ import './globals.css';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
+const fraunces = Fraunces({ variable: '--font-fraunces', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'monsieur music maestro',
-  description: 'A beginner journey for house music via Strudel, plus the listening, theory, dancing, history and DJ skills underneath.',
+  description: 'A journey through global rhythm: music theory, history, dance, and DJ craft, with Strudel as the listening tool.',
 };
 
 export const viewport: Viewport = {
@@ -21,7 +22,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         <a
           href="#main-content"
