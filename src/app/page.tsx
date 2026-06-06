@@ -11,6 +11,10 @@ export default async function Home() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
+      <div className="mb-8">
+        <Link href="/lessons" className="text-accent underline">Lesson sets →</Link>
+      </div>
+
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
