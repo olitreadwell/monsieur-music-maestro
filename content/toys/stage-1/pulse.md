@@ -7,6 +7,14 @@ difficulty: easy
 branch: spine
 parent: stage-0-play
 estimate_min: 5
+challenge:
+  id: stage-1-pulse-challenge
+  prompt: "Modify the patch to play eight kicks per bar instead of four. Keep the TR-909 kit."
+  starterCode: |
+    s("bd*4").bank("RolandTR909")
+  targetDescription: "Twice as many kicks per bar, even spacing, same kit."
+  validator: contains
+  target: 'bd*8'
 ---
 
 ## What you're listening for

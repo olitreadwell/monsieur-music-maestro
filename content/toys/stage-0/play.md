@@ -7,6 +7,17 @@ difficulty: easy
 branch: spine
 parent: null
 estimate_min: 5
+quiz:
+  id: stage-0-play-quiz
+  kind: multiple-choice
+  question: "In `s('bd hh sd hh')`, what does each space-separated token represent?"
+  options:
+    - "A separate bar of music."
+    - "A single beat (one slot) in the pattern."
+    - "A tempo marker."
+    - "A volume change."
+  correctAnswerIndex: 1
+  explanation: "Each token is one slot in the pattern. Four tokens spread across one bar of 4/4 time, so each token sits on one beat."
 ---
 
 ## What you're listening for

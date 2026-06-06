@@ -9,6 +9,9 @@ import type { Toy } from '@/lib/toys';
 import StrudelEmbed from '@/components/StrudelEmbed';
 import TreeNav from '@/components/TreeNav';
 import ReadButton from '@/components/ReadButton';
+import Quiz from '@/components/Quiz';
+import Challenge from '@/components/Challenge';
+import PatternPuzzle from '@/components/PatternPuzzle';
 
 export async function generateStaticParams() {
   const tree = await getTree();
@@ -121,6 +124,25 @@ export default async function ToyPage({
           <div className="mt-12 pt-8 border-t border-fg/10">
             <ReadButton toyId={toy.id} />
           </div>
+
+          {toy.quiz && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold mb-3">Quiz</h2>
+              <Quiz quiz={toy.quiz} />
+            </div>
+          )}
+          {toy.challenge && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold mb-3">Challenge</h2>
+              <Challenge challenge={toy.challenge} />
+            </div>
+          )}
+          {toy.puzzle && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold mb-3">Puzzle</h2>
+              <PatternPuzzle puzzle={toy.puzzle} />
+            </div>
+          )}
 
           <nav className="mt-12 flex justify-between text-sm">
             {prev ? (

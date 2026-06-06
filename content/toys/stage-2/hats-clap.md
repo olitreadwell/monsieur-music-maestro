@@ -7,6 +7,18 @@ difficulty: easy
 branch: spine
 parent: stage-1-pulse
 estimate_min: 8
+puzzle:
+  id: stage-2-hats-clap-puzzle
+  kind: reorder
+  prompt: "Reorder these tokens so the bar reads kick on every beat, clap on beats 2 and 4, hats on every eighth."
+  tokens:
+    - "bd*4"
+    - "[~ cp]*2"
+    - "hh*8"
+  correctSequence:
+    - "bd*4"
+    - "[~ cp]*2"
+    - "hh*8"
 ---
 
 ## What you're listening for
