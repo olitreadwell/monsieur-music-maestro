@@ -42,11 +42,15 @@ export default function BottomRepl() {
     stopPoll();
     pollTimerRef.current = setInterval(() => {
       const el = editorRef.current;
-      if (!el?.editor) return;
-      const current = el.editor.getCode();
-      if (current !== lastCodeRef.current) {
-        lastCodeRef.current = current;
-        scheduleWrite(current);
+      if (!el?.editor || typeof el.editor.getCode !== 'function') return;
+      try {
+        const current = el.editor.getCode();
+        if (current !== lastCodeRef.current) {
+          lastCodeRef.current = current;
+          scheduleWrite(current);
+        }
+      } catch {
+        // Strudel editor not ready or API mismatch; skip this tick.
       }
     }, POLL_MS);
   }
@@ -151,7 +155,7 @@ export default function BottomRepl() {
           'overflow-hidden bg-zinc-900 border-t border-fg/10',
           'motion-safe:transition-[height] motion-safe:duration-300',
           open
-            ? 'sm:h-[320px] max-sm:fixed max-sm:inset-0 max-sm:h-full max-sm:z-50'
+            ? 'sm:h-[320px] max-sm:fixed max-sm:top-0 max-sm:left-0 max-sm:right-0 max-sm:bottom-11 max-sm:h-auto max-sm:z-40'
             : 'h-0',
         ].join(' ')}
         style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
