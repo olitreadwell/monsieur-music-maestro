@@ -21,10 +21,10 @@ export default async function Home() {
             monsieur music maestro
           </h1>
           <p className="mt-3 text-lg text-muted">
-            An absolute-beginner path to making house music by writing code.
+            From zero to musical literacy: rhythm, theory, global music traditions, dance, and DJ craft, with Strudel as the listening tool.
           </p>
           <p className="mt-2 text-sm text-muted">
-            9 stages · {totalToys} {totalToys === 1 ? 'toy' : 'toys'}
+            9 stages · {totalToys} {totalToys === 1 ? 'toy' : 'toys'} · house music as the anchor, the world as the destination
           </p>
         </div>
         <Link
