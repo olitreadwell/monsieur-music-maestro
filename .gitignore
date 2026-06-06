@@ -31,5 +31,9 @@ npm-debug.log*
 # claude session state
 .claude
 
+# playwright session artifacts
+.playwright-mcp
+*.png
+
 # misc
 tsconfig.tsbuildinfo
