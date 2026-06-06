@@ -3,7 +3,7 @@ import { buildReviewIndex } from '@/lib/review';
 import ReviewQueue from '@/components/ReviewQueue';
 
 export const metadata: Metadata = {
-  title: 'Review — monsieur music maestro',
+  title: 'Review: monsieur music maestro',
 };
 
 export default async function ReviewPage() {

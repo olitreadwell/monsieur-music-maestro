@@ -23,7 +23,7 @@ puzzle:
 
 ## What you're listening for
 
-The **backbeat** — the clap or snare that falls on beats 2 and 4 of a 4/4 bar. Add the eight hi-hats that fill the space between kicks, and you have the complete house drum loop: kick, clap, hats, all running at the same time.
+The **backbeat**: the clap or snare that falls on beats 2 and 4 of a 4/4 bar. Add the eight hi-hats that fill the space between kicks, and you have the complete house drum loop: kick, clap, hats, all running at the same time.
 
 This is the pattern behind nearly every house track you have ever heard.
 
@@ -38,9 +38,9 @@ This toy introduces three new pieces of notation:
 - `*2` after a group or token means "repeat this group 2 times across the bar." You already know `*4` and `*8` for single tokens. The same `*N` works after `[...]` groups. So `[~ cp]*2` means "play the group `[~ cp]` twice in one bar": rest-clap, rest-clap. That lands the clap on beats 2 and 4.
 
 Putting it together: `"bd*4, [~ cp]*2, hh*8"` reads as three voices:
-1. `bd*4` — kick on all four beats.
-2. `[~ cp]*2` — rest on beat 1, clap on beat 2, rest on beat 3, clap on beat 4.
-3. `hh*8` — hi-hat eight times per bar, which is twice per beat (eighth notes).
+1. `bd*4`: kick on all four beats.
+2. `[~ cp]*2`: rest on beat 1, clap on beat 2, rest on beat 3, clap on beat 4.
+3. `hh*8`: hi-hat eight times per bar, which is twice per beat (eighth notes).
 
 ```strudel
 // s(...)           = play these sounds in order, looped.
@@ -65,19 +65,19 @@ Now break it:
 - Listen to the full loop. Try to identify each of the three voices separately while it plays.
 - Remove the clap voice: `s("bd*4, hh*8").bank("RolandTR909")`. The track sounds emptier. The clap creates the backbeat emphasis.
 - Change `[~ cp]*2` to `cp*4`. The clap now falls on every beat instead of just 2 and 4. Notice how it loses its backbeat snap and starts to sound monotonous.
-- Change `hh*8` to `hh*4`. Half as many hats — the pattern suddenly feels more open and less like classic house.
-- Change `hh*8` to `hh*16`. Sixteen hats per bar is double-time. Busy, almost frantic — closer to UK garage or drum 'n' bass.
-- Swap `.bank("RolandTR909")` for `.bank("RolandTR808")`. Same pattern, different weight — the 808 kick is rounder, from the 808 vs 909 toy.
+- Change `hh*8` to `hh*4`. Half as many hats: the pattern suddenly feels more open and less like classic house.
+- Change `hh*8` to `hh*16`. Sixteen hats per bar is double-time. Busy, almost frantic: closer to UK garage or drum 'n' bass.
+- Swap `.bank("RolandTR909")` for `.bank("RolandTR808")`. Same pattern, different weight: the 808 kick is rounder, from the 808 vs 909 toy.
 
 ## In the world
 
-Put on any house track — Larry Heard's "Can You Feel It," Frankie Knuckles's "Your Love," any Armand van Helden or MK track. Within the first four bars you will hear this exact pattern: four kicks, clap on 2 and 4, hats running between. The clap is usually a sample of a TR-909 clap or a real hand clap, sometimes both layered.
+Put on any house track: Larry Heard's "Can You Feel It," Frankie Knuckles's "Your Love," any Armand van Helden or MK track. Within the first four bars you will hear this exact pattern: four kicks, clap on 2 and 4, hats running between. The clap is usually a sample of a TR-909 clap or a real hand clap, sometimes both layered.
 
 On the dance floor, the backbeat clap is what the crowd claps along to. When a DJ drops a track and the whole room claps in unison, they are all on beats 2 and 4, following the backbeat.
 
 ## Music theory note
 
-**Backbeat** refers to the emphasis on beats 2 and 4 in a 4/4 bar. The "strong beats" in classical theory are 1 and 3 (the downbeats). Placing the accent on 2 and 4 instead creates tension against that expectation — the feeling of forward motion, groove.
+**Backbeat** refers to the emphasis on beats 2 and 4 in a 4/4 bar. The "strong beats" in classical theory are 1 and 3 (the downbeats). Placing the accent on 2 and 4 instead creates tension against that expectation: the feeling of forward motion, groove.
 
 The eight hi-hats per bar are **eighth notes**: the bar is divided into eight equal parts, two per beat. When you count "one-and-two-and-three-and-four-and," the "and" syllables are the eighth-note subdivisions. House hi-hats fill those subdivisions.
 
@@ -99,5 +99,5 @@ Without looking back: what does `[~ cp]*2` produce, and on which beats does the 
 
 ## Next
 
-- Spine: [Stage 3 — Clave](/journey/3/clave)
+- Spine: [Stage 3: Clave](/journey/3/clave)
 - Side-quests in Stage 2: [Shuffle hats](/journey/2/shuffle-hats), [Open vs closed hats](/journey/2/open-vs-closed-hats)

@@ -1,7 +1,7 @@
 ---
 id: stage-7-16-bar-section
 stage: 7
-title: 16-bar sections — verse and chorus thinking
+title: "16-bar sections: verse and chorus thinking"
 type: challenge
 difficulty: stretch
 branch: side-quest
@@ -26,7 +26,7 @@ In Strudel, you cannot easily trigger a 16-bar section with a single control (th
 This manual section switching is what a DJ does: they control which "section" the crowd hears by choosing what plays on which deck.
 
 ```strudel
-// Section A — Verse: kick, hats, bass only (no chords, no clap)
+// Section A: Verse: kick, hats, bass only (no chords, no clap)
 // Use this for your intro and breakdown sections.
 // Count 16 bars (about 30 seconds at 128 BPM) before switching.
 stack(
@@ -37,7 +37,7 @@ stack(
 ```
 
 ```strudel
-// Section B — Chorus/Drop: all elements in
+// Section B: Chorus/Drop: all elements in
 // Use this for your drop. Switch to this after 16 bars of Section A.
 stack(
   s("bd*4").bank("RolandTR909"),
@@ -60,7 +60,7 @@ This is a **challenge** toy. Here is the structure to aim for:
 5. Paste Section A again and switch back. This is your breakdown.
 6. After 8 bars in the breakdown, bring Section B back for the second drop.
 
-You have just executed: A (16 bars) — B (16 bars) — A (8 bars) — B (16 bars). That is a real 56-bar arrangement.
+You have just executed: A (16 bars): B (16 bars): A (8 bars): B (16 bars). That is a real 56-bar arrangement.
 
 **Extensions** once you can do the above:
 
@@ -106,5 +106,5 @@ Without looking back: what is AABA form, and why do house tracks use 16-bar sect
 
 ## Next
 
-- Return to spine: [Stage 8 — Two decks](/journey/8/two-decks)
+- Return to spine: [Stage 8: Two decks](/journey/8/two-decks)
 - Other side-quest: [Filter build](/journey/7/filter-build)

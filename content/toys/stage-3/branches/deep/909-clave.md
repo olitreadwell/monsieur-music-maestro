@@ -62,7 +62,7 @@ Deep house emerged in Chicago and New York in the mid-to-late 1980s as a more un
 
 In deep house production the clave is rarely stated loudly. You find it as a rim hit, a subtle percussion loop, or buried in a piano part that has a slight syncopation. The **implication** is the point: listeners feel the African-Latin ancestry of the groove without the producer hitting them over the head with it.
 
-This approach — hiding the structural rhythm inside the texture — is also common in Brazilian baile funk, in much UK garage, and in certain strands of Afro house from South Africa. The clave is load-bearing architecture, but it does not need to be visible.
+This approach: hiding the structural rhythm inside the texture: is also common in Brazilian baile funk, in much UK garage, and in certain strands of Afro house from South Africa. The clave is load-bearing architecture, but it does not need to be visible.
 
 ## Music theory note
 
@@ -76,13 +76,13 @@ This is related to the concept of a **ghost note** in jazz and funk drumming: a 
 
 Larry Heard's *Can You Feel It* (recorded around 1986, released 1987) is one of the foundational deep house records. It uses a sparse Roland TR-909 pattern with open hats, a gentle clave-adjacent percussion part, and a slow, emotional piano. The percussion is so quiet that many listeners do not notice it explicitly but feel the groove it creates.
 
-The Roland TR-909 was released in 1983 and discontinued in 1985. By the mid-1980s secondhand units were cheap, which is one reason Chicago and Detroit producers used them heavily. The 909's kick, snare, and hi-hat sounds became the template for house and techno. Its rim sound — the dry crack you hear on this toy — was often used for auxiliary percussion roles: shakers, claves, and additional accents.
+The Roland TR-909 was released in 1983 and discontinued in 1985. By the mid-1980s secondhand units were cheap, which is one reason Chicago and Detroit producers used them heavily. The 909's kick, snare, and hi-hat sounds became the template for house and techno. Its rim sound: the dry crack you hear on this toy: was often used for auxiliary percussion roles: shakers, claves, and additional accents.
 
 ## Dance and body
 
 At a deep house night the floor is usually dark and the tempos are lower (115-120 BPM rather than the 126-128 of harder house). Dancers tend to move slower and more inward: small hip shifts, weight transfers, slow arm movements. The implied clave gives those movements a shape that an even kick and hat pattern alone would not.
 
-Try moving slowly to the patch at a low tempo. Let your hip move on each clave hit, even though the rim is quiet. After a few bars your body will start to anticipate the hits. That anticipation — filling in a pattern your ears half-hear — is a version of what dancers call "finding the pocket."
+Try moving slowly to the patch at a low tempo. Let your hip move on each clave hit, even though the rim is quiet. After a few bars your body will start to anticipate the hits. That anticipation: filling in a pattern your ears half-hear: is a version of what dancers call "finding the pocket."
 
 ## Self-test
 
@@ -90,7 +90,7 @@ Without looking back: what is a ghost note, and how does the low-gain rim in thi
 
 ## Next
 
-- Spine: [Stage 3 — The clave](/journey/3/clave)
+- Spine: [Stage 3: The clave](/journey/3/clave)
 - Other branches:
-  - [Afrobeat clave — Tony Allen and Fela Kuti](/journey/3/branches/afro-house/afrobeat-clave)
-  - [2-step clave — UK garage kick shove](/journey/3/branches/garage/2-step-clave)
+  - [Afrobeat clave: Tony Allen and Fela Kuti](/journey/3/branches/afro-house/afrobeat-clave)
+  - [2-step clave: UK garage kick shove](/journey/3/branches/garage/2-step-clave)

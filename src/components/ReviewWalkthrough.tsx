@@ -152,7 +152,7 @@ export default function ReviewWalkthrough({ index, initialDue, onExit }: Props) 
       {/* Header row */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <p className="text-sm text-muted" aria-live="polite" aria-atomic="true">
-          {positionLabel} &mdash; {kindLabel(currentRef.kind)} &mdash;{' '}
+          {positionLabel}: {kindLabel(currentRef.kind)}:{' '}
           <span className="font-medium text-fg">{currentRef.source.title}</span>
         </p>
         <button
@@ -164,7 +164,7 @@ export default function ReviewWalkthrough({ index, initialDue, onExit }: Props) 
         </button>
       </div>
 
-      {/* Embedded item — keyed by itemId so React fully remounts on advance */}
+      {/* Embedded item: keyed by itemId so React fully remounts on advance */}
       <div key={currentRef.itemId}>
         {currentRef.kind === 'quiz' && (
           <Quiz quiz={currentRef.item as QuizT} />

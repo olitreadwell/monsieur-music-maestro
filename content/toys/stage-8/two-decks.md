@@ -1,7 +1,7 @@
 ---
 id: stage-8-two-decks
 stage: 8
-title: Two decks — the DJ mental model
+title: "Two decks: the DJ mental model"
 type: takeapart
 difficulty: stretch
 branch: spine
@@ -38,7 +38,7 @@ For Strudel patterns, BPM and CPM are related. One cycle in Strudel is one bar (
 **The EQ swap**: in a real DJ mix, the DJ cuts the bass (low EQ) on the incoming track while the outgoing track is still playing, then swaps: fade in incoming bass, fade out outgoing bass. This prevents two basslines clashing. In the code, the incoming track has its bass element commented out at first, then you manually add it as you remove it from the outgoing track.
 
 ```strudel
-// Track A (outgoing) — the track already playing.
+// Track A (outgoing): the track already playing.
 // This is what the crowd hears before the mix.
 stack(
   s("bd*4").bank("RolandTR909"),
@@ -51,18 +51,18 @@ stack(
 ```
 
 ```strudel
-// Track B (incoming) — the track the DJ is cueing.
+// Track B (incoming): the track the DJ is cueing.
 // Run this alongside Track A (open two strudel.cc tabs).
 // To simulate an EQ swap: remove Track A's bass, add Track B's bass.
 stack(
   s("bd*4").bank("RolandTR909"),
   s("~ cp ~ cp").bank("RolandTR909").gain(0.6),
   s("hh*16").bank("RolandTR909").gain(0.4), // busier hats: different feel
-  // bass commented out — you bring this in as you fade out Track A's bass:
+  // bass commented out: you bring this in as you fade out Track A's bass:
   // note("f2 ~ ~ ab2 ~ ~ c3 ~").s("sawtooth").lpf(700).gain(0.6),
   note("<f2ab2c3 eb2g2bb2 db2f2ab2 c2eb2g2>")
     .s("piano").slow(2).room(0.3).gain(0.5)
-).cpm(32) // same tempo — beatmatched
+).cpm(32) // same tempo: beatmatched
 ```
 
 ## Try it

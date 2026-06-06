@@ -13,7 +13,7 @@ estimate_min: 12
 
 A kick that moves. In **UK garage** (late 1990s London) the four-on-the-floor kick is broken apart. Instead of four steady kicks per bar you get a syncopated, skipping pattern with gaps where the kick "should" be. That pattern is called **2-step**: two main kick placements per bar, offset and staggered so they do not land on every beat.
 
-Now put the clave over that. The clave was designed to be an anchor. When the kick itself is syncopated, the clave does not just sit over the groove — it shoves the kick sideways, making it feel like the music is always about to stumble but never does.
+Now put the clave over that. The clave was designed to be an anchor. When the kick itself is syncopated, the clave does not just sit over the groove: it shoves the kick sideways, making it feel like the music is always about to stumble but never does.
 
 ## How to read the code
 
@@ -44,7 +44,7 @@ Compared to four-on-the-floor (`bd ~ ~ ~ bd ~ ~ ~ bd ~ ~ ~ bd ~ ~ ~`), the 2-ste
 
 ```strudel
 // UK garage 2-step kick with clave shove.
-// The kick does NOT land on every beat — 2-step skips and lurches.
+// The kick does NOT land on every beat: 2-step skips and lurches.
 // The clave 3-2 lands against the irregular kick, creating tension.
 // [bd ~] = squeeze kick + rest into one step: a half-step push.
 stack(
@@ -70,15 +70,15 @@ stack(
 
 This is a challenge toy. The task is not just to play the patch but to make the clave and the kick **work together** by ear. Paste in [strudel.cc](https://strudel.cc) and try these steps:
 
-**Step 1 — Hear the problem.** Play the full patch. The clave and kick hit on some of the same steps (step 1, step 10 area). Notice where they collide — the moments that feel busy. Notice where they open up.
+**Step 1: Hear the problem.** Play the full patch. The clave and kick hit on some of the same steps (step 1, step 10 area). Notice where they collide: the moments that feel busy. Notice where they open up.
 
-**Step 2 — Remove the clave line.** Just the 2-step kick, backbeat clap, and hats. Does it feel lighter? Does it feel like something is missing?
+**Step 2: Remove the clave line.** Just the 2-step kick, backbeat clap, and hats. Does it feel lighter? Does it feel like something is missing?
 
-**Step 3 — Re-add the clave but flip it to 2-3.** Change the clave string to `"~ ~ cp ~ cp ~ ~ ~ cp ~ ~ cp ~ ~ cp ~"`. Does the 2-3 direction clash more or less with the 2-step kick than 3-2?
+**Step 3: Re-add the clave but flip it to 2-3.** Change the clave string to `"~ ~ cp ~ cp ~ ~ ~ cp ~ ~ cp ~ ~ cp ~"`. Does the 2-3 direction clash more or less with the 2-step kick than 3-2?
 
-**Step 4 — Write your own kick.** Delete the current kick string and try placing kicks at different positions. Your goal: four to five kicks per bar, no two consecutive steps, at least one kick that falls on an "off" position (not steps 1, 5, 9, 13). Can you make it still feel like a groove and not just random?
+**Step 4: Write your own kick.** Delete the current kick string and try placing kicks at different positions. Your goal: four to five kicks per bar, no two consecutive steps, at least one kick that falls on an "off" position (not steps 1, 5, 9, 13). Can you make it still feel like a groove and not just random?
 
-**Step 5 — Lower the clave gain until it glues.** Try gain values of `0.3`, `0.2`, `0.15`. At what point does the clave stop being a competing voice and start being the invisible structure?
+**Step 5: Lower the clave gain until it glues.** Try gain values of `0.3`, `0.2`, `0.15`. At what point does the clave stop being a competing voice and start being the invisible structure?
 
 ## In the world
 
@@ -86,7 +86,7 @@ UK garage emerged in London in the mid-to-late 1990s. It grew from US garage hou
 
 Key producers and artists: **MJ Cole**, whose productions in the late 1990s (the *Sincere* EP, the *MJ Cole Presents Crazy Love* compilation) helped define the sound; **Todd Edwards**, an American producer who recorded chopped, sped-up vocal loops that became a signature garage texture; **Artful Dodger**, whose "Re-Rewind (Find Out Soon)" (1999, featuring Craig David) brought the garage sound to mainstream UK radio.
 
-The 2-step name comes from the kick pattern: instead of four on the floor you get two main placements per bar, with additional kicks and ghost kicks filling the gaps. The dancers at UK garage nights moved with a specific shuffle — small quick steps on the off-beat, weight rolling between feet — that was choreographed around the irregular kick placement.
+The 2-step name comes from the kick pattern: instead of four on the floor you get two main placements per bar, with additional kicks and ghost kicks filling the gaps. The dancers at UK garage nights moved with a specific shuffle: small quick steps on the off-beat, weight rolling between feet: that was choreographed around the irregular kick placement.
 
 ## Music theory note
 
@@ -102,7 +102,7 @@ The 2-step kick pattern in UK garage is generally associated with the period rou
 
 Todd Edwards, though American (New Jersey), had significant influence on UK garage through his distinctive production style and releases on UK labels. His vocal-chop technique, where small fragments of a singer's voice are looped and rearranged as percussion, became an important element of the genre. Daft Punk cited him as an influence on their *Discovery* album (2001).
 
-MJ Cole (real name Matt Coleman) studied jazz at university, which may account for the harmonic sophistication of some UK garage productions — the genre often used jazz-inflected chord progressions under the syncopated beats. That jazz-clave-over-syncopated-kick chain connects back to Mario Bauzá and the Afro-Cuban jazz of the 1940s, though the UK garage producers were not necessarily aware of that lineage.
+MJ Cole (real name Matt Coleman) studied jazz at university, which may account for the harmonic sophistication of some UK garage productions: the genre often used jazz-inflected chord progressions under the syncopated beats. That jazz-clave-over-syncopated-kick chain connects back to Mario Bauzá and the Afro-Cuban jazz of the 1940s, though the UK garage producers were not necessarily aware of that lineage.
 
 ## Dance and body
 
@@ -116,7 +116,7 @@ Without looking back: what does "rhythmic counterpoint" mean when applied to dru
 
 ## Next
 
-- Spine: [Stage 3 — The clave](/journey/3/clave)
+- Spine: [Stage 3: The clave](/journey/3/clave)
 - Other branches:
-  - [Afrobeat clave — Tony Allen and Fela Kuti](/journey/3/branches/afro-house/afrobeat-clave)
-  - [909 clave — sparse deep house rim](/journey/3/branches/deep/909-clave)
+  - [Afrobeat clave: Tony Allen and Fela Kuti](/journey/3/branches/afro-house/afrobeat-clave)
+  - [909 clave: sparse deep house rim](/journey/3/branches/deep/909-clave)

@@ -11,7 +11,7 @@ estimate_min: 5
 
 ## What you're listening for
 
-Every dance song has a "1." It is the beat the music leans into, the moment of arrival, the place a dancer plants their weight. You do not count to it consciously — you feel it before you know why.
+Every dance song has a "1." It is the beat the music leans into, the moment of arrival, the place a dancer plants their weight. You do not count to it consciously: you feel it before you know why.
 
 You are going to learn to find it deliberately, so that when you are on a dance floor or behind a mixer, you can locate it on demand.
 
@@ -67,4 +67,4 @@ Play any song and find the "1" within 8 seconds. Tap it and count along for 16 b
 
 ## Next
 
-- Spine: [Play — your first Strudel pattern](/journey/0/play)
+- Spine: [Play: your first Strudel pattern](/journey/0/play)

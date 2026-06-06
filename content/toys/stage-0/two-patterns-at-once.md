@@ -11,7 +11,7 @@ estimate_min: 5
 
 ## What you're listening for
 
-**Layered voices** — two rhythmic patterns playing at the same time, each on its own sounds. When you hear a kick underneath a clap, those are two separate rhythmic lines running in parallel. In music theory, this is called **rhythmic polyphony**: "poly" means many, "phony" means voices.
+**Layered voices**: two rhythmic patterns playing at the same time, each on its own sounds. When you hear a kick underneath a clap, those are two separate rhythmic lines running in parallel. In music theory, this is called **rhythmic polyphony**: "poly" means many, "phony" means voices.
 
 A single `s("bd hh sd hh")` is one voice. Two voices stacked together is the first step toward a real drum arrangement.
 
@@ -41,13 +41,13 @@ Open [strudel.cc](https://strudel.cc). Paste the code. Cmd+Enter plays, Cmd+. st
 Now break it:
 
 - Listen once to `s("bd hh, sd cp")`. Now listen to `s("bd hh")` alone (remove `, sd cp`). Then `s("sd cp")` alone. Now put both together again. Your ear should be able to separate the two voices even when layered.
-- Add a third voice: `s("bd hh, sd cp, oh*4")`. Three voices at once. `oh*4` is "open hi-hat, four times per bar" — the `*4` shorthand is from the Pulse toy.
+- Add a third voice: `s("bd hh, sd cp, oh*4")`. Three voices at once. `oh*4` is "open hi-hat, four times per bar": the `*4` shorthand is from the Pulse toy.
 - Try `s("bd*4, cp*2")`. Four kicks and two claps. Where do the claps land? Count them: they land on beats 1 and 3.
 - Try `s("bd*4, ~ cp ~ cp")`. The `~` is silence, introduced in Stage 2, but try it here. A `~` in a slot means "no sound in this slot." This pattern plays: kick on every beat, clap only on beats 2 and 4. That is the house backbeat.
 
 ## In the world
 
-Every drum arrangement ever recorded is a set of layered voices. A live drummer plays kick, snare, and hi-hat all at once — three voices from one person. A drum machine separates them into independent channels, each programmable. The comma in Strudel mirrors that channel separation.
+Every drum arrangement ever recorded is a set of layered voices. A live drummer plays kick, snare, and hi-hat all at once: three voices from one person. A drum machine separates them into independent channels, each programmable. The comma in Strudel mirrors that channel separation.
 
 In a club, the DJ's monitor sends the kick into the floor and the clap into the air. These two timbres hit your body differently because they are different voices, even at the same tempo.
 
@@ -65,7 +65,7 @@ Drum machines like the Roland TR-909 made separate programming of each voice sta
 
 ## Dance and body
 
-Try moving to both voices at once. Step your feet on the kick (beats 1, 2, 3, 4). Clap your hands on the clap (beats 2 and 4 in the `~ cp ~ cp` version). Now your body is playing both voices physically. That split — feet steady, hands on the backbeat — is the fundamental physical grammar of dance to house music.
+Try moving to both voices at once. Step your feet on the kick (beats 1, 2, 3, 4). Clap your hands on the clap (beats 2 and 4 in the `~ cp ~ cp` version). Now your body is playing both voices physically. That split: feet steady, hands on the backbeat: is the fundamental physical grammar of dance to house music.
 
 ## Self-test
 
@@ -73,5 +73,5 @@ Without looking back: what does a comma do inside a Strudel pattern string?
 
 ## Next
 
-- Spine: [Stage 1 — Pulse](/journey/1/pulse)
+- Spine: [Stage 1: Pulse](/journey/1/pulse)
 - Side-quests in Stage 0: [Explore sounds](/journey/0/explore-sounds)

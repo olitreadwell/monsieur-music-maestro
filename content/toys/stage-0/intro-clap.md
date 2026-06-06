@@ -49,7 +49,7 @@ In all three cases, the people clapping are making music, not just responding to
 
 **Rhythm**: the pattern of when sounds happen and when they do not. Rhythm is the arrangement of time.
 
-Every piece of music has rhythm. Even a single sustained note has rhythm — it starts somewhere and stops somewhere, and those moments are rhythmic events.
+Every piece of music has rhythm. Even a single sustained note has rhythm: it starts somewhere and stops somewhere, and those moments are rhythmic events.
 
 The word comes from the Greek *rhythmos*, meaning "measured motion." The ancient Greeks applied it to walking and dancing, not just music.
 
@@ -73,4 +73,4 @@ Clap a four-count with your eyes closed for 16 beats (four full repetitions of "
 
 ## Next
 
-- [Find the one — locating the strong beat in any song](/journey/0/intro-find-the-one)
+- [Find the one: locating the strong beat in any song](/journey/0/intro-find-the-one)

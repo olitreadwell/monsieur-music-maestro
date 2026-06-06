@@ -33,7 +33,7 @@ export async function generateMetadata({
   }
   const toy = await getToy(stageNumber, slug);
   if (!toy) return { title: 'Not found' };
-  return { title: `${toy.title} — Stage ${toy.stage} — monsieur music maestro` };
+  return { title: `${toy.title}: Stage ${toy.stage} - monsieur music maestro` };
 }
 
 function getSpineOrder(toys: Toy[]): Toy[] {

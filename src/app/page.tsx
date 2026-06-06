@@ -3,7 +3,7 @@ import { getTree, STAGE_TITLES } from '@/lib/toys';
 import StageProgress from '@/components/StageProgress';
 import TreeRow from '@/components/TreeRow';
 
-export const metadata = { title: 'monsieur music maestro — the journey' };
+export const metadata = { title: 'monsieur music maestro: the journey' };
 
 export default async function Home() {
   const tree = await getTree();
@@ -51,7 +51,7 @@ export default async function Home() {
                   href={`/journey/${stage.number}`}
                   className="hover:text-accent transition"
                 >
-                  Stage {stage.number} — {title}
+                  Stage {stage.number}: {title}
                 </Link>
                 <StageProgress stage={stage} />
               </div>

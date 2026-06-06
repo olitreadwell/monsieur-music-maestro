@@ -10,7 +10,7 @@ intro: |
   This set looks at polyrhythm through three traditions: Ewe drumming
   from coastal West Africa, Cuban son and rumba, and South Indian
   Carnatic tala. The clave you've already met is one specific kind of
-  polyrhythm — here you'll see the bigger family.
+  polyrhythm: here you'll see the bigger family.
 toyIds:
   - stage-3-clave
   - stage-3-tresillo
@@ -66,7 +66,7 @@ They argue. The argument is the music.
 
 ## What you'll meet
 
-**West Africa — Ewe drumming (coastal Ghana, Togo, Benin)**
+**West Africa: Ewe drumming (coastal Ghana, Togo, Benin)**
 
 The Ewe people have a long tradition of master-drummer ensembles where
 each drummer plays a different rhythmic role. A gankogui (a double iron
@@ -77,7 +77,7 @@ responses that cross the underlying patterns. The whole ensemble is
 polyrhythm by design. Search "Ewe Agbadza" or read about C K Ladzekpo's
 teaching at UC Berkeley.
 
-**Cuba — son and rumba**
+**Cuba: son and rumba**
 
 The clave you've met is one polyrhythmic pattern. In Cuban rumba
 (particularly guaguancó), the clave plays against tumbadoras (conga
@@ -86,9 +86,9 @@ Each drummer locks to the clave but plays a pattern with different
 grouping. The dance moves are themselves a rhythm: the dancer's feet
 say one thing while the shoulders say another.
 
-**India — Carnatic tala**
+**India: Carnatic tala**
 
-Carnatic music (South India) organises time into talas — rhythmic
+Carnatic music (South India) organises time into talas: rhythmic
 cycles. Adi tala is 8 beats. Rupaka is 6. Misra Chapu is 7 (3 + 4).
 The mridangam drummer plays patterns that span multiple talas, cross
 through them, and resolve precisely on beat 1 of the next cycle. The
@@ -96,7 +96,7 @@ calculation involved is enormous; the listening is meditative.
 
 ## What ties them together
 
-The 3-against-2 polyrhythm — three even strokes in the time of two —
+The 3-against-2 polyrhythm (three even strokes in the time of two)
 shows up in every one of these traditions. It is one of the most
 universal rhythmic ideas in human music. The clave's 3-side is a 3,
 the 2-side is a 2. The Ewe bell pattern's accent pattern is 3-2-3-2.
@@ -111,5 +111,5 @@ surdo) to a Brahms symphony to a J Dilla beat.
 
 The three toys below (clave, tresillo, 2-3 flip) are about Cuban
 clave specifically. After running through them, come back here and do
-the final review — the quizzes and challenge widen the lens to the
+the final review: the quizzes and challenge widen the lens to the
 three traditions named above.

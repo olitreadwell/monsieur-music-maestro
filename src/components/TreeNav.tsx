@@ -37,7 +37,7 @@ export default function TreeNav({ tree, currentId }: TreeNavProps) {
         return (
           <div key={stage.number} className="mb-4">
             <div className="text-xs uppercase tracking-wide opacity-60 mb-1">
-              Stage {stage.number} — {STAGE_TITLES[stage.number]}
+              Stage {stage.number}: {STAGE_TITLES[stage.number]}
             </div>
 
             {stage.spine.map((toy) => {

@@ -46,7 +46,7 @@ finalReview:
     Did your body find it without counting? Describe what it felt like.
 ---
 
-# Foundations — the bones of a beat
+# Foundations: the bones of a beat
 
 This first set is about getting comfortable enough with rhythm that you can
 start to hear deliberately. You will press play. You will count to four.
@@ -55,9 +55,9 @@ to find the "one" of any house, pop, or rock track without thinking.
 
 The three toys below walk you through:
 
-1. **Play** — pressing play, hearing four sounds in a row, swapping one out.
-2. **The pulse** — the steady kick that defines house and most dance music.
-3. **Hats and clap** — adding the backbeat that makes you nod your head.
+1. **Play**: pressing play, hearing four sounds in a row, swapping one out.
+2. **The pulse**: the steady kick that defines house and most dance music.
+3. **Hats and clap**: adding the backbeat that makes you nod your head.
 
 Take them in order. Do the "I read this" button at the bottom of each page.
 When you've done all three, come back here and do the final review.

@@ -93,7 +93,7 @@ montuno section is what you remember from the song.
 Sabar is a family of drums played in Senegal and parts of Gambia. A
 sabar ensemble can have one master drummer and four or five players;
 the master drummer "calls" phrases on his drum, and the ensemble
-"answers". The phrases are not random — they are part of a shared
+"answers". The phrases are not random: they are part of a shared
 vocabulary, and a knowledgeable listener (or dancer) can recognise the
 call. Doudou N'Diaye Rose (1930 to 2015) was the most internationally
 known sabar master of the 20th century. His descendants and students
@@ -104,7 +104,7 @@ pop genre, on the sabar's call-and-response rhythms.
 
 In all three: the second voice is structurally as important as the
 first. The "answer" is not a follow-up; it's half of the music. Without
-the response, there is no music — only a question hanging in the air.
+the response, there is no music: only a question hanging in the air.
 This is a different model of music-making than the Western
 concert-hall solo-performer-and-silent-audience model. It's
 participatory. The dancers are part of the band.

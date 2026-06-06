@@ -1,6 +1,6 @@
 ---
 slug: persian-classical
-title: Persian classical music — dastgah and radif
+title: "Persian classical music: dastgah and radif"
 format: cultural-deep-dive
 intro: |
   Persian classical music is one of the world's oldest continuous
@@ -18,7 +18,7 @@ finalReview:
       question: "What is a dastgah?"
       options:
         - "A type of drum."
-        - "A modal system in Persian classical music — like a scale, but with memorised melodic phrases, emotional character, and improvisation rules attached."
+        - "A modal system in Persian classical music: like a scale, but with memorised melodic phrases, emotional character, and improvisation rules attached."
         - "A song form."
         - "A dance."
       correctAnswerIndex: 1
@@ -40,7 +40,7 @@ finalReview:
       explanation: "The tar (long-necked lute), setar (4-stringed long-necked lute), santur (hammered dulcimer), kamancheh (bowed spike fiddle), ney (end-blown flute), tonbak (goblet drum, also called zarb), and daf (large frame drum) are core to Persian classical music."
   challenges: []
   openPrompt: |
-    Search YouTube for "Shajarian Mahour" (or any dastgah name — try
+    Search YouTube for "Shajarian Mahour" (or any dastgah name: try
     "Shur", "Homayun", or "Segah"). Listen for at least 5 minutes. The
     music breathes very differently to Western pop. There is no fixed
     bar. The singer pauses where they want. The instrumentalists answer
@@ -48,7 +48,7 @@ finalReview:
     or faster than it actually was?
 ---
 
-# Persian classical music — dastgah and radif
+# Persian classical music: dastgah and radif
 
 Persian classical music is among the world's oldest continuously
 practised musical traditions. It has roots in pre-Islamic court music

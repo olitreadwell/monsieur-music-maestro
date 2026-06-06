@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const set = await getLessonSet(slug);
   if (!set) return {};
-  return { title: `Final review: ${set.title} — monsieur music maestro` };
+  return { title: `Final review: ${set.title} - monsieur music maestro` };
 }
 
 export default async function LessonSetReviewPage({

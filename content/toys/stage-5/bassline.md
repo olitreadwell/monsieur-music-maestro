@@ -105,7 +105,7 @@ What is the difference between `eb2` and `e2`? Which sounds darker, and why?
 
 ## Next
 
-- Spine: [Stage 6 — The colour](/journey/6/chords-stab)
+- Spine: [Stage 6: The colour](/journey/6/chords-stab)
 - Side-quests:
   - [Sub vs mid bass](/journey/5/sub-vs-mid)
   - [Off-beat bass](/journey/5/off-beat-bass)

@@ -1,7 +1,7 @@
 ---
 id: stage-6-minor-vs-major
 stage: 6
-title: Minor vs major — change one note
+title: "Minor vs major: change one note"
 type: mutate
 difficulty: easy
 branch: side-quest
@@ -63,7 +63,7 @@ Now break it:
 
 ## In the world
 
-House music leans minor. Deep house in particular — tracks by Larry Heard (Mr Fingers), Kerri Chandler, and early UK house producers in the early 1990s — favours minor chords that feel melancholy and contemplative. This is partly a blues inheritance: minor modes carry a long history of expressive depth from blues through soul through disco into house.
+House music leans minor. Deep house in particular: tracks by Larry Heard (Mr Fingers), Kerri Chandler, and early UK house producers in the early 1990s: favours minor chords that feel melancholy and contemplative. This is partly a blues inheritance: minor modes carry a long history of expressive depth from blues through soul through disco into house.
 
 Joe Smooth's "Promised Land" (1987) is a clear example of major-key house. The gospel-inflected chords and major harmony give it a feeling of uplift rather than ache. Compare it to a Larry Heard deep house track in the same era and you hear the full emotional range that the minor/major choice controls.
 
@@ -95,5 +95,5 @@ Without looking back: how many semitones separate a minor third from a major thi
 
 ## Next
 
-- Return to spine: [Stage 7 — Shape](/journey/7/intro-build-drop)
+- Return to spine: [Stage 7: Shape](/journey/7/intro-build-drop)
 - Other side-quest: [The pad](/journey/6/pad)

@@ -1,7 +1,7 @@
 ---
 id: stage-7-deep-long-build
 stage: 7
-title: Deep house — the slow build
+title: "Deep house: the slow build"
 type: mutate
 difficulty: stretch
 branch: deep

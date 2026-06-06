@@ -28,8 +28,8 @@ This toy puts two versions of the same bassline in the same stack so you can hea
 
 ```strudel
 // Two basslines, same pitches, different filter settings.
-// Line 1: sub-bass — very low cutoff keeps only the fundamental.
-// Line 2: mid-bass — higher cutoff keeps harmonics for presence.
+// Line 1: sub-bass: very low cutoff keeps only the fundamental.
+// Line 2: mid-bass: higher cutoff keeps harmonics for presence.
 //
 // note(...)       = pitched note sequence.
 // c1              = C in octave 1 (very low, sub range).

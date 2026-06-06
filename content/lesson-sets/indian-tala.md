@@ -1,6 +1,6 @@
 ---
 slug: indian-tala
-title: Indian tala — Hindustani and Carnatic rhythm cycles
+title: "Indian tala: Hindustani and Carnatic rhythm cycles"
 format: concept-across-cultures
 intro: |
   Indian classical music organises time into cycles called tala (or
@@ -49,7 +49,7 @@ finalReview:
     end?
 ---
 
-# Indian tala — Hindustani and Carnatic rhythm cycles
+# Indian tala: Hindustani and Carnatic rhythm cycles
 
 Indian classical music has two main living traditions: **Hindustani**
 (roughly North India, including Pakistan and Bangladesh) and
@@ -59,7 +59,7 @@ cyclic rhythm pattern. The whole piece returns to the beginning of the
 cycle, called **sam**, again and again. Drummer, singer, and dancer
 all share the cycle.
 
-## Hindustani — Teen taal (Tintal): 16 beats
+## Hindustani: Teen taal (Tintal): 16 beats
 
 Teen taal is the most common Hindustani tala. It is 16 beats
 (matras) divided into four sections (vibhags) of 4 beats each:
@@ -77,7 +77,7 @@ tabla. The way the soloist and the tabla player conspire across the
 cycle, sometimes deliberately crossing it before resolving back to
 sam, is the magic.
 
-## Carnatic — Adi tala: 8 beats
+## Carnatic: Adi tala: 8 beats
 
 Adi tala is the South Indian equivalent in popularity. It is 8 beats
 divided 4 + 2 + 2. The drum that plays it is the **mridangam**

@@ -27,11 +27,11 @@ Find any song you love. Play 30 seconds of it.
 
 Then press pause and sit in silence for 30 seconds.
 
-Notice the difference: the song is arrangement. The silence is the absence of arrangement. Both are part of music — silence is not nothing. It is the space that gives sounds their shape.
+Notice the difference: the song is arrangement. The silence is the absence of arrangement. Both are part of music: silence is not nothing. It is the space that gives sounds their shape.
 
 ## In the world
 
-Every culture organises sound. Javanese gamelan, Indian raga, West African drumming, Andean pan pipes, Japanese koto, gospel choir, house music — these are all different answers to the same question: how do you arrange sound in time so it means something to a human body?
+Every culture organises sound. Javanese gamelan, Indian raga, West African drumming, Andean pan pipes, Japanese koto, gospel choir, house music: these are all different answers to the same question: how do you arrange sound in time so it means something to a human body?
 
 You will meet many of these answers on this site. None is more correct than the others. Each grew from a particular place, time, and community of people.
 
@@ -41,7 +41,7 @@ Two words worth holding onto:
 
 **Timbre** (pronounced "TAM-ber"): the colour of a sound. A violin and a trumpet playing the same note sound different. That difference is timbre. It comes from the physical shape of the instrument and how it vibrates.
 
-**Silence**: an absence of sound that is still part of music. Composers and producers use silence the same way they use notes — to create tension, relief, space, and surprise.
+**Silence**: an absence of sound that is still part of music. Composers and producers use silence the same way they use notes: to create tension, relief, space, and surprise.
 
 ## History
 
@@ -63,4 +63,4 @@ What is the difference between sound and music?
 
 ## Next
 
-- [Clap — producing rhythm with your body](/journey/0/intro-clap)
+- [Clap: producing rhythm with your body](/journey/0/intro-clap)

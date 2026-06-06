@@ -11,7 +11,7 @@ estimate_min: 10
 
 ## What you're listening for
 
-**Swing feel** — when the eighth notes between beats are not evenly spaced. In straight time, "one-AND-two-AND" divides each beat in half. In swung time, the first eighth note is a little longer and the second is a little shorter, giving the pattern a lopsided, rolling quality. That unevenness is what musicians call **shuffle** or **swing**.
+**Swing feel**: when the eighth notes between beats are not evenly spaced. In straight time, "one-AND-two-AND" divides each beat in half. In swung time, the first eighth note is a little longer and the second is a little shorter, giving the pattern a lopsided, rolling quality. That unevenness is what musicians call **shuffle** or **swing**.
 
 Compare: straight hats feel mechanical, relentless. Swung hats feel like someone is playing them.
 
@@ -21,7 +21,7 @@ You already know `s(...)`, `hh*8`, the comma `,`, `.bank(...)`, and `bd*4` and `
 
 This toy introduces one new method: `.swing(N)`.
 
-- `.swing(N)` shifts every second subdivision slightly later in time, creating the swing feel. `N` is a value between 0 and 1, where 0 is perfectly straight and 0.5 is a very strong swing (a "triplet feel" where the beat is divided into three equal parts and the second lands on the third). A value around 0.15 to 0.25 gives a light shuffle — enough to feel but not cartoonish.
+- `.swing(N)` shifts every second subdivision slightly later in time, creating the swing feel. `N` is a value between 0 and 1, where 0 is perfectly straight and 0.5 is a very strong swing (a "triplet feel" where the beat is divided into three equal parts and the second lands on the third). A value around 0.15 to 0.25 gives a light shuffle: enough to feel but not cartoonish.
 
 Note: `.swing()` is a live parameter and the exact range and feel depends on your Strudel version. If `.swing(0.2)` sounds too subtle, try `.swing(0.3)`. If it sounds wrong, try `.swing(0.15)`. Tune by ear.
 
@@ -45,15 +45,15 @@ Open [strudel.cc](https://strudel.cc). Paste the code. Cmd+Enter plays, Cmd+. st
 Now break it:
 
 - Compare `.swing(0)` (perfectly straight) with `.swing(0.2)`. Your ear should catch the change in the hats. The kick and clap feel it too, but the hats make it obvious.
-- Try `.swing(0.4)`. Very swung — almost dotted-note feel.
+- Try `.swing(0.4)`. Very swung: almost dotted-note feel.
 - Try `.swing(0.15)`. Subtle. Some producers call this "humanising" the grid.
 - Try removing the kick and clap: `s("hh*8").bank("RolandTR909").swing(0.2)`. Just the hats. Now you can really hear the lopsided eighth notes.
 
 ## In the world
 
-Swing is one of the most important feels in Western popular music. Jazz rhythm sections in the 1920s and 1930s swung every eighth note as standard practice. Funk drummers in the 1970s used a lighter shuffle to give grooves a forward lean. UK garage in the 1990s built its "2-step" feel by shifting the hi-hat off the straight eighth note grid — a swing that became the signature of the genre.
+Swing is one of the most important feels in Western popular music. Jazz rhythm sections in the 1920s and 1930s swung every eighth note as standard practice. Funk drummers in the 1970s used a lighter shuffle to give grooves a forward lean. UK garage in the 1990s built its "2-step" feel by shifting the hi-hat off the straight eighth note grid: a swing that became the signature of the genre.
 
-House music is often straight-quantised — perfectly even hats. But some sub-genres, including deep house and certain UK house styles, use a slight shuffle to add warmth. DJ and producer Larry Heard's early recordings from Chicago in the mid-1980s sometimes have this quality, though debates continue about whether it was deliberate or a product of the machines.
+House music is often straight-quantised: perfectly even hats. But some sub-genres, including deep house and certain UK house styles, use a slight shuffle to add warmth. DJ and producer Larry Heard's early recordings from Chicago in the mid-1980s sometimes have this quality, though debates continue about whether it was deliberate or a product of the machines.
 
 ## Music theory note
 
@@ -81,5 +81,5 @@ Without looking back: what does `.swing(N)` do to the pattern, and what value gi
 
 ## Next
 
-- Spine: [Stage 3 — Clave](/journey/3/clave)
+- Spine: [Stage 3: Clave](/journey/3/clave)
 - Side-quests in Stage 2: [Open vs closed hats](/journey/2/open-vs-closed-hats), [Hats and clap](/journey/2/hats-clap)
