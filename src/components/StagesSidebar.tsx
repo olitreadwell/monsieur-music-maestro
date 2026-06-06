@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import type { Tree } from '@/lib/toys';
 import { useProgress } from '@/lib/progress';
@@ -23,8 +22,6 @@ interface StagesSidebarProps {
 }
 
 export default function StagesSidebar({ tree }: StagesSidebarProps) {
-  const pathname = usePathname();
-  const showOnPage = /^\/journey\/\d+\/.+/.test(pathname ?? '');
   const [open, setOpen] = useState(false);
   const { progress } = useProgress();
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -46,8 +43,6 @@ export default function StagesSidebar({ tree }: StagesSidebarProps) {
       document.body.style.overflow = '';
     };
   }, [open]);
-
-  if (!showOnPage) return null;
 
   return (
     <>

@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
 import DropdownNav from '@/components/DropdownNav';
 import PlaygroundSidebar from '@/components/PlaygroundSidebar';
-import StagesSidebar from '@/components/StagesSidebar';
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
-import { getTree } from '@/lib/toys';
 import './globals.css';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -22,8 +20,7 @@ export const viewport: Viewport = {
   themeColor: '#0a0a0a',
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const tree = await getTree();
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}>
       <head>
@@ -44,7 +41,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           Skip to content
         </a>
-        <StagesSidebar tree={tree} />
         <div className="fixed top-4 right-4 z-50 lg:right-[calc(28rem+1rem)]">
           <DropdownNav />
         </div>
