@@ -8,6 +8,7 @@ import { getTree, getToy, STAGE_TITLES } from '@/lib/toys';
 import type { Toy } from '@/lib/toys';
 import StrudelEmbed from '@/components/StrudelEmbed';
 import TreeNav from '@/components/TreeNav';
+import ReadButton from '@/components/ReadButton';
 
 export async function generateStaticParams() {
   const tree = await getTree();
@@ -116,6 +117,10 @@ export default async function ToyPage({
               {toy.body}
             </ReactMarkdown>
           </article>
+
+          <div className="mt-12 pt-8 border-t border-fg/10">
+            <ReadButton toyId={toy.id} />
+          </div>
 
           <nav className="mt-12 flex justify-between text-sm">
             {prev ? (
