@@ -15,9 +15,11 @@ type StrudelEditorEl = HTMLElement & {
   };
 };
 
+const DESKTOP_OPEN_KEY = 'mmm:playground-open';
+
 export default function PlaygroundSidebar() {
-  // Mobile-only toggle. On lg+ the sidebar is always visible.
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [desktopOpen, setDesktopOpen] = useState(true);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const editorRef = useRef<StrudelEditorEl | null>(null);
@@ -124,6 +126,23 @@ export default function PlaygroundSidebar() {
   }, []);
 
   useEffect(() => {
+    try {
+      const saved = localStorage.getItem(DESKTOP_OPEN_KEY);
+      if (saved === 'false') setDesktopOpen(false);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(DESKTOP_OPEN_KEY, String(desktopOpen));
+    } catch {
+      // ignore
+    }
+  }, [desktopOpen]);
+
+  useEffect(() => {
     if (!mobileOpen) return;
     function handleKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
@@ -149,20 +168,27 @@ export default function PlaygroundSidebar() {
       });
   }
 
+  const showFloatingTrigger = !mobileOpen && !desktopOpen;
+
   return (
     <>
-      {/* Mobile-only floating trigger. Hidden on lg+. */}
-      <button
-        ref={triggerRef}
-        type="button"
-        onClick={() => setMobileOpen(true)}
-        aria-expanded={mobileOpen}
-        aria-controls="strudel-playground"
-        className="lg:hidden fixed bottom-4 right-4 z-50 text-sm font-medium px-4 py-2 rounded-full border border-rule bg-accent text-bg shadow-lg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
-      >
-        <span className="mr-1.5" aria-hidden="true">♪</span>
-        playground
-      </button>
+      {/* Floating trigger. Visible on mobile when closed; on desktop when closed. */}
+      {showFloatingTrigger && (
+        <button
+          ref={triggerRef}
+          type="button"
+          onClick={() => {
+            setMobileOpen(true);
+            setDesktopOpen(true);
+          }}
+          aria-expanded={false}
+          aria-controls="strudel-playground"
+          className="fixed bottom-4 right-4 z-50 text-sm font-medium px-4 py-2 rounded-full border border-rule bg-accent text-bg shadow-lg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+        >
+          <span className="mr-1.5" aria-hidden="true">♪</span>
+          playground
+        </button>
+      )}
 
       {/* Mobile-only backdrop. */}
       {mobileOpen && (
@@ -181,10 +207,12 @@ export default function PlaygroundSidebar() {
           'bg-zinc-900 text-fg border-l border-rule flex flex-col',
           // Mobile: fixed overlay, toggleable.
           'fixed inset-y-0 right-0 z-40 w-full sm:w-[28rem]',
-          'motion-safe:transition-transform motion-safe:duration-300',
+          'motion-safe:transition-all motion-safe:duration-300',
           mobileOpen ? 'translate-x-0' : 'translate-x-full',
-          // Desktop: in-flow column, always visible.
-          'lg:static lg:translate-x-0 lg:w-[28rem] lg:flex-shrink-0 lg:sticky lg:top-0 lg:h-screen',
+          // Desktop: in-flow column, can collapse via desktopOpen.
+          desktopOpen
+            ? 'lg:static lg:translate-x-0 lg:w-[28rem] lg:flex-shrink-0 lg:sticky lg:top-0 lg:h-screen'
+            : 'lg:static lg:w-0 lg:flex-shrink-0 lg:overflow-hidden',
         ].join(' ')}
       >
         <div className="flex items-center justify-between px-5 py-3 border-b border-rule">
@@ -199,9 +227,12 @@ export default function PlaygroundSidebar() {
             </button>
             <button
               type="button"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                setDesktopOpen(false);
+              }}
               aria-label="Close playground"
-              className="lg:hidden text-sm px-2 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              className="text-sm px-2 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               close
             </button>
