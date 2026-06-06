@@ -4,6 +4,22 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import type { Puzzle } from '@/lib/quiz';
 import { useAttempt, validatePuzzle } from '@/lib/quiz';
 
+const feedbackKeyframes = `
+@keyframes mmm-nod {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+@keyframes mmm-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-3px); }
+  40%  { transform: translateX(3px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+`;
+
 // ---------------------------------------------------------------------------
 // Reorder puzzle
 // ---------------------------------------------------------------------------
@@ -347,7 +363,8 @@ function FeedbackMessage({
       tabIndex={-1}
       className="mt-4 space-y-1 focus:outline-none"
     >
-      <p className={`font-semibold ${correct ? 'text-green-700' : 'text-red-700'}`}>
+      <style>{feedbackKeyframes}</style>
+      <p className={`font-semibold ${correct ? 'text-green-700' : 'text-red-700'} ${correct ? 'motion-safe:[animation:mmm-nod_250ms_ease-out]' : 'motion-safe:[animation:mmm-shake_280ms_ease-out]'}`}>
         {correct ? '✓ Correct' : '✗ Not quite'}
       </p>
       {explanation && <p className="text-sm text-neutral-800">{explanation}</p>}

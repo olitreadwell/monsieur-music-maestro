@@ -4,6 +4,22 @@ import { useState, useRef, useEffect } from 'react';
 import type { Challenge as ChallengeT } from '@/lib/quiz';
 import { useAttempt, validateChallenge } from '@/lib/quiz';
 
+const feedbackKeyframes = `
+@keyframes mmm-nod {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+@keyframes mmm-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-3px); }
+  40%  { transform: translateX(3px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+`;
+
 export default function Challenge({ challenge }: { challenge: ChallengeT }) {
   const { recordAttempt } = useAttempt(challenge.id);
   const [code, setCode] = useState(challenge.starterCode);
@@ -34,6 +50,7 @@ export default function Challenge({ challenge }: { challenge: ChallengeT }) {
 
   return (
     <div className="rounded-lg bg-neutral-50 p-5 mt-4 border border-neutral-200">
+      <style>{feedbackKeyframes}</style>
       <p className="text-base font-semibold mb-1">{challenge.prompt}</p>
       <p className="text-sm text-neutral-600 mb-3">{challenge.targetDescription}</p>
 
@@ -81,7 +98,7 @@ export default function Challenge({ challenge }: { challenge: ChallengeT }) {
           ref={feedbackRef}
           aria-live="polite"
           tabIndex={-1}
-          className={`mt-3 font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'}`}
+          className={`mt-3 font-semibold ${result === 'correct' ? 'text-green-700' : 'text-red-700'} ${result === 'correct' ? 'motion-safe:[animation:mmm-nod_250ms_ease-out]' : 'motion-safe:[animation:mmm-shake_280ms_ease-out]'}`}
         >
           {result === 'correct'
             ? '✓ Looks good — attempt recorded.'

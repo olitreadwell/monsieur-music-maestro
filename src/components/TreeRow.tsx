@@ -17,7 +17,8 @@ export default function TreeRow({ toy, prefix, indent = false, branchLabel }: Tr
   const readMark = isRead ? '✓' : '·';
 
   const baseClass = [
-    'block hover:text-accent transition',
+    'group block hover:text-accent transition',
+    'motion-safe:hover:bg-fg/5 motion-safe:transition-colors motion-safe:duration-150',
     indent ? 'pl-2' : '',
   ]
     .filter(Boolean)
@@ -29,7 +30,11 @@ export default function TreeRow({ toy, prefix, indent = false, branchLabel }: Tr
     <div>
       <Link href={toy.routePath} className={baseClass}>
         <span className={markClass}>{readMark}</span>{' '}
-        {prefix && <span>{prefix} </span>}
+        {prefix && (
+          <span className="inline-block motion-safe:transition-transform motion-safe:duration-150 motion-safe:group-hover:translate-x-0.5">
+            {prefix}{' '}
+          </span>
+        )}
         {branchLabel && <span>{branchLabel} · </span>}
         <span className="inline-block min-w-[20ch]">{toy.title}</span>
         <span className="text-muted">
