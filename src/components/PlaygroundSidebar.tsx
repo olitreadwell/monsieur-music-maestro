@@ -228,7 +228,7 @@ export default function PlaygroundSidebar() {
         role="complementary"
         aria-label="Strudel playground"
         className={[
-          'bg-zinc-900 text-fg border-l border-rule flex flex-col',
+          'bg-zinc-900 text-zinc-100 border-l border-rule flex flex-col',
           // Mobile: fixed overlay, toggleable.
           'fixed inset-y-0 right-0 z-40 w-full sm:w-[28rem]',
           'motion-safe:transition-all motion-safe:duration-300',
@@ -239,13 +239,12 @@ export default function PlaygroundSidebar() {
             : 'lg:static lg:w-0 lg:flex-shrink-0 lg:overflow-hidden',
         ].join(' ')}
       >
-        <div className="flex items-center justify-between px-4 py-3 border-b border-rule gap-2">
-          <h2 className="text-lg font-display italic shrink-0">Playground</h2>
+        <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-700 gap-2 shrink-0">
           <div className="flex items-center gap-1.5">
             <button
               type="button"
               onClick={handlePlay}
-              aria-label="Play the patch in the playground"
+              aria-label="Play the patch"
               className="text-xs font-medium px-2.5 py-1 rounded bg-accent text-bg hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               ▶ play
@@ -254,36 +253,33 @@ export default function PlaygroundSidebar() {
               type="button"
               onClick={handleStop}
               aria-label="Stop playback"
-              className="text-xs px-2.5 py-1 rounded border border-fg/20 hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              className="text-xs text-zinc-100 px-2.5 py-1 rounded border border-zinc-600 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               ■ stop
             </button>
             <button
               type="button"
               onClick={handlePasteFromClipboard}
-              className="text-xs px-2.5 py-1 rounded border border-fg/20 hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+              aria-label="Paste clipboard into editor"
+              className="text-xs text-zinc-100 px-2.5 py-1 rounded border border-zinc-600 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
             >
               paste
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                setMobileOpen(false);
-                setDesktopOpen(false);
-              }}
-              aria-label="Close playground"
-              className="text-xs px-2.5 py-1 rounded hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
-            >
-              close
-            </button>
           </div>
+          <button
+            type="button"
+            onClick={() => {
+              setMobileOpen(false);
+              setDesktopOpen(false);
+            }}
+            aria-label="Close playground"
+            className="text-xs text-zinc-100 px-2.5 py-1 rounded border border-zinc-600 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-safe:transition-colors"
+          >
+            close
+          </button>
         </div>
 
-        <div ref={containerRef} className="flex-1 min-h-0 overflow-auto" />
-
-        <div className="px-4 py-2 border-t border-rule text-xs text-fg/60">
-          Cmd+Enter plays · Cmd+. stops
-        </div>
+        <div ref={containerRef} className="flex-1 min-h-0 overflow-hidden" />
       </aside>
     </>
   );
