@@ -74,10 +74,12 @@ src/
 
 | Route | Renders |
 |---|---|
-| `/journey` | Full tree view |
+| `/` | Full tree view (was `/journey`, promoted to home per user request 2026-06-06) |
 | `/journey/[stage]` | Stage overview page (list of toys in stage) |
 | `/journey/[stage]/[slug]` | Single toy page |
 | `/journey/narrative` | Existing `learning-journey.md` long-read, relocated |
+
+The previous `/` (link-card hub) and `/journey` (narrative loader) are gone. Their navigation role is taken over by a global `DropdownNav` in the layout that links to cheatsheet, resources, practice-log, and narrative.
 
 ## Toy schema
 
