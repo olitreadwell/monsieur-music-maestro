@@ -11,12 +11,25 @@ owner: olitreadwell
 
 A learning journey tree for the monsieur-music-maestro site. Each node is a "breakable toy": a small, runnable Strudel patch with prompts to mutate, take apart, or solve as a constraint task. The tree maps the existing 9-stage house-by-strudel journey into ~50 small toys with optional side-quests, difficulty variants, and late-stage genre branches.
 
+## What this is FOR
+
+**The destination is music, not house production.** The learner wants to understand:
+
+- Music as a craft (rhythm, time, melody, harmony, arrangement)
+- Music theory (named concepts, standard notation where useful)
+- Music history (who, when, where, why — accurate, cited)
+- Dance (how bodies respond to rhythm; club, social, partner)
+- DJing (mixing, key, phrase, crowd reading)
+
+House music is the **engaging anchor**, not the goal. The learner is already drawn to it. The tree uses house as the genre lens because that motivation is already present. Each toy treats Strudel as a listening-and-feeling tool, not the subject.
+
 ## Goals
 
 1. Make every stage of the journey concrete, runnable, and breakable in under 15 minutes per toy.
 2. Show the whole map at a glance (the tree), so the learner can pick where to dive in.
 3. Scale to 50+ toys without code changes; new toys are MD files dropped into a stage dir.
 4. Stay readable in plain MD if the Next app is ever removed.
+5. Code blocks are self-explanatory: every Strudel patch has inline comments naming each token (`bd = bass drum`, etc.) so a reader who has never seen Strudel can parse it.
 
 ## Non-goals
 
@@ -100,19 +113,32 @@ Frontmatter fields:
 Body structure (MD):
 
 ```
-## What this is
-One-line setup.
+## What you're listening for
+Name the musical phenomenon. e.g. "pulse", "downbeat", "syncopation". Frame
+music as sound arranged in time before jumping to the patch.
 
-## Break it
-- Prompt 1
-- Prompt 2
-- Prompt 3
+## Try it
+Pointer to strudel.cc + how to play and stop. Then 2-4 "break it" bullets
+with concrete edits. The Strudel patch itself comes from frontmatter
+`strudel_code` (rendered above the body via StrudelBlock) AND has inline
+comments naming every token. A reader new to Strudel must be able to parse
+`bd`, `hh`, `s(...)`, `*4`, `.bank(...)` from the code's own comments.
 
-## Listen for
-What to hear in real tracks once you've done this.
+## In the world
+Where this appears in real music, real dance floors, real DJ sets. Always
+reach outward — the toy is a window onto a real practice.
+
+## Music theory note
+What musicians call this. Time signature, beat names, harmonic concept,
+form vocabulary. Connect to standard notation if useful.
 
 ## History
-One paragraph, plain language, culturally accurate.
+Who, when, where, why. Plain. Cite real people and decades. Don't fabricate
+exact dates — say "early 1980s" if uncertain.
+
+## Dance and body
+How dancers, drummers, listeners physically respond to this idea. Get the
+reader out of their head and into their body.
 
 ## Self-test
 One question. No answer below it.
@@ -121,6 +147,8 @@ One question. No answer below it.
 - Spine: [link]
 - Side-quests: [links]
 ```
+
+The body has 7 sections (was 5). The two new ones — **Music theory note** and **Dance and body** — exist to keep the toy oriented toward the broader destination, not just the patch.
 
 ## Tree page (`/journey`)
 
