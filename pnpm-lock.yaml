@@ -34,7 +34,7 @@ importers:
         specifier: ^0.5.20
         version: 0.5.20(tailwindcss@4.3.3)
       '@types/node':
-        specifier: ^26
+        specifier: ^26.6.2
         version: 26.6.2
       '@types/react':
         specifier: ^19
