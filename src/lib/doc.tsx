@@ -1,18 +1,18 @@
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type DocSlug =
-  | 'README'
-  | 'learning-journey'
-  | 'strudel-cheatsheet'
-  | 'resources'
-  | 'practice-log-template';
+  | "README"
+  | "learning-journey"
+  | "strudel-cheatsheet"
+  | "resources"
+  | "practice-log-template";
 
 export async function loadDoc(slug: DocSlug): Promise<string> {
-  const file = path.join(process.cwd(), 'content', 'music', `${slug}.md`);
-  return fs.readFile(file, 'utf8');
+  const file = path.join(process.cwd(), "content", "music", `${slug}.md`);
+  return fs.readFile(file, "utf8");
 }
 
 export function Doc({ markdown }: { markdown: string }) {

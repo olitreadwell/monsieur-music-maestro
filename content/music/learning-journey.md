@@ -92,7 +92,7 @@ is in `strudel-cheatsheet.md`.
   ```
   s("bd hh sd hh")
   ```
-- **Name:** *sound* (a drum hit). `bd` kick, `sd` snare, `hh` hi-hat, `cp` clap.
+- **Name:** _sound_ (a drum hit). `bd` kick, `sd` snare, `hh` hi-hat, `cp` clap.
 - **History:** drum machines (like the Roland TR-909) made house possible. You are using their sounds.
 - **Self-test:** can you make it play, and stop it (Ctrl+. / Cmd+.)?
 - **Stop here.** That is a real first session.
@@ -109,7 +109,7 @@ is in `strudel-cheatsheet.md`.
   s("bd*4").bank("RolandTR909")
   ```
   `bd*4` means four kicks, evenly spread. That is **four-on-the-floor**.
-- **Name:** *beat* (one pulse), *BPM* (beats per minute, house is ~120 to 128), *4/4* (four beats per bar).
+- **Name:** _beat_ (one pulse), _BPM_ (beats per minute, house is ~120 to 128), _4/4_ (four beats per bar).
 - **History:** the steady four-on-the-floor kick came from disco into house. It is the genre's spine.
 - **Self-test:** without looking, what does `*4` do?
 - **Stop here** if you like. You built the foundation of every house track ever made.
@@ -127,7 +127,7 @@ is in `strudel-cheatsheet.md`.
   ```
   The commas stack sounds together. `~` is silence. So: kick on every beat, clap on
   beats 2 and 4, hats eight times across the bar.
-- **Name:** *backbeat* (clap on 2 and 4), *offbeat* (the "and" between beats).
+- **Name:** _backbeat_ (clap on 2 and 4), _offbeat_ (the "and" between beats).
 - **History:** clap on 2 and 4 is the "backbeat," shared across soul, funk, disco, and house.
 - **Self-test:** which beats does `~ cp ~ cp` clap on?
 - **Stop here.** You now have a full house drum loop.
@@ -140,7 +140,7 @@ This is the stage where your favourite music walks in.
 
 - **Goal:** feel and code the **tresillo** and the **son clave**.
 - **Listen:** an Afro house, Latin house, or reggaeton track. Find the "boom... boom... boom"
-  that is *not* evenly spaced. That uneven pattern is tresillo.
+  that is _not_ evenly spaced. That uneven pattern is tresillo.
 - **Move:** clap the tresillo: "**1** . . **2** . . **3** ." (clap, rest, rest, clap, rest, rest, clap, rest). Slow.
 - **Build:** the tresillo cell (the DNA of Afro and Latin music):
   ```
@@ -158,7 +158,7 @@ This is the stage where your favourite music walks in.
   ```
   s("cp ~ ~ cp ~ ~ cp ~ ~ ~ cp ~ cp ~ ~ ~")
   ```
-- **Name:** *clave* (the key rhythm), *tresillo* (the 3+3+2 cell), *syncopation* (hits in the gaps).
+- **Name:** _clave_ (the key rhythm), _tresillo_ (the 3+3+2 cell), _syncopation_ (hits in the gaps).
 - **History:** the tresillo came to the Americas through the slave trade and grew out of the
   West African bell pattern. It is inside reggaeton, salsa, son, and tons of house.
 - **Self-test:** clap the tresillo with no music. Just `x . . x . . x .`
@@ -180,7 +180,7 @@ This is the stage where your favourite music walks in.
   ).bank("RolandTR909")
   ```
   The `< >` alternates each cycle: normal hats, then double-time hats, repeat.
-- **Name:** *bar* (4 beats), *phrase* (8 or 16 bars), *cycle* (one loop in Strudel, here one bar).
+- **Name:** _bar_ (4 beats), _phrase_ (8 or 16 bars), _cycle_ (one loop in Strudel, here one bar).
 - **History:** DJs mix tracks together at phrase boundaries (every 8, 16, or 32 bars). This
   counting is the exact skill behind beatmatching, which you reach in Stage 8.
 - **Self-test:** how many beats in 2 bars?
@@ -202,9 +202,9 @@ This is the stage where your favourite music walks in.
   ```
   `eb2` (E flat) gives a **minor**, moodier feel. Change `eb2` to `e2` for a **major**,
   brighter feel. Press play after each change and hear the mood flip.
-- **Name:** *note* (a pitch, A to G), *octave* (the number, higher = higher), *minor* (darker),
-  *major* (brighter), *low-pass filter* (`lpf`, cuts brightness).
-- **History:** the bass and kick "lock" together in house and in Afro-Cuban son (the *tumbao*).
+- **Name:** _note_ (a pitch, A to G), _octave_ (the number, higher = higher), _minor_ (darker),
+  _major_ (brighter), _low-pass filter_ (`lpf`, cuts brightness).
+- **History:** the bass and kick "lock" together in house and in Afro-Cuban son (the _tumbao_).
   Low end is the body of the music.
 - **Self-test:** which note made it sound sadder, `e2` or `eb2`?
 - **Stop here.**
@@ -223,7 +223,7 @@ This is the stage where your favourite music walks in.
   ```
   Each group like `c3eb3g3` is three notes played together: a **chord**. The `< >` plays
   one chord per cycle, so it is a little progression. This one is in a minor key.
-- **Name:** *chord* (notes stacked together), *stab* (a short chord hit), *progression* (chords in a row).
+- **Name:** _chord_ (notes stacked together), _stab_ (a short chord hit), _progression_ (chords in a row).
 - **History:** soulful, jazzy 7th chords are a signature of deep house and its disco roots.
 - **Self-test:** how many notes are in `c3eb3g3`?
 - **Stop here.**
@@ -242,7 +242,7 @@ This is the stage where your favourite music walks in.
   - **Drop:** everything in.
   - **Breakdown:** remove the kick, leave chords and clave.
   - Change something every 8 or 16 bars.
-- **Name:** *arrangement* (the order of sections), *intro / build / drop / breakdown / outro*.
+- **Name:** _arrangement_ (the order of sections), _intro / build / drop / breakdown / outro_.
 - **History:** house tracks are built in 8 / 16 / 32-bar blocks like Lego, so DJs can mix them.
 - **Self-test:** what do you remove to make a breakdown?
 - **Stop here.** You have made a track.
@@ -261,7 +261,7 @@ This is the stage where your favourite music walks in.
   3. Bring it in at a **phrase boundary** (every 8 or 16 bars, the counting from Stage 4).
   4. Use the **EQ** (low / mid / high knobs) to swap basslines cleanly.
   - Learn manual **beatmatching** by ear later. Sync first.
-- **Name:** *beatmatching*, *phrasing*, *EQ*, *cue*, *crossfader*.
+- **Name:** _beatmatching_, _phrasing_, _EQ_, _cue_, _crossfader_.
 - **History:** Frankie Knuckles and Larry Levan built house culture by DJing, re-editing, and
   blending records for dancers. You are doing the same thing they did.
 - **Stop here.** You went from zero to DJ.
@@ -282,25 +282,25 @@ sources and honest evidence-strength flags are in `resources.md` (section 8).
 - **Sound before symbol.** Every major music-teaching method (Gordon, Kodaly, Orff, Suzuki)
   agrees: experience first, name after. Strudel is perfect for it because the sound is instant.
 - **Chunk it (cognitive load).** Beginners overload because everything is new at once. One
-  new element per session keeps it learnable. *Strong evidence.*
+  new element per session keeps it learnable. _Strong evidence._
 - **Test yourself + space it (retrieval practice + spacing).** Rebuilding from memory and
-  revisiting on a 1-3-7-14-30 day ladder beats re-reading by a lot. *Strong evidence.*
+  revisiting on a 1-3-7-14-30 day ladder beats re-reading by a lot. _Strong evidence._
 - **I do, we do, you do (scaffolding).** Copy a worked example, then tweak with support, then
   build alone. Supports fade as you grow.
 - **Move to learn (embodied cognition + Dalcroze).** Moving to a beat is a real brain process
-  (auditory-motor entrainment) and builds an internal pulse. It also aids focus. *Mechanism: strong.*
+  (auditory-motor entrainment) and builds an internal pulse. It also aids focus. _Mechanism: strong._
 - **Special interest as fuel (monotropism).** Anchoring to Afro and Latin music you love raises
-  focus, motivation, and memory for an AuDHD brain. *Useful theory.*
+  focus, motivation, and memory for an AuDHD brain. _Useful theory._
 - **Stable shell, novel content.** The fixed session shape satisfies the autistic need for
-  predictability; the changing music satisfies the ADHD need for novelty. *Lived-experience pattern.*
+  predictability; the changing music satisfies the ADHD need for novelty. _Lived-experience pattern._
 - **Plain language + visuals (multimedia learning).** Short sentences, no idioms, a sound or
-  picture with every idea. Good for ESL and for everyone. *Strong evidence.*
+  picture with every idea. Good for ESL and for everyone. _Strong evidence._
 - **The "why" and immediate use (andragogy).** Adults learn better with a reason and a payoff.
   Every stage ends in something that plays.
 
-**Borrowed from Teach Like a Champion 3.0** (a teaching book, current as of 2021): *Check for
-Understanding* (the self-tests), *Right is Right* (hold out for the precise answer, not "close
-enough"), *No Opt Out* (when stuck, work back to stating it yourself), and small-rep practice
+**Borrowed from Teach Like a Champion 3.0** (a teaching book, current as of 2021): _Check for
+Understanding_ (the self-tests), _Right is Right_ (hold out for the precise answer, not "close
+enough"), _No Opt Out_ (when stuck, work back to stating it yourself), and small-rep practice
 (loop the one hard bar). The classroom-control parts of that book are skipped; they do not fit
 solo adult learning.
 

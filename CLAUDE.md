@@ -15,6 +15,7 @@ The `content/music/*.md` files are a **copy fork** from `~/oli/art/music/` (Oli'
 Before committing any new content here, ask: does this belong on the public web? If unsure, keep it in the PKM until Oli decides.
 
 Do **not** copy across:
+
 - frontmatter with `privacy: private` or `privacy: encrypted`
 - anything from `~/oli/relocation/`, `~/oli/health/`, `~/oli/finance/`, `~/oli/journaling/`
 - dated journal entries

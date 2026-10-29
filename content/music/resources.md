@@ -21,7 +21,7 @@ verified. Open `learning-journey.md` for the path that uses them.
 - **[PAID]** = part is free, part is behind a paywall. Flagged so you do not hit a wall.
 - ⭐ = best fit for you (beginner, plain language, visual or interactive).
 
-A note on "open": most of the *best beginner tools* (Ableton, ear trainers) are **free but
+A note on "open": most of the _best beginner tools_ (Ableton, ear trainers) are **free but
 not open**. The genuinely open ones (reusable) are Wikipedia, Open Music Theory, and the
 software itself (Strudel, Mixxx). Both are fine to learn from. The label just tells you
 what you may legally copy.
@@ -174,6 +174,7 @@ The journey is designed on evidence, not guesswork. Strongest-evidence ideas fir
 - **Teach Like a Champion 3.0** (2021, current; borrowed: Check for Understanding, Right is Right, No Opt Out, small-rep practice) — https://teachlikeachampion.org/books/teach-like-a-champion-3-0/
 
 **Honesty on evidence strength:**
+
 - **Strong:** cognitive load, retrieval practice, spacing, multimedia (words + visuals), if-then planning.
 - **Solid framework, modest proof:** self-regulation, scaffolding, deliberate-practice parts, UDL.
 - **Useful theory, lighter proof:** monotropism, special-interest learning, andragogy, and the AuDHD "stable shell + novel content" pattern.

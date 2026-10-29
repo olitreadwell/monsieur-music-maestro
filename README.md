@@ -8,13 +8,13 @@ Public deploy of an absolute-beginner journey for **making house music by writin
 
 ## what's here
 
-| Route           | Source markdown                       | What it is                                                          |
-| --------------- | ------------------------------------- | ------------------------------------------------------------------- |
-| `/`             | `src/app/page.tsx`                    | Landing, links to the four docs                                     |
-| `/journey`      | `content/music/learning-journey.md`   | **Centrepiece.** 9 stages, 10 rules, session shape, paste-ready Strudel per stage |
-| `/cheatsheet`   | `content/music/strudel-cheatsheet.md` | Drum names, mini-notation, house + Afro/Latin snippets              |
-| `/resources`    | `content/music/resources.md`          | Free + open-license tutorials, flagged `[OPEN]` / `[FREE]` / `[PAID]` |
-| `/practice-log` | `content/music/practice-log-template.md` | Spaced-practice session log template                             |
+| Route           | Source markdown                          | What it is                                                                        |
+| --------------- | ---------------------------------------- | --------------------------------------------------------------------------------- |
+| `/`             | `src/app/page.tsx`                       | Landing, links to the four docs                                                   |
+| `/journey`      | `content/music/learning-journey.md`      | **Centrepiece.** 9 stages, 10 rules, session shape, paste-ready Strudel per stage |
+| `/cheatsheet`   | `content/music/strudel-cheatsheet.md`    | Drum names, mini-notation, house + Afro/Latin snippets                            |
+| `/resources`    | `content/music/resources.md`             | Free + open-license tutorials, flagged `[OPEN]` / `[FREE]` / `[PAID]`             |
+| `/practice-log` | `content/music/practice-log-template.md` | Spaced-practice session log template                                              |
 
 ## stack
 
@@ -22,13 +22,13 @@ Next.js 16, React 19, TypeScript, Tailwind 4, pnpm. Markdown rendered with `reac
 
 ## commands
 
-| Script           | What it does          |
-| ---------------- | --------------------- |
-| `pnpm dev`       | local dev server      |
-| `pnpm build`     | production build      |
-| `pnpm start`     | run production build  |
-| `pnpm lint`      | eslint                |
-| `pnpm typecheck` | tsc --noEmit          |
+| Script           | What it does         |
+| ---------------- | -------------------- |
+| `pnpm dev`       | local dev server     |
+| `pnpm build`     | production build     |
+| `pnpm start`     | run production build |
+| `pnpm lint`      | eslint               |
+| `pnpm typecheck` | tsc --noEmit         |
 
 ## content source
 
